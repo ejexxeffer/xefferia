@@ -10,7 +10,7 @@
     //         if ( $form.validate() ) { register($form); }
     //     });
     // }
-});
+// });
 
 // function register($form) {
 //     $.ajax({
