@@ -21,7 +21,8 @@ gulp.task('watch', ['serve'], function(){
 gulp.task('serve', function() {
 	browserSync.init({
 		server: {
-			baseDir: './'
+			baseDir: './',
+			index: "404.html"
 		},
 	});
 	// browserSync.watch("*.html").on("change", reload);
