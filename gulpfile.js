@@ -22,7 +22,7 @@ gulp.task('serve', function() {
 	browserSync.init({
 		server: {
 			baseDir: './',
-			index: "404.html"
+			index: "index.html"
 		},
 	});
 	// browserSync.watch("*.html").on("change", reload);
