@@ -1,7 +1,30 @@
 # xefferia
-a simple study project my blog
+			EVOLUTION BLOG.
+
+v1.0 HTML/CSS I'm trying to use only html/css stack for whrite my simple version blog. Also i will be use progressive enhancement strategy for my site design. OOCSS/AMCSS/FUN for CSS. Two lang change.
+
+v1.1 HTML5/SCSS Rewritten css and html for the new functionality. Include flexbox and grid. Maybe add html5 canvas.
+
+v1.2 Add JS code and two languages change v2.
+
+v1.3 Rebuild blog with change js to coffescript/typescript. Make first SPA with PWA.
+
+v2.0 Rebuild blog on js framework with SPAv2 and PWA too.
+
+
+Alternative v1.0 Make blog with php. SQL database.
+
+Alternative v1.1 Change SQL to MongoDB
+
+Alternative v2.0 PHP FRAMEWORK
+
+REGRESS v1.0 make JEKYLL blog.
+
+ALSO: Try to write blog with course to write responsive site. 
+
 
 11/11/16/ I want write the simple project, which help me learn the full web developer stack.
+
 01/12/16/ Start writing prototype.
 
 01/12/17 I don't make my site because i've spent long time for learning. And also i made one paid order. And after all this, I somehow found myself in the desert of despair.
