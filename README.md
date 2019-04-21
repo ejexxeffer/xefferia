@@ -1,9 +1,9 @@
 # xefferia
 			EVOLUTION BLOG.
 
-v1.0 HTML/CSS I'm trying to use only html/css stack for whrite my simple version blog. Also i will be use progressive enhancement strategy for my site design. OOCSS/AMCSS/FUN for CSS. Two lang change.
+v1.0 HTML5/CSS3 I'm trying to use only html5/css3 stack for whrite my simple version blog. Also i will be use progressive enhancement strategy for my site design. OOCSS for CSS. Only one language.
 
-v1.1 HTML5/SCSS Rewritten css and html for the new functionality. Include flexbox and grid. Maybe add html5 canvas.
+v1.1 HTML5/SCSS Rewritten CSS and html for the new functionality. I use AMCSS as CSS methodology. Remake site on flexbox and grid for best PWA workflow. Maybe add html5 canvas.
 
 v1.2 Add JS code and two languages change v2.
 
