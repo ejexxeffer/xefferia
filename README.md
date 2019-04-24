@@ -38,3 +38,5 @@ ALSO: Try to write blog with course to write responsive site.
 10/09/18 I have a couple of untreated diseases, but now I'm working at full strength.
 
 15/09/18/ I started writing my blog v1.0. Hope it will not take long.
+
+21/04/19 I'm rewrite indexpage again and start to write v1.0. It's been a long way for just start to code again. I hope i never stopped again like it have been.

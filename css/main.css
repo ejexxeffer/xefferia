@@ -13,9 +13,8 @@
 
 html {
     color: white;
-    /* font-size: 1em; */
+    font-size: 15px;
     line-height: 1.4;
-    /* height: 100%; */
     height: auto;
 }
 
@@ -97,19 +96,16 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    =========*/
-
-/* ==== Google font ==== */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
-
+/* =====FONTS BEGIN===== */
 body {
     background: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: 'roboto_regular', sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
-    font-size: 21px;
+    font-size: 1rem;
     color: #101010;
     height: 100%;
-    line-height: 1.6em;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
     -webkit-background-size: cover;
@@ -119,29 +115,97 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: #444;
+    font-family: 'oranienbaum', serif;
+    font-weight: 400;
 }
 
 h1 {
-  /* font-size: 40px; */
+    font-size: 3.1333rem;
+    margin:0;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin:0;
 }
 
 h3 {
-  font-weight: 400;
+    font-size: 1.8rem;
+    margin:0;
 }
 
 h4 {
-  font-weight: 400;
-  /* font-size: 20px; */
+    font-size: 1.3333rem;
+    margin:0;
+}
+
+h5 {
+    font-size: 0.7333rem;
+    margin:0;
+}
+
+h6 {
+    font-size: 0.5333rem;
+    margin:0;
 }
 
 p {
-    margin-bottom: 20px;
-    font-size: 21px;
+    font-size: 1rem;
+    margin:0;
 }
 
+blockquote {
+    font-size: 1rem;
+    font-family: 'roboto_thin', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    margin:0;
+}
+
+q {
+    font-size: 1rem;
+    font-family: 'roboto_thin', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    margin:0;
+}
+
+cite {
+    font-size: 1rem;
+    font-family: 'roboto_thin_italic', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    margin:0;
+}
+
+code {
+    font-size: 1rem;
+    font-family: 'roboto_light', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin:0;
+}
+
+li {
+    font-size: 1.0667rem;
+    font-family: 'oranienbaum', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.archlabel {
+    font-family: 'roboto_light', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.archlabel p {
+    font-size: 1rem;
+}
+
+.archlabel time {
+    font-size: 0.8667rem;
+}
 
 a {
     color: #ACBAC1;
@@ -169,31 +233,200 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
-/* wrapper */
 
-#wrapper {
-    text-align: center;
-    background-color: #1a1a1a;
-	/* background: url(../img/xeffer.jpg) no-repeat center top; */
-	background-attachment: relative;
-	background-position: center center;
-	box-sizing:border;
-	width: 100%;
-    height: 100%;
-	margin: 0px auto;
-	overflow: hidden;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+/* =====FONTS END===== */
+/* =====HEADER BEGIN===== */
+ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    clear: both;
 }
 
+li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    clear: both;
+    vertical-align: middle;
+}
 
+a img {
+    border: none;
+}
+
+header {    
+    padding:3.125% 3.125%  0 3.125% ;
+}
+
+.topnav {
+    text-align: justify;
+    overflow: hidden;
+    height: 40px;
+    cursor: default;
+}
+
+.topnav li:nth-child(1) {
+    visibility: hidden;
+}
+
+.topnav li:nth-last-child(1) {
+    visibility: hidden;
+}
+
+.topnav li {
+    display: inline;
+}
+
+.topnav li a {
+    display: inline-block;
+}
+
+.topnav:after { 
+    content: "1";
+    margin-left: 100%;
+    height: 1px;
+    overflow: hidden;
+    display: inline-block
+}
+/* =====HEADER END===== */
+/* =====MAIN BEGIN===== */
+main {
+    padding: 0 3.125%;
+    margin-top: 4.6875%;
+}
+
+h1 {
+    text-align: right;
+    line-height: 36pt;
+}
+
+.main_header {
+    margin: 0 auto;
+    max-width: 390px;
+}
+
+.archlabel {
+    margin: 3.333333333% auto 0;
+    text-align: right;
+    max-width: 390px;
+}
+
+.archlabel p {
+    margin: 0;
+    line-height: 0.5;
+}
+
+.archlabel time {
+    line-height: 1;
+}
+
+.headerquote {
+    margin: 1.666666667% auto 0;
+    text-align: right;
+    max-width: 390px;
+}
+
+.headerquote blockquote {
+    line-height: 12pt;
+    letter-spacing: 0.03rem;
+    margin-bottom: 1%;
+}
+
+.headerquote cite {
+    margin-top: 10px;
+    line-height: 12pt;
+    letter-spacing: 0.04rem;
+}
+
+.main_text {
+    line-height: 1.4;
+    letter-spacing: 0.01rem;
+    margin-top: 3.333333333%;
+}
+
+.main_text p + p{
+    margin-top: 6.666666667%;
+}
+
+.main_text p span {
+    font-family: 'roboto_italic', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* =====MAIN END===== */
+/* =====FOOTER BEGIN===== */
+footer {
+    margin-top: 9.375%;
+}
+.chevrones {
+    padding: 0 3.75%;
+    text-align: justify;
+    overflow: hidden;
+    height: 28px;
+    cursor: default;
+}
+
+.chevrones li {
+    display: inline;
+}
+
+.chevrones li a {
+    color: #101010;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'roboto_light', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.chevrones:after { 
+    content: "1";
+    margin-left: 100%;
+    height: 1px;
+    overflow: hidden;
+    display: inline-block
+}
+
+.chevrones:nth-child(1) a span{
+    /* margin-right: 1.69%; */
+}
+
+.chevrones:nth-last-child(1) a span{
+    /* margin-left: 1%; */
+    /* margin-right: 1.69%; */
+}
+
+footer nav {
+    font-size: 0;
+}
+
+.bottomnav {
+    background-color: #080808;
+    padding: 1.25% 11.875% 1.875%;
+    text-align: justify;
+    overflow: hidden;
+    height: 25px;
+    cursor: default;
+}
+
+.bottomnav li {
+    display: inline;
+}
+
+.bottomnav li a {
+    display: inline-block;
+}
+
+.bottomnav:after { 
+    content: "1";
+    margin-left: 100%;
+    height: 1px;
+    overflow: hidden;
+    display: inline-block
+}
+/* =====FOOTER END===== */
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -280,26 +513,137 @@ a:after {
 
 
 
-@media all and (min-width: 320px) and (orientation: portrait) {
+@media all and (min-width: 570px) and (orientation: portrait),all and (min-width: 570px) and (orientation: landscape) {
+    html {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 
+    header {    
+        padding:1.754385965% 2.1053% 0 2.1053%;
+    }
 
-}   
+    main {
+        padding: 0;
+        margin-top: 2.6316%;
+    }
 
-@media all and (min-width: 340px) and (orientation: portrait) {
-      
-}
+    .main_header {
+        max-width: 396px;
+    }
 
-@media all and (min-width: 768px) and (orientation: portrait){
-	
-}
-
-
-@media all and (min-width: 1024px) and (orientation: portrait) {
-
-}
+    .archlabel {
+        margin: 1.754385965% auto 0;
+        max-width: 375px;
+    }
     
-@media all and (min-height: 236px) and (orientation: landscape) {
+    .archlabel time {
+        font-size: 0.8125rem;
+    }
+
+    .headerquote {
+        margin: 1.7544% auto 0;
+        padding-left: 7.01754386%;
+        max-width: 356px;
+    }
+
+    .headerquote blockquote {
+        margin-bottom: 1.123595506%;
+    }
+
+    .main_text {
+        margin: 1.818181818% auto 0;
+        max-width: 500px;
+    }
+
+    .main_text p + p{
+        margin-top: 4%;
+    }
+
+    footer {
+        margin-top: 5.263157895%;
+    }
+
+    .bottomnav {
+        padding: 0.7018% 28.421052632% 1.052631579%;
+    }
+}
+
+@media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
+    html {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    header {    
+        padding:1.754385965% 2.1053% 0 2.1053%;
+    }
+
+    main {
+        padding: 0;
+        margin-top: 2.6316%;
+    }
+
+    .main_header {
+        max-width: 590px;
+    }
+
+    .archlabel {
+        margin: 1.754385965% auto 0;
+        padding: 0;
+        max-width: 532px;
+    }
+
+    .archlabel p {
+        font-size: 1rem;
+    }
     
+    .archlabel time {
+        font-size: 0.8667rem;
+    }
+
+    .headerquote {
+        margin-top: 0.909090909%;
+        max-width: 490px;
+    }
+
+    .headerquote blockquote {        
+        font-size: 0.9375rem;
+        margin-bottom: 0.849454545%;
+    }
+
+    .main_text {
+        margin-top: 1.818181818%;
+    }
+
+    .main_text p + p{
+        margin-top: 3.636363636%;
+    }
+
+    footer {
+        margin-top: 5.263157895%;
+    }
+
+    .bottomnav {
+        padding: 0.7018% 28.421052632% 1.052631579%;
+    }
+}
+
+@media all and (min-width: 1024px) and (orientation: portrait),all and (min-width: 1024px) and (orientation: landscape) {
+
+}
+
+@media all and (min-width: 1440px) and (orientation: portrait),all and (min-width: 1440px) and (orientation: landscape) {
+
+}
+
+
+@media all and (min-width: 1920px) and (orientation: portrait),all and (min-width: 1920px) and (orientation: landscape) {
+    
+}
+
+@media all and (min-width: 2048px) and (orientation: portrait),all and (min-width: 2048px) and (orientation: landscape) {
+
 }
 
 
