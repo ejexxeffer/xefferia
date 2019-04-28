@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'oranienbaum';
-    src: url('../fonts/oranienbaum-regular-webfont.woff2') format('woff2'),
+    src: 
          url('../fonts/oranienbaum-regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;

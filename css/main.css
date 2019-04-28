@@ -27,12 +27,14 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: none;
+    /* background: #b3d4fc; */
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: none;
+    /* background: #b3d4fc; */
     text-shadow: none;
 }
 
@@ -199,7 +201,7 @@ li {
     font-style: normal;
 }
 
-.archlabel p {
+.archlabel a p {
     font-size: 1rem;
 }
 
@@ -208,7 +210,8 @@ li {
 }
 
 a {
-    color: #ACBAC1;
+    color: #434343;
+    text-decoration: none;
     word-wrap: break-word;
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -219,7 +222,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #4F92AF;
+    color: #101010;
     text-decoration: none;
     outline: 0;
 }
@@ -259,6 +262,14 @@ header {
     padding:3.125% 3.125%  0 3.125% ;
 }
 
+.logo path {
+    fill: #080808;
+}
+
+.logo:hover path{
+    fill: #434343;
+}
+
 .topnav {
     text-align: justify;
     overflow: hidden;
@@ -289,6 +300,38 @@ header {
     overflow: hidden;
     display: inline-block
 }
+
+.top_menu {
+    text-align: justify;
+    overflow: hidden;
+    height: 40px;
+    cursor: default;
+    display: none;
+}
+
+.top_menu li {
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+}
+
+.top_menu li a {
+    display: inline-block;
+    color: #A4A4A4;
+}
+
+.top_menu li a:hover {
+    color: #434343;
+}
+
+.top_menu:after { 
+    content: "1";
+    margin-left: 100%;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    display: inline-block;
+}
 /* =====HEADER END===== */
 /* =====MAIN BEGIN===== */
 main {
@@ -296,12 +339,9 @@ main {
     margin-top: 4.6875%;
 }
 
-h1 {
+.main_header {
     text-align: right;
     line-height: 36pt;
-}
-
-.main_header {
     margin: 0 auto;
     max-width: 390px;
 }
@@ -312,9 +352,18 @@ h1 {
     max-width: 390px;
 }
 
-.archlabel p {
+.archlabel a p {
     margin: 0;
     line-height: 0.5;
+
+}
+
+.archlabel a {
+    color: #101010;
+}
+
+.archlabel a:hover {
+    color: #434343;
 }
 
 .archlabel time {
@@ -354,6 +403,37 @@ h1 {
     font-weight: 400;
     font-style: normal;
 }
+
+.body_404 {
+    background: url("/img/320dp.svg") no-repeat;
+    background-position-y:10px;
+    background-size: 100%;
+}
+
+.main_404 {
+    padding: 0;
+    margin: 0;
+}
+
+.header_404 h1{
+    padding: 0;
+    margin: 28.125% auto 0;
+    color: #ffffff;
+    width: 76px;
+    font-size: 3.0667rem;
+}
+
+.info_404 p {
+    padding: 0;
+    margin: 155px auto 0;
+    text-align: center;
+    font-family: 'oranienbaum', serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 170px;
+    font-size: 3.3333rem;
+    line-height: 0.8;
+}
 /* =====MAIN END===== */
 /* =====FOOTER BEGIN===== */
 footer {
@@ -373,13 +453,28 @@ footer {
 }
 
 .chevrones li a {
-    color: #101010;
     display: inline-block;
     text-decoration: none;
     font-family: 'roboto_light', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 1rem;
+}
+
+.chevrones li a {
+    fill: #434343;
+}
+
+.chevrones li a:hover {
+    fill: #101010;
+}
+
+.chevrones li a svg {
+    fill: #101010;
+}
+
+.chevrones li a svg:hover {
+    fill: #434343;
 }
 
 .chevrones:after { 
@@ -410,6 +505,14 @@ footer nav {
     display: inline-block;
 }
 
+.bottomnav li a svg {
+    fill: #A4A4A4;
+}
+
+.bottomnav li a svg:hover {
+    fill: #F1F1F1;
+}
+
 .bottomnav:after { 
     background: #080808;
     content: "1";
@@ -437,7 +540,11 @@ footer nav {
 
 .bottom_menu li a {
     display: inline-block;
-    text-decoration: none;
+    color: #A4A4A4;
+}
+
+.bottom_menu li a:hover {
+    color: #F1F1F1;
 }
 
 .bottom_menu:after {
@@ -568,8 +675,8 @@ footer nav {
     }
 
     .headerquote {
-        margin: 1.7544% auto 0;
-        padding-left: 7.01754386%;
+        margin: 0.877192982% auto 0;
+        padding-left: 40px;
         max-width: 356px;
     }
 
@@ -593,6 +700,25 @@ footer nav {
 
     .bottomnav {
         padding: 0.7018% 28.421052632% 1.052631579%;
+    }
+
+    .body_404 {
+        background: url("/img/570dp.svg") no-repeat;
+        background-position-y: 5px;
+        background-size: 100%;
+    }
+    
+    .header_404 h1{
+        margin: 57px auto 0;
+        width: 76px;
+        font-size: 3rem;
+    }
+    
+    .info_404 p {
+        margin: 35px auto 0;
+        width: 129px;
+        font-size: 2.3rem;
+        line-height: 0.8;
     }
 }
 
@@ -637,15 +763,16 @@ footer nav {
 
     .main_header {
         max-width: 590px;
+        line-height: 52pt;
     }
 
     .archlabel {
-        margin: 2.597402597% auto 0;
+        margin: 20px auto 0;
         padding: 0;
-        max-width: 570px;
+        max-width: 550px;
     }
 
-    .archlabel p {
+    .archlabel a p {
         font-size: 1rem;
     }
     
@@ -654,14 +781,14 @@ footer nav {
     }
 
     .headerquote {
-        margin: 1.16883117% auto 0;
-        padding-left: 27.272727273%;
+        margin: 9px auto 0;
+        padding-left: 210px;
         max-width: 380px;
     }
 
     .headerquote blockquote {        
         font-size: 0.95rem;
-        margin-bottom: 1.578947368%;
+        margin-bottom: 6px;
     }
 
     .headerquote cite {
@@ -669,7 +796,7 @@ footer nav {
     }
 
     .main_text {
-        margin: 1.9481% auto 0;
+        margin: 15px auto 0;
         max-width: 590px;
     }
 
@@ -679,7 +806,8 @@ footer nav {
     }
 
     footer {
-        margin-top: 4.545454545%;
+        margin-top: 35px;
+        /* указал в пикселях так как с ростом ширины экрана рост значения в процентах слишком быстрый */
         background: #080808;
     }
 
@@ -719,122 +847,332 @@ footer nav {
     .bottom_menu li {
         font-size: 0.8rem;
         line-height: 1;
+    }
+
+    .body_404 {
+        background: url("/img/770dp.svg") no-repeat;
+        background-position-y: 11px;
+        background-size: 100%;
+    }
+    
+    .header_404 h1{
+        margin: 110px auto 0;
+        width: 190px;
+        font-size: 6rem;
+    }
+    
+    .info_404 p {
+        margin: 226px auto 0;
+        width: 345px;
+        font-size: 5.7rem;
+        line-height: 0.8;
     }
 }
 
 @media all and (min-width: 1024px) and (orientation: portrait),all and (min-width: 1024px) and (orientation: landscape) {
-    html {
-        font-size: 20px;
-        line-height: 1.4;
-    }
-
     header {
-        padding:1.948051948% 1.818181818% 0 1.818181818%;
+        padding:1.953125% 1.6602% 0 1.6602%;
     }
 
     main {
         padding: 0;
-        margin-top: 10.38961039%;
+        margin-top: 9.766%;
     }
 
     .main_header {
-        max-width: 590px;
+        padding-left: 202px;
+        max-width: 586px;
     }
 
     .archlabel {
-        margin: 2.597402597% auto 0;
+        margin: 1.9531% auto 0;
         padding: 0;
-        max-width: 570px;
-    }
-
-    .archlabel p {
-        font-size: 1rem;
-    }
-    
-    .archlabel time {
-        font-size: 0.85rem;
+        max-width: 748px;
     }
 
     .headerquote {
-        margin: 1.16883117% auto 0;
-        padding-left: 27.272727273%;
-        max-width: 380px;
-    }
-
-    .headerquote blockquote {
-        font-size: 0.95rem;
-        margin-bottom: 1.578947368%;
-    }
-
-    .headerquote cite {
-        font-size: 0.95rem;
+        padding-left: 402px;
+        max-width: 386px;
     }
 
     .main_text {
-        margin: 1.9481% auto 0;
-        max-width: 590px;
+        max-width: 788px;
     }
 
-    .main_text p + p{
-        margin-top: 25px;
-        /* возможно потом надо будет сменить на относительные единицы, например rem */
+    .body_404 {
+        background: url("/img/1024dp.svg") no-repeat;
+        background-position-y: 10px;
+        background-size: 100%;
     }
-
-    footer {
-        margin-top: 4.545454545%;
-        background: #080808;
+    
+    .header_404 h1{
+        margin: 111px auto 0;
+        width: 190px;
+        font-size: 6rem;
     }
-
-    .chevrones {
-        height: 30px;
-        display: none;
-    }
-
-    .chevrones li {
-        vertical-align: middle;
-    }
-
-    .bottomnav {
-        padding: 0;
-        height: 30px;
-        max-width: 330px;
-        padding: 8px;
-        margin: 0 auto;
-    }
-
-    .bottomnav li {
-        line-height: 1;
-    }
-
-    .bottomnav li a img{
-        width: 30px;
-        height: 30px;
-    }
-
-    .bottom_menu {
-        display: block;
-        width: 219px;
-        padding: 4px 0 10px;
-        margin: 0 auto;
-    }
-
-    .bottom_menu li {
-        font-size: 0.8rem;
-        line-height: 1;
+    
+    .info_404 p {
+        margin: 103px auto 0;
+        width: 428px;
+        font-size: 5rem;
+        line-height: 0.8;
     }
 }
 
 @media all and (min-width: 1440px) and (orientation: portrait),all and (min-width: 1440px) and (orientation: landscape) {
+    html {
+        font-size: 21px;
+        line-height: 1.4;
+    }
 
+    h1 {
+        font-size: 4.2381rem;
+    }
+
+    h2 {
+        font-size: 2.9524rem;
+    }
+    
+    h3 {
+        font-size: 2.0476rem;
+    }
+    
+    h4 {
+        font-size: 1.4286rem;
+    }
+    
+    h5 {
+        font-size: 0.7143rem;
+    }
+    
+    h6 {
+        font-size: 0.4762rem;
+    }
+
+    header {    
+        padding:1.7362% 1.818181818% 0 1.818181818%;
+    }
+
+    .top_menu {
+        display: block;
+        margin: 10px auto 0;
+        width: 670px;
+        height: 28px;
+    }
+
+    main {
+        padding: 0;
+        margin-top: 8.680555556%;
+    }
+
+    .main_header {
+        max-width: 880px;
+        padding-left: 20px;
+        line-height: 68pt;
+    }
+
+    .archlabel {
+        margin: 25px auto 0;
+        max-width: 860px;
+    }
+
+    .headerquote {
+        padding-left: 460px;
+        max-width: 440px;
+    }
+
+    .headerquote blockquote {        
+        font-size: 1rem;
+    }
+
+    .headerquote cite {
+        font-size: 1rem;
+    }
+
+    .main_text {
+        max-width: 900px;
+    }
+
+    footer {
+        margin-top: 40px;
+        /* указал в пикселях так как с ростом ширины экрана рост значения в процентах слишком быстрый */
+    }
+
+    .body_404 {
+        background: url("/img/1440dp.svg") no-repeat;
+        background-position-y: 13px;
+        background-size: 100%;
+    }
+    
+    .header_404 h1{
+        margin: 151px auto 0;
+        width: 205px;
+        font-size: 6.1905rem;
+    }
+    
+    .info_404 p {
+        margin: 168px auto 0;
+        width: 360px;
+        font-size: 5.5rem;
+        line-height: 0.8;
+    }
 }
 
 
 @media all and (min-width: 1920px) and (orientation: portrait),all and (min-width: 1920px) and (orientation: landscape) {
+    html {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 4.4091rem;
+    }
+
+    h2 {
+        font-size: 3.0455rem;
+    }
     
+    h3 {
+        font-size: 2.0909rem;
+    }
+    
+    h4 {
+        font-size: 1.4545rem;
+    }
+    
+    h5 {
+        font-size: 0.6818rem;
+    }
+    
+    h6 {
+        font-size: 0.4545rem;
+    }
+
+    header {
+        padding:0;
+        padding-top:36px;
+    }
+
+    main {
+        padding: 0;
+        margin-top: 7.3%;
+    }
+
+    .main_header {
+        max-width: 930px;
+        padding: 0;
+        line-height: 74pt;
+    }
+
+    .archlabel {
+        max-width: 900px;
+    }
+
+    .archlabel a p {
+        font-size: 0.9545rem;
+    }
+
+    .archlabel time {
+        font-size: 0.8182rem;
+    }
+
+    .headerquote {
+        padding-left: 480;
+        max-width: 450px;
+    }
+
+    .headerquote blockquote {        
+        font-size: 0.9545rem;
+        margin-bottom: 6px;
+    }
+
+    .headerquote cite {
+        font-size: 0.9545rem;
+    }
+
+    .main_text {
+        max-width: 930px;
+    }
+
+    footer {
+        margin-top: 45px;
+        /* указал в пикселях так как с ростом ширины экрана рост значения в процентах слишком быстрый */
+    }
+
+    .body_404 {
+        background: url("/img/1920dp.svg") no-repeat;
+        background-position-y: 13px;
+        background-size: 100%;
+    }
+    
+    .header_404 h1{
+        margin: 206px auto 0;
+        width: 205px;
+        font-size: 5.9091rem;
+    }
+    
+    .info_404 p {
+        margin: 140px auto 0;
+        width: 360px;
+        font-size: 5.5rem;
+        line-height: 0.8;
+    }
 }
 
 @media all and (min-width: 2048px) and (orientation: portrait),all and (min-width: 2048px) and (orientation: landscape) {
+    header {
+        padding:0;
+        padding-top:36px;
+    }
 
+    main {
+        padding: 0;
+        margin-top: 7.38%;
+    }
+
+    .main_header {
+        max-width: 990px;
+        padding: 0;
+        line-height: 74pt;
+    }
+
+    .archlabel {
+        max-width: 950px;
+    }
+
+    .headerquote {
+        padding-left: 510px;
+        max-width: 480px;
+    }
+
+    .main_text {
+        max-width: 990px;
+    }
+
+    footer {
+        margin-top: 50px;
+        /* указал в пикселях так как с ростом ширины экрана рост значения в процентах слишком быстрый */
+    }
+
+    .body_404 {
+        background: url("/img/2048dp.svg") no-repeat;
+        background-position-y: 13px;
+        background-size: 100%;
+    }
+    
+    .header_404 h1{
+        margin: 206px auto 0;
+        width: 205px;
+        font-size: 5.9091rem;
+    }
+    
+    .info_404 p {
+        margin: 140px auto 0;
+        width: 360px;
+        font-size: 5.5rem;
+        line-height: 0.8;
+    }
 }
 
 
