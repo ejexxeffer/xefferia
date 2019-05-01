@@ -419,6 +419,7 @@ q::after {
 cite::before {
     content: "— ";
 }
+/* автор цитаты */
 
 .main_header {
     text-align: right;
