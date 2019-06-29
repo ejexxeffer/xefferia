@@ -478,6 +478,14 @@ cite::before {
     margin-top: 3.333333333%;
 }
 
+.main_text h2 , h3, h4{
+    line-height: 1.8;
+}
+
+.main_text h5, h6 {
+    line-height: 2.5;
+}
+
 .main_text p + p{
     margin-top: 6.666666667%;
 }
@@ -865,6 +873,14 @@ footer nav {
         max-width: 500px;
     }
 
+    .main_text h2 , h3, h4{
+        line-height: 2;
+    }
+    
+    .main_text h5, h6 {
+        line-height: 3.5;
+    }
+
     .main_text p + p{
         margin-top: 20px;
         /* возможно потом надо будет сменить на относительные единицы, например rem */
@@ -1209,6 +1225,14 @@ footer nav {
 
     .main_text {
         max-width: 900px;
+    }
+
+    .main_text h2 , h3, h4{
+        line-height: 2.1;
+    }
+    
+    .main_text h5, h6 {
+        line-height: 3.6;
     }
 
     footer {
