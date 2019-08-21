@@ -26,17 +26,17 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
+/* ::-moz-selection {
     background: none;
-    /* background: #b3d4fc; */
+    background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
     background: none;
-    /* background: #b3d4fc; */
+    background: #b3d4fc;
     text-shadow: none;
-}
+} */
 
 /*
  * A better looking default horizontal rule
@@ -399,11 +399,13 @@ cite::before {
 /* автор цитаты */
 
 .archive_menu {
-    margin: 0 10px;
+    margin: 1.5625% auto 0;
     display: none;
     /* display: grid; */
+    align-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 20px;
+    max-width: 356px;
 }
 
 .archive_menu li {
@@ -427,10 +429,39 @@ cite::before {
 } */
 
 .archive_grid {
-    margin: 0 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 20px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 20px;
+    margin: 15px auto 0;
+    max-width: 400px;
+}
+
+.archive_grid section {
+    break-inside: avoid;
+}
+
+.archive_grid section + section {
+    margin-top: 20px;
+}
+
+.archive_header h1{
+    font-size: 1.6667rem;
+}
+
+.archive_archlabel {
+    text-align: right;
+    font-family: 'roboto_light', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.archive_archlabel a p{
+    font-size: 1.0667rem;
+}
+
+.archive_archlabel time {
+    font-size: 0.8667rem;
 }
 
 .main_header {
@@ -449,7 +480,6 @@ cite::before {
 .archlabel a p {
     margin: 0;
     line-height: 0.5;
-
 }
 
 .archlabel a {
@@ -810,6 +840,41 @@ footer nav {
         max-width: 396px;
     }
 
+    .archive_menu {
+        margin: 1.754385965% auto 0;
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 500px;
+    }
+
+    .archive_menu a {
+        font-size: 1rem;
+    }
+
+    .archive_menu :nth-child(1) {
+        grid-column-start: 3;
+    }
+
+    .archive_grid {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        margin: 1.754385965% auto 0;
+        max-width: 550px;
+        padding: 0 2.1053% 0 2.1053%;
+    }
+
+    .archive_header h1 {
+        font-size: 1.5625rem;
+    }
+
+    .archive_archlabel a p {
+        font-size: 1rem;
+    }
+
+    .archive_archlabel time {
+        font-size: 0.8125rem;
+    }
+
     .archlabel {
         margin: 1.754385965% auto 0;
         max-width: 375px;
@@ -931,6 +996,32 @@ footer nav {
         margin-top: 10.38961039%;
         max-width: 590px;
         line-height: 52pt;
+    }
+
+    .archive_menu {
+        margin: 30px auto 0;
+        grid-template-columns: repeat(8, 1fr);
+        max-width: 740px;
+    }
+    .archive_menu :nth-child(1) {
+        grid-column-start: 4;
+    }
+
+    .archive_grid {
+        margin: 20px auto 0;
+        padding: 0;
+    }
+
+    .archive_header h1 {
+        font-size: 1.5rem;
+    }
+
+    .archive_archlabel time {
+        font-size: 0.8rem;
+    }
+
+    .archive_archlabel a p {
+        font-size: 0.95rem;
     }
 
     .archlabel {
@@ -1064,6 +1155,22 @@ footer nav {
         max-width: 586px;
     }
 
+    .archive_menu {
+        margin: 2.9296875% auto 0;
+        grid-template-columns: repeat(10, 1fr);
+        max-width: 990px;
+    }
+
+    .archive_menu :nth-child(1) {
+        grid-column-start: 5;
+    }
+
+    .archive_grid {
+        margin: 1.953125% auto 0;
+        padding: 0;
+        max-width: 586px;
+    }
+
     .archlabel {
         margin: 1.9531% auto 0;
         padding: 0;
@@ -1157,6 +1264,39 @@ footer nav {
     .inputcode pre code {
         padding: 10px 5%;
         width: 900px;
+    }
+
+    .archive_menu {
+        margin: 45px auto 0;
+        grid-template-columns: repeat(12, 1fr);
+        max-width: 1360px;
+    }
+
+    .archive_menu a {
+        font-size: 0.9524rem;
+    }
+
+
+    .archive_menu :nth-child(1) {
+        grid-column-start: 6;
+    }
+
+    .archive_grid {
+        margin: 30px auto 0;
+        padding: 0;
+        max-width: 670px;
+    }
+
+    .archive_header h1 {
+        font-size: 1.4286rem;
+    }
+
+    .archive_archlabel time {
+        font-size: 0.7619rem;
+    }
+
+    .archive_archlabel a p {
+        font-size: 0.9048rem;
     }
 
     .main_header {
@@ -1269,6 +1409,39 @@ footer nav {
     .inputcode pre {
         margin: 20px auto;
         width: 930px;
+    }
+
+    .archive_menu {
+        margin: 50px auto 0;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 50px;
+        max-width: 1810px;
+    }
+
+    .archive_menu :nth-child(1) {
+        grid-column-start: 6;
+    }
+
+    .archive_menu a {
+        font-size: 0.9091rem;
+    }
+
+    .archive_grid {
+        column-gap: 30px;
+        max-width: 1070px;
+        padding: 0 487.5px;
+    }
+
+    .archive_header h1 {
+        font-size: 1.8182rem;
+    }
+
+    .archive_archlabel time {
+        font-size: 0.8636rem;
+    }
+
+    .archive_archlabel a p {
+        font-size: 1rem;
     }
 
     .main_header {
