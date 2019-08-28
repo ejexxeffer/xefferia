@@ -3,11 +3,13 @@
 
 v1.0 HTML5/CSS3 I'm trying to use only html5/css3 stack for whrite my simple version blog. Also i will be use progressive enhancement strategy for my site design. OOCSS for CSS. Only one language.
 
-v1.1 HTML5/SCSS Rewritten CSS and html for the new functionality. I use AMCSS as CSS methodology. Remake site on flexbox and grid for best PWA workflow. Maybe add html5 canvas.
+v1.0.1 Flexbox and archive
 
-v1.2 Add JS code and two languages change v2.
+v1.1 HTML5/SCSS Rewritten CSS and html for the new functionality. I use AMCSS as CSS methodology. Remake site on flexbox and grid for best PWA workflow. Maybe add html5 canvas. JS menu and maybe write service worker.
 
-v1.3 Rebuild blog with change js to coffescript/typescript. Make first SPA with PWA.
+v1.2 Add JS code and two languages change.
+
+v1.3 Rebuild blog with change js to coffescript/typescript. Make SPA with PWA great again.
 
 v2.0 Rebuild blog on js framework with SPAv2 and PWA too.
 
@@ -40,3 +42,4 @@ ALSO: Try to write blog with course to write responsive site.
 15/09/18/ I started writing my blog v1.0. Hope it will not take long.
 
 21/04/19 I'm rewrite indexpage again and start to write v1.0. It's been a long way for just start to code again. I hope i never stopped again like it have been.
+29/08/19 I write some algorithms and do not work on a blog while reading a book about javascript. This is the next version with a little taste of PWA. I hope that I can do PWA in the next version of the site.
