@@ -14,11 +14,11 @@ v1.3 Rebuild blog with change js to coffescript/typescript. Make SPA with PWA gr
 v2.0 Rebuild blog on js framework with SPAv2 and PWA too.
 
 
-Alternative v1.0 Make blog with php. SQL database.
+Alternative v1.0 Make blog with php SQL database.
 
-Alternative v1.1 Change SQL to MongoDB
+Alternative v1.1 Change SQL to MongoDB.
 
-Alternative v2.0 PHP FRAMEWORK
+Alternative v2.0 PHP FRAMEWORK.
 
 REGRESS v1.0 make JEKYLL blog.
 
