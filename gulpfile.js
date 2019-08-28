@@ -7,7 +7,7 @@ const reload = browserSync.reload;
 var config = {
 	server: {
 		baseDir: './',
-		index: 'archive.html'
+		index: 'index.html'
 	},
 	port: 3000,
 	notify: false
