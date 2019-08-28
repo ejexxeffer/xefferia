@@ -423,8 +423,8 @@ cite::before {
 .chevrone:hover path {
     fill: #101010;
 }
-/* так можно заполнить цветом path внутри контейнеров */
-/* .archive_menu ul :nth-child(1) a svg path {
+/* так можно заполнить цветом path внутри контейнеров 
+ .archive_menu ul :nth-child(1) a svg path {
     fill:#434343;
 } */
 
@@ -432,9 +432,7 @@ cite::before {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
-    /*column-gap: 20px;*/
     margin: 15px auto 0;
-    /*max-width: 400px;*/
 }
 
 .archive_grid section {
