@@ -267,9 +267,9 @@ header {
     padding:3.125% 3.125%  0 3.125% ;
 }
 
-.logo path {
+/* .topnav li:nth-child(2) path {
     fill: #080808;
-}
+} */
 
 .logo:hover path{
     fill: #434343;
@@ -449,6 +449,15 @@ cite::before {
     font-size: 1.6667rem;
 }
 
+.archive_header h1 a {
+    color: #101010;
+}
+
+.archive_header h1 a:hover,
+.archive_header h1 a:focus {
+    color: #434343;
+}
+
 .archive_archlabel {
     text-align: right;
     font-family: 'roboto_light', sans-serif;
@@ -456,7 +465,7 @@ cite::before {
     font-style: normal;
 }
 
-.archive_archlabel a p{
+.archive_archlabel p{
     font-size: 1.0667rem;
 }
 
@@ -539,7 +548,7 @@ cite::before {
 }
 
 .images_center {
-    display: flex;
+    display: block;
     margin: 10px auto;
     height: auto;
 }
@@ -754,21 +763,21 @@ footer nav {
 
 @media all and (min-width: 320px) and (orientation: landscape) {
     .images_center {
-        max-height: 100vh;
+        max-height: 320px;
     }
     
     .images_center img{
-        max-height: 100vh;
+        max-height: 320px;
     }
 }
 
 @media all and (min-width: 768px) and (orientation: landscape) {
     .images_center {
-        max-height: 100vh;
+        max-height: 400px;
     }
     
     .images_center img{
-        max-height: 100vh;
+        max-height: 400px;
     }
 }
 
@@ -880,7 +889,7 @@ footer nav {
         font-size: 1.5625rem;
     }
 
-    .archive_archlabel a p {
+    .archive_archlabel p {
         font-size: 1rem;
     }
 
@@ -1033,7 +1042,7 @@ footer nav {
         font-size: 0.8rem;
     }
 
-    .archive_archlabel a p {
+    .archive_archlabel p {
         font-size: 0.95rem;
     }
 
@@ -1308,7 +1317,7 @@ footer nav {
         font-size: 0.7619rem;
     }
 
-    .archive_archlabel a p {
+    .archive_archlabel p {
         font-size: 0.9048rem;
     }
 
@@ -1453,7 +1462,7 @@ footer nav {
         font-size: 0.8636rem;
     }
 
-    .archive_archlabel a p {
+    .archive_archlabel p {
         font-size: 1rem;
     }
 
