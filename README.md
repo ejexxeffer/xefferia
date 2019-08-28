@@ -3,7 +3,7 @@
 
 v1.0 HTML5/CSS3 I'm trying to use only html5/css3 stack for whrite my simple version blog. Also i will be use progressive enhancement strategy for my site design. OOCSS for CSS. Only one language.
 
-v1.0.1 Flexbox and archive
+v1.0.1 Flexbox and archive.
 
 v1.1 HTML5/SCSS Rewritten CSS and html for the new functionality. I use AMCSS as CSS methodology. Remake site on flexbox and grid for best PWA workflow. Maybe add html5 canvas. JS menu and maybe write service worker.
 
