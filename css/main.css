@@ -301,15 +301,15 @@ header nav:nth-last-child(1) {
     height: 40px;
     position: relative;
     cursor: default;
-    display: flex;  
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .top_menu li {
     /* width: 210px; */
-    height: 55px;
-    padding-bottom: 10px;
+    /* height: 55px; */
+    margin-bottom: 10px;
 }
 
 .top_menu li:nth-child(1) {
