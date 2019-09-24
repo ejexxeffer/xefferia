@@ -281,27 +281,50 @@ header {
     cursor: default;
 }
 
-.topnav li:nth-child(1) {
+/* .topnav li:nth-child(1) {
     visibility: hidden;
-}
+}*/
 
-.topnav li:nth-last-child(1) {
-    visibility: hidden;
+header nav:nth-last-child(1) {
+    width:100%;
+    min-height:100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    bottom: 0; left: 0; top: 0; right: 0;   
+    -webkit-overflow-scrolling: touch;
 }
 
 .top_menu {
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 40px;
+    position: relative;
     cursor: default;
-    display: none;
+    display: flex;  
+    align-items: center;
+    flex-direction: column;
 }
 
 .top_menu li {
-    width: 210px;
+    /* width: 210px; */
+    height: 55px;
+    padding-bottom: 10px;
 }
 
+.top_menu li:nth-child(1) {
+    align-self: flex-start;
+    justify-content: center;
+    padding: 22px 10px 10px;
+}
+
+/* .top_menu li:nth-child(2) {
+    margin-top: 5px;
+} */
+
 .top_menu li a {
-    color: #A4A4A4;
+    /* color: #A4A4A4; */
+    font-size: 3.1333rem;
 }
 
 .top_menu li a:hover {
@@ -846,6 +869,10 @@ footer nav {
         padding: 0;
     }
 
+    .top_menu li a {
+        font-size: 2.9375rem;
+    }
+
     .greyquotes blockquote {
         padding: 5px 0;
         margin: 5px auto;
@@ -998,6 +1025,37 @@ footer nav {
 
     header {    
         padding:1.948051948% 1.818181818% 0 1.818181818%;
+    }
+
+    .topnav li:nth-child(1) {
+    visibility: hidden;
+    }
+
+    .topnav li:nth-last-child(1) {
+    visibility: hidden;
+    }
+
+    header nav:nth-last-child(1) {
+        background: none;
+        width: auto;
+        min-height: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-overflow-scrolling: none;
+    }
+
+    .top_menu {
+        flex-direction: row;
+    }
+
+    .top_menu li:nth-child(1) {
+        display: none;
+    }
+
+    .top_menu li a {
+        font-size: 1.0667rem;
+        color: #A4A4A4;
     }
 
     main {
