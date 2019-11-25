@@ -286,6 +286,7 @@ header {
 }*/
 
 header nav:nth-last-child(1) {
+    display: none;
     width:100%;
     min-height:100%;
     background-color: rgba(255, 255, 255, 0.95);
@@ -297,7 +298,6 @@ header nav:nth-last-child(1) {
 }
 
 .top_menu {
-    /* overflow: hidden; */
     height: 40px;
     position: relative;
     cursor: default;
@@ -1027,16 +1027,9 @@ footer nav {
         padding:1.948051948% 1.818181818% 0 1.818181818%;
     }
 
-    .topnav li:nth-child(1) {
-    visibility: hidden;
-    }
-
-    .topnav li:nth-last-child(1) {
-    visibility: hidden;
-    }
-
     header nav:nth-last-child(1) {
         background: none;
+        display: block;
         width: auto;
         min-height: auto;
         overflow-y: hidden;
@@ -1046,6 +1039,9 @@ footer nav {
     }
 
     .top_menu {
+        width: 550px;
+        height: 28px;
+        margin: 10px auto 0;
         flex-direction: row;
     }
 
@@ -1053,9 +1049,25 @@ footer nav {
         display: none;
     }
 
+    .top_menu li:nth-child(2) {
+        display: none;
+    }
+
+    .top_menu li {
+        width: 210px;
+    }
+
     .top_menu li a {
         font-size: 1.0667rem;
         color: #A4A4A4;
+    }
+
+    .topnav li:nth-child(1) {
+        visibility: hidden;
+        }
+    
+    .topnav li:nth-last-child(1) {
+        visibility: hidden;
     }
 
     main {
@@ -1128,7 +1140,7 @@ footer nav {
         max-width: 380px;
     }
 
-    .headerquote blockquote {        
+    .headerquote blockquote {
         font-size: 0.95rem;
         margin-bottom: 6px;
     }
@@ -1214,6 +1226,10 @@ footer nav {
 @media all and (min-width: 1024px) and (orientation: portrait),all and (min-width: 1024px) and (orientation: landscape) {
     header {
         padding:1.953125% 1.6602% 0 1.6602%;
+    }
+
+    .top_menu {
+        width: 586px;
     }
 
     main {
