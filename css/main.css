@@ -430,11 +430,11 @@ cite::before {
 }
 
 .search_input {
-  font-family: 'robotomono_regular', sans-serif;
+  font-family: 'roboto_regular', sans-serif;
   vertical-align: middle;
   border: 1px solid black;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: 6px;
   padding-left: 5px;
   margin-right: 5px;
   width: 190px;
@@ -464,14 +464,28 @@ input[type="search"] {
 .search_button {
   display: inline-block;
   vertical-align: middle;
+  outline-style: none;
   background-color: black;
   padding: 2px 4px 2px 2px;
-  border-radius: 12px;
+  border-radius: 8px;
   border-left: none;
+  cursor: pointer;
   border: none;
   height: 34px;
   width: 34px;
-  cursor: pointer;
+}
+
+.search_icon path {
+  fill: #E6E6E6;
+}
+
+.search_button:hover {
+  color: black;
+  background-color: #A4A4A4;
+}
+
+.search_button:hover .search_icon path {
+  fill: white;
 }
 
 .search_icon {
@@ -600,7 +614,7 @@ input[type="search"] {
 .headerquote blockquote {
   padding: 0;
   background: none;
-  line-height: 12pt;
+  line-height: 14pt;
   letter-spacing: 0.03rem;
   margin-bottom: 1%;
 }
@@ -611,6 +625,82 @@ input[type="search"] {
   letter-spacing: 0.04rem;
 }
 
+.contacts {
+  padding: 0 15px;
+}
+
+.contacts_form {
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
+.contacts_form label {
+  margin-bottom: 5px;
+  display: block;
+  align-items: flex-start;
+}
+
+.contacts_form input {
+  font-family: 'roboto_regular', sans-serif;
+  vertical-align: middle;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  outline-style: none;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 1rem;
+  height: 32px;
+  width: 100%;
+}
+
+.contacts_form input:focus {
+border: 2px solid #434343;
+}
+
+.contacts_form textarea {
+  font-family: 'roboto_regular', sans-serif;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  outline-style: none;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 1rem;
+  overflow: auto;
+  resize: none;
+  height: 200px;
+  width: 100%;
+}
+.contacts_form textarea:focus {
+  border: 2px solid #434343;
+}
+
+.contacts_form button {
+  font-family: 'roboto_medium', sans-serif;
+  display: inline-block;
+  align-self: center;
+  vertical-align: middle;
+  outline-style: none;
+  color: #E6E6E6;
+  background-color: #080808;
+  padding-bottom: 3px;
+  border-radius: 8px;
+  border-left: none;
+  cursor: pointer;
+  border: none;
+  height: 32px;
+  width: 80px;
+}
+
+.contacts_form button:hover {
+  background-color: #434343;
+  color: white;
+}
+
 .main_text {
   line-height: 1.4;
   letter-spacing: 0.01rem;
@@ -619,6 +709,7 @@ input[type="search"] {
 
 .main_text h2 , h3, h4{
   line-height: 1.8;
+  margin: 5px 0;
 }
 
 .main_text h5, h6 {
@@ -626,7 +717,7 @@ input[type="search"] {
 }
 
 .main_text p + p {
-  margin-top: 6.666666667%;
+  margin-top: 4%;
 }
 
 .main_text p span {
@@ -704,7 +795,7 @@ footer {
   font-style: normal;
   font-size: 1rem;
 }
-/* стоит переписать как я сделал делая меню в archive. а тоесть использовать универсальный класс chevrone для hover эффекта */
+/* будет удалено */
 .chevrones li a {
   fill: #434343;
 }
@@ -958,12 +1049,12 @@ footer nav {
     width: 212px;
     font-size: 0.9rem;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 6px;
   }
   
   .search_button {
     padding: 2px 4px 2px 2px;
-    border-radius: 10px;
+    border-radius: 8px;
     height: 32px;
     width: 32px;
   }
@@ -1039,8 +1130,12 @@ footer nav {
   }
 
   .main_text p + p {
-    margin-top: 20px;
-    /* возможно потом надо будет сменить на относительные единицы, например rem */
+    margin-top: 15px;
+  }
+
+  .contacts {
+    margin: 0 auto;
+    max-width: 420px;
   }
 
   footer {
@@ -1127,10 +1222,6 @@ footer nav {
     display: none;
   }
 
-  .top_menu li:nth-child(2) {
-    display: none;
-  }
-
   .top_menu li {
     width: 210px;
   }
@@ -1172,6 +1263,10 @@ footer nav {
     line-height: 52pt;
   }
 
+  .main_text h2 {
+    margin: 10px 0;
+  }
+
   .archive_searchbar {
     margin-top: 20px;
   }
@@ -1180,7 +1275,7 @@ footer nav {
     width: 215px;
     font-size: 0.75rem;
     height: 24px;
-    border-radius: 7px;
+    border-radius: 5px;
   }
   
   .search_button {
@@ -1242,6 +1337,7 @@ footer nav {
   }
 
   .headerquote blockquote {
+    line-height: 17pt;
     font-size: 0.95rem;
     margin-bottom: 6px;
   }
@@ -1257,13 +1353,27 @@ footer nav {
   }
 
   .main_text p + p{
-    margin-top: 25px;
-    /* возможно потом надо будет сменить на относительные единицы, например rem */
+    margin-top: 20px;
+  }
+
+  .contacts {
+    font-size: 0.9rem;
+  }
+
+  .contacts_form {
+    font-size: 0.9rem;
+  }
+
+  .contacts_form input {
+    font-size: 0.8rem;
+  }
+
+  .contacts_form textarea {
+    font-size: 0.8rem;
   }
 
   footer {
     margin-top: 35px;
-    /* указал в пикселях так как с ростом ширины экрана рост значения в процентах слишком быстрый */
     background: #080808;
   }
 
@@ -1520,7 +1630,8 @@ footer nav {
     max-width: 440px;
   }
 
-  .headerquote blockquote {    
+  .headerquote blockquote {
+    line-height: 19pt;
     font-size: 1rem;
   }
 
@@ -1539,6 +1650,10 @@ footer nav {
   
   .main_text h5, h6 {
     line-height: 3.6;
+  }
+
+  .contacts {
+    margin-top: 10px;
   }
 
   footer {
@@ -1680,7 +1795,8 @@ footer nav {
     max-width: 450px;
   }
 
-  .headerquote blockquote {    
+  .headerquote blockquote {
+    line-height: 20pt;
     font-size: 0.9545rem;
     margin-bottom: 6px;
   }
@@ -1692,6 +1808,10 @@ footer nav {
   .main_text {
     line-height: 1.55;
     max-width: 930px;
+  }
+
+  .main_text h2 {
+    margin:5px 0;
   }
 
   footer {
