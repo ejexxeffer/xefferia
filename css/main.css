@@ -909,6 +909,14 @@ footer nav {
   visibility: hidden;
 }
 
+.overflow_hidden {
+  overflow: hidden !important;
+}
+
+.display_block {
+  display: block !important;
+}
+
 /*
  * Clearfix: contain floats
  *
