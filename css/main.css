@@ -657,9 +657,38 @@ input[type="search"] {
   width: 100%;
 }
 
-.contacts_form input:focus {
-border: 2px solid #434343;
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
 }
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+.contacts_form input:focus {
+  border: 2px solid #434343;
+}
+
+.contacts_form input:invalid:not(:placeholder-shown) {
+  box-shadow: 0 0 5px #ff5151;
+}
+
+.contacts_form input:valid:not(:placeholder-shown) {
+  box-shadow: 0 0 5px #55ff5d;
+}
+
+.contacts_form textarea:invalid:not(:placeholder-shown) {
+  box-shadow: 0 0 5px #ff5151;
+}
+
+.contacts_form textarea:valid:not(:placeholder-shown) {
+  box-shadow: 0 0 5px #55ff5d;
+}
+
 
 .contacts_form textarea {
   font-family: 'roboto_regular', sans-serif;

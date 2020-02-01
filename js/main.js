@@ -5,11 +5,15 @@ let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 
 function isValid(value) {
-  return value.length >= 3;
+  if (value) {
+    return (value.length >= 3) && (value.length <= 20);
+  }
 }
 
 function isQuestion(value) {
-  return value.length >=20;
+  if (value) {
+    return (value.length >=20) && (value.length <=500);
+  }
 }
 
 //overflow здесь <div style="overflow">
@@ -32,6 +36,7 @@ let emailInpt = form.querySelector('#email');
 let themeInpt = form.querySelector('#theme');
 let messageText = form.querySelector('#textmessage');
 let submitBtn = form.querySelector('#submit');
+
 
 nameInpt.addEventListener('input', ()=>{
   submitBtn.disabled = !isValid(nameInpt.value);
@@ -63,27 +68,28 @@ function submitFormHandler(event) {
       date: new Date().toISOString()
     }
     submitBtn.disabled = true;
-    //Async question to server to save question
-    fetch('https://ajax-test-app-ejex.firebaseio.com/questions.json', {
+    //Async question to server to send mail
+    fetch('mail.php', {
       method: 'POST',
       body: JSON.stringify(question),
       headers: {
           'Content-type': 'application/json'}})
     .then(response => response.json())
     .then(response => {
+
       console.log('response from server', response);
-      question.id = response.name;
-      return question;
+
+      if (response) {
+        alert('Ваше письмо отправленно, ' + nameInpt.value.trim()+ '.');
+      } else {
+        alert('Ошибка, ваше письмо не отправленно, ' + nameInpt.value.trim() + '.');
+      }
     })
-    .then(addToLocalStorage)
     .then(() => {
-      console.log('Question collection', question);
       nameInpt.value = '';
       emailInpt.value = '';
       themeInpt.value = '';
       messageText.value = '';
-      // questionInpt.className = '';
-      // submitBtn.disabled = false;
     })
   }
 }

@@ -79,13 +79,13 @@
             <p>email:<a href="mailto:ejexefer@gmail.com?subject=Xefferia.com"> ejexefer@gmail.com</a></p>
             <form class="contacts_form" id="form">
               <label for="name">Имя</label>
-              <input type="text" id="name" placeholder="Ваше имя кстати...">
+              <input type="text" id="name" placeholder="Ваше имя кстати..." minlength="3" maxlegth="20" mozactionhint="next" required>
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Адрес вашей почты...">
+              <input type="email" id="email" placeholder="Адрес вашей почты..." minlength="3" maxlegth="20" mozactionhint="next" required>
               <label for="theme">Тема</label>
-              <input type="text" id="theme" placeholder="О чем пишем?">
+              <input type="text" id="theme" placeholder="О чем пишем?" minlength="3" maxlegth="20" mozactionhint="next" required>
               <label for="textmessage">Текст письма</label>
-              <textarea name="" id="textmessage" placeholder="Писать письмо здесь..."></textarea>
+              <textarea name="" id="textmessage" placeholder="Писать письмо здесь..." minlength="20" maxlegth="500" mozactionhint="send" required></textarea>
               <button type="submit" id="submit" disabled>Отправить</button>
             </form>
           </div>
