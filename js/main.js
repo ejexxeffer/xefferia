@@ -6,7 +6,11 @@ let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
-
+let searhForm = document.getElementById('search_form');
+let urls = ['posts/20_04_2019.html','index.html'];
+let searchTerm = '';
+let cards = [];
+let named = promiseXHR('GET', '..\/index.html').then((response, reject) => console.log(response,reject));
 
 document.addEventListener('DOMContentLoaded', loadValid);
 
@@ -41,9 +45,10 @@ function loadValid() {
   };
   
   if (searhForm !== null) {
-    let searchInpt = form.querySelector('#search');
-    let submitSearchBtn = form.querySelector('#submit_search');
-    buildArchive();
+    let searchInpt = searchForm.querySelector('#search');
+    let submitSearchBtn = searhForm.querySelector('#submit_search');
+    cards = saveData(urls,new Array());
+    buildArchive(cards);
 
     searchInpt.addEventListener('inpt', ()=>{
       submitSearchBtn.disabled = !isValid(searchInpt);
@@ -85,32 +90,50 @@ function htmlToCard(href,headerValue,date,theme) {
           </section>`;
 }
 
-function buildJSON() {
+function saveData(urls, array) {
   //запрос файла с сервера
-  promiseXHR('GET', '../posts/20_04_2019')
-  .then((response) => {
-    href = '/posts/20_04_2019';
-    headerValue = response.querySelector('h1').innerHTML;
-    date = response.querySelector('time').innerHTML;
-    theme = response.querySelector('p').innerHTML;
-  })
+  let index = 0;
+  urls.forEach(url => {
+    promiseXHR('GET', `..\/${url}`)
+    .then(response => {
+    array[index] = {
+      href:url,
+      headerValue:response.querySelector('h1').innerHTML,
+      date:response.querySelector('time').innerHTML,
+      theme:response.querySelector('p').innerHTML,
+    }
+    index++;
+    });
+  });
+  return array;
 }
 
-function buildArchive() {
- 
+function buildArchive(cards) {
+  let filtered;
+  if (!!searchForm.querySelector('#search').value) {
+    filtered = cards.filter((item) => {
+      item.headerValue.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    });
+  } else {
+    filtered = cards;
+  }
+  
+  archiveGrid.innerHTML = '';
+  filtered.forEach(item => {
+    archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
+  });
+  // let filesJSON = saveData(urls, object);
   //тут должна быть реализация разбора json в объекты и создание карточек пока есть объекты
-  //создание карточки
-  archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(href,headerValue,date,theme));
+  //создание карточки  
+  
 }
 
 function promiseXHR(method, url, body) {
   return new Promise ((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-      if (xhr.readyState !== 4) {
+      if (xhr.readyState == 4) {
         if (xhr.status == 200 && method == 'GET') {
-          resolve(xhr.response);
-        } else if (xhr.status == 200 && method == 'POST') {
           resolve(xhr.response);
         }
 
@@ -121,7 +144,7 @@ function promiseXHR(method, url, body) {
         }
       }
     }
-    xhr.open(method, url, true);
+    xhr.open(method, url);
     if (method == 'POST') {
       xhr.setRequestHeader('Content-type', 'application/json');
       xhr.responseType = 'json';
@@ -145,7 +168,7 @@ function submitFormHandler(event) {
     }
     submitBtn.disabled = true;
     //Async question to server to send mail
-    promiseXHR('POST','../mail.php', JSON.stringify(question))
+    promiseXHR('POST','mail.php', JSON.stringify(question))
     .then(response => {
 
       console.log('response from server', response);
@@ -163,6 +186,7 @@ function submitFormHandler(event) {
       messageText.value = '';
     })
   } else if (isValid(searchInpt.value)) {
-    
+    searchTerm = searchInpt.value;
+    buildArchive();
   }
 }
