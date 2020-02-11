@@ -443,7 +443,9 @@ cite::before {
 
 .search_input:focus {
   outline-style: none;
+  box-shadow: 0 0 5px #838383;
 }
+
 
 .search_input::-webkit-search-cancel-button {
 -webkit-appearance: none;
