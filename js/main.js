@@ -9,8 +9,8 @@ let archiveGrid = document.getElementById('archive');
 let searhForm = document.getElementById('search_form');
 let urls = ['posts/20_04_2019.html','index.html'];
 let searchTerm = '';
-let cards = [];
-let named = promiseXHR('GET', '..\/index.html').then((response, reject) => console.log(response,reject));
+let cards = saveData(urls, new Array());
+// let named = promiseXHR('GET', '..\/index.html').then((response, reject) => console.log(response,reject));
 
 document.addEventListener('DOMContentLoaded', loadValid);
 
@@ -24,7 +24,7 @@ function loadValid() {
     let themeInpt = form.querySelector('#theme');
     let messageText = form.querySelector('#textmessage');
     let submitBtn = form.querySelector('#submit');
-
+  
     nameInpt.addEventListener('input', ()=>{
       submitBtn.disabled = !isValid(nameInpt);
     });
@@ -40,23 +40,21 @@ function loadValid() {
     messageText.addEventListener('input', ()=>{
       submitBtn.disabled = !isValid(messageText);
     });
-
+  
     form.addEventListener('submit', submitFormHandler);
   };
-  
+
   if (searhForm !== null) {
     let searchInpt = searchForm.querySelector('#search');
     let submitSearchBtn = searhForm.querySelector('#submit_search');
-    cards = saveData(urls,new Array());
     buildArchive(cards);
-
+  
     searchInpt.addEventListener('inpt', ()=>{
       submitSearchBtn.disabled = !isValid(searchInpt);
     });
-
+  
     searchForm.addEventListener('submit', submitFormHandler);
   };
-
 }
 
 function isValid(param) {
@@ -134,13 +132,13 @@ function promiseXHR(method, url, body) {
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
         if (xhr.status == 200 && method == 'GET') {
-          resolve(xhr.response);
+          return resolve(xhr.response);
         }
 
         if (xhr.status == 404) {
-          reject(xhr.statusText);
+          return reject(xhr.statusText);
         } else if (xhr.status == 500) {
-          reject(xhr.statusText);
+          return reject(xhr.statusText);
         }
       }
     }
@@ -187,6 +185,6 @@ function submitFormHandler(event) {
     })
   } else if (isValid(searchInpt.value)) {
     searchTerm = searchInpt.value;
-    buildArchive();
+    buildArchive(cards);
   }
 }
