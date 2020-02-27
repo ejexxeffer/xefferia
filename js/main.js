@@ -6,10 +6,12 @@ let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
-let searhForm = document.getElementById('search_form');
+let searсhForm = document.getElementById('search_form');
 let urls = ['posts/20_04_2019.html','index.html'];
 let searchTerm = '';
-let cards = saveData(urls, new Array());
+let cards = [];
+let filtered = [];
+// let cards = saveData(urls);
 // let named = promiseXHR('GET', '..\/index.html').then((response, reject) => console.log(response,reject));
 
 document.addEventListener('DOMContentLoaded', loadValid);
@@ -44,22 +46,36 @@ function loadValid() {
     form.addEventListener('submit', submitFormHandler);
   };
 
-  if (searhForm !== null) {
+  if (searсhForm !== null) {
     let searchInpt = searchForm.querySelector('#search');
-    let submitSearchBtn = searhForm.querySelector('#submit_search');
-    buildArchive(cards);
+    let submitSearchBtn = searсhForm.querySelector('#submit_search');
+    let i = 0;
   
-    searchInpt.addEventListener('inpt', ()=>{
+    searchInpt.addEventListener('input', ()=>{
       submitSearchBtn.disabled = !isValid(searchInpt);
     });
-  
-    searchForm.addEventListener('submit', submitFormHandler);
+    
+    saveData(urls)
+    .then(response => {
+      response.forEach(doc => {
+        cards.push({
+          href:urls[i],
+          headerValue:doc.querySelector('h1').innerHTML,
+          date:doc.querySelector('time').innerHTML,
+          theme:doc.querySelector('p').innerHTML,
+        });
+        i++;
+      });
+      buildArchive(cards);
+    })
+    // buildArchive(cards);
+    searchForm.addEventListener('submit', submitFormHandlerArchive);
   };
 }
 
 function isValid(param) {
   if (param.value.length && (param.tagName === 'TEXTAREA')) {
-    return (param.value.length >=20) && (param.value.length <=500);
+    return (param.value.length >=20) && (param.value.length <= 500);
   } else if (param.value.length){
     return (param.value.length >= 3) && (param.value.length <= 20);
   }
@@ -88,38 +104,66 @@ function htmlToCard(href,headerValue,date,theme) {
           </section>`;
 }
 
-function saveData(urls, array) {
+// function saveData(urls) {
+//   //запрос файла с сервера
+//   let array = [];
+//   urls.forEach(url => {
+//     promiseXHR('GET', `..\/${url}`)
+//     .then(response => {
+//     array.push({
+//       href:url,
+//       headerValue:response.querySelector('h1').innerHTML,
+//       date:response.querySelector('time').innerHTML,
+//       theme:response.querySelector('p').innerHTML,
+//     })
+//     });
+//   });
+//   return array;
+// }
+
+// function saveData(urls) {
+//   //promise.all завершение всех промисов и возвращение одного промиса
+//   //запрос файла с сервера
+//   let array = [];
+//   urls.forEach(url => {
+//     promiseXHR('GET', `..\/${url}`)
+//     .then(response => {
+//     array.push({
+//       href:url,
+//       headerValue:response.querySelector('h1').innerHTML,
+//       date:response.querySelector('time').innerHTML,
+//       theme:response.querySelector('p').innerHTML,
+//     })
+//     });
+//   });
+//   //ожидая, что после возвращения promise он выполнит return
+//   return array;
+// }
+
+function saveData(urls) {
+  //promise.all завершение всех промисов и возвращение одного промиса
   //запрос файла с сервера
-  let index = 0;
-  urls.forEach(url => {
-    promiseXHR('GET', `..\/${url}`)
-    .then(response => {
-    array[index] = {
-      href:url,
-      headerValue:response.querySelector('h1').innerHTML,
-      date:response.querySelector('time').innerHTML,
-      theme:response.querySelector('p').innerHTML,
-    }
-    index++;
-    });
-  });
-  return array;
+
+return Promise.all(urls.map(url=> {return promiseXHR('GET', `..\/${url}`)}));
+  //ожидая, что после возвращения promise он выполнит return
 }
 
+
 function buildArchive(cards) {
-  let filtered;
-  if (!!searchForm.querySelector('#search').value) {
-    filtered = cards.filter((item) => {
-      item.headerValue.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-    });
-  } else {
-    filtered = cards;
-  }
-  
-  archiveGrid.innerHTML = '';
-  filtered.forEach(item => {
-    archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
+
+    if (searchTerm !== '') {
+      filtered = cards.filter(item => {
+        return item.headerValue.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    } else {
+      filtered = cards;
+    }
+
+    archiveGrid.innerHTML = '';
+    filtered.forEach(item => {
+      archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
   });
+  
   // let filesJSON = saveData(urls, object);
   //тут должна быть реализация разбора json в объекты и создание карточек пока есть объекты
   //создание карточки  
@@ -132,21 +176,21 @@ function promiseXHR(method, url, body) {
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
         if (xhr.status == 200 && method == 'GET') {
-          return resolve(xhr.response);
+          resolve(xhr.response);
         }
 
         if (xhr.status == 404) {
-          return reject(xhr.statusText);
+          reject(xhr.statusText);
         } else if (xhr.status == 500) {
-          return reject(xhr.statusText);
+          reject(xhr.statusText);
         }
       }
     }
     xhr.open(method, url);
-    if (method == 'POST') {
+    if (method === 'POST') {
       xhr.setRequestHeader('Content-type', 'application/json');
       xhr.responseType = 'json';
-    } else {
+    } else  if (method === 'GET') {
       xhr.responseType = 'document';
     }
     xhr.send(body);
@@ -156,7 +200,7 @@ function promiseXHR(method, url, body) {
 function submitFormHandler(event) {
   event.preventDefault();
   
-  if (isValid(nameInpt.value) && isValid(emailInpt.value) && isValid(themeInpt.value) && isValid(messageText.value)) {
+  if (isValid(nameInpt) && isValid(emailInpt) && isValid(themeInpt) && isValid(messageText)) {
     let question = {
       name: nameInpt.value.trim(),
       email: emailInpt.value.trim(),
@@ -183,7 +227,20 @@ function submitFormHandler(event) {
       themeInpt.value = '';
       messageText.value = '';
     })
-  } else if (isValid(searchInpt.value)) {
+  } else if (isValid(searchInpt)) {
+    console.log('wtsup');
+    searchTerm = searchInpt.value;
+    buildArchive(cards);
+  }
+}
+
+function submitFormHandlerArchive(event) {
+  event.preventDefault();
+
+  let searchInpt = searchForm.querySelector('#search');
+
+  if (isValid(searchInpt)) {
+    console.log('wtsup');
     searchTerm = searchInpt.value;
     buildArchive(cards);
   }
