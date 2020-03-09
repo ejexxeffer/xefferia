@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
@@ -7,14 +7,21 @@ let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
 let searсhForm = document.getElementById('search_form');
-let urls = ['posts/20_04_2019.html','index.html'];
+let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html'];
 let searchTerm = '';
 let cards = [];
 let filtered = [];
-// let cards = saveData(urls);
-// let named = promiseXHR('GET', '..\/index.html').then((response, reject) => console.log(response,reject));
 
 document.addEventListener('DOMContentLoaded', loadValid);
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js', {scope: './'})
+      .then((reg) => {
+        console.log('Service worker registered.', reg);
+      });
+  });
+}
 
 function loadValid() {
   threeBars.addEventListener('click',toggle);
@@ -52,9 +59,11 @@ function loadValid() {
     let i = 0;
   
     searchInpt.addEventListener('input', ()=>{
-      submitSearchBtn.disabled = !isValid(searchInpt);
+      submitSearchBtn.disabled = !searchInpt;
     });
-    
+
+    searchForm.addEventListener('submit', submitFormHandlerArchive);
+
     saveData(urls)
     .then(response => {
       response.forEach(doc => {
@@ -67,9 +76,7 @@ function loadValid() {
         i++;
       });
       buildArchive(cards);
-    })
-    // buildArchive(cards);
-    searchForm.addEventListener('submit', submitFormHandlerArchive);
+    });
   };
 }
 
@@ -81,7 +88,6 @@ function isValid(param) {
   }
 }
 
-//overflow здесь <div style="overflow">
 function toggle() {
   if (window.matchMedia("(max-width: 700px)").matches) {
     document.body.classList.toggle('overflow_hidden');
@@ -104,70 +110,30 @@ function htmlToCard(href,headerValue,date,theme) {
           </section>`;
 }
 
-// function saveData(urls) {
-//   //запрос файла с сервера
-//   let array = [];
-//   urls.forEach(url => {
-//     promiseXHR('GET', `..\/${url}`)
-//     .then(response => {
-//     array.push({
-//       href:url,
-//       headerValue:response.querySelector('h1').innerHTML,
-//       date:response.querySelector('time').innerHTML,
-//       theme:response.querySelector('p').innerHTML,
-//     })
-//     });
-//   });
-//   return array;
-// }
-
-// function saveData(urls) {
-//   //promise.all завершение всех промисов и возвращение одного промиса
-//   //запрос файла с сервера
-//   let array = [];
-//   urls.forEach(url => {
-//     promiseXHR('GET', `..\/${url}`)
-//     .then(response => {
-//     array.push({
-//       href:url,
-//       headerValue:response.querySelector('h1').innerHTML,
-//       date:response.querySelector('time').innerHTML,
-//       theme:response.querySelector('p').innerHTML,
-//     })
-//     });
-//   });
-//   //ожидая, что после возвращения promise он выполнит return
-//   return array;
-// }
-
 function saveData(urls) {
-  //promise.all завершение всех промисов и возвращение одного промиса
-  //запрос файла с сервера
-
-return Promise.all(urls.map(url=> {return promiseXHR('GET', `..\/${url}`)}));
-  //ожидая, что после возвращения promise он выполнит return
+  return Promise.all(urls.map(url=> {
+    return promiseXHR('GET', `..\/${url}`)}));
 }
 
 
 function buildArchive(cards) {
 
-    if (searchTerm !== '') {
-      filtered = cards.filter(item => {
-        return item.headerValue.toLowerCase().includes(searchTerm.toLowerCase());
-      });
-    } else {
-      filtered = cards;
-    }
+  if (searchTerm !== '') {
+    filtered = cards.filter(item => {
+      return item.headerValue.toLowerCase().includes(searchTerm.toLocaleLowerCase());
+    });
+  } else {
+    filtered = cards;
+  }
 
-    archiveGrid.innerHTML = '';
-    filtered.forEach(item => {
-      archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
+  searсhForm.querySelector('#submit_search').disabled = true;
+
+  archiveGrid.innerHTML = '';
+  filtered.forEach(item => {
+    archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
+
+    searсhForm.querySelector('#submit_search').disabled = false;
   });
-  
-  // let filesJSON = saveData(urls, object);
-  //тут должна быть реализация разбора json в объекты и создание карточек пока есть объекты
-  //создание карточки  
-  
 }
 
 function promiseXHR(method, url, body) {
@@ -209,7 +175,7 @@ function submitFormHandler(event) {
       date: new Date().toISOString()
     }
     submitBtn.disabled = true;
-    //Async question to server to send mail
+
     promiseXHR('POST','mail.php', JSON.stringify(question))
     .then(response => {
 
@@ -227,10 +193,6 @@ function submitFormHandler(event) {
       themeInpt.value = '';
       messageText.value = '';
     })
-  } else if (isValid(searchInpt)) {
-    console.log('wtsup');
-    searchTerm = searchInpt.value;
-    buildArchive(cards);
   }
 }
 
@@ -239,9 +201,11 @@ function submitFormHandlerArchive(event) {
 
   let searchInpt = searchForm.querySelector('#search');
 
-  if (isValid(searchInpt)) {
-    console.log('wtsup');
-    searchTerm = searchInpt.value;
+  if (searchInpt.value.length>=1) {
+    searchTerm = searchInpt.value.trim();
+    buildArchive(cards);
+  } else if (!!searchInpt) {
+    searchTerm = '';
     buildArchive(cards);
   }
 }

@@ -37,7 +37,7 @@ gulp.task ('watch', function(done) {
   gulp.watch('*.php').on('change', ()=> {
     reload();
     done();
-  })
+  });
 });
 
 gulp.task('serve', (done) => {
@@ -47,9 +47,14 @@ gulp.task('serve', (done) => {
   done();
 });
 
+gulp.task('sync', (done) => {
+  browserSync.init(configSync);
+  done();
+});
+
 gulp.task('php', (done) => {
  connect.server(configPhp);
  done();
 });
 
-gulp.task('default', gulp.parallel(['serve','watch']));
+gulp.task('default', gulp.parallel(['sync','watch']));
