@@ -4,7 +4,7 @@
     "name": "Xefferia planet",
     "short_name": "Xefferia",
     "scope": "/",
-    "start_url": "./?utm_source=web_app_manifest",
+    "start_url": "/index.html",
     "description": "Ejex Xeffer blog and apps",
     "icons": [
         {
