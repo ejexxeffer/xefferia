@@ -1,0 +1,84 @@
+ul {
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    clear: both;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+    clear: both;
+  }
+  
+  a img {
+    border: none;
+  }
+  
+  header {  
+    padding:3.125% 3.125%  0 3.125%;
+  }
+  
+  .logo:hover path{
+    fill: #434343;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    height: 40px;
+    cursor: default;
+  }
+  
+  header nav:nth-last-child(1) {
+    background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0; left: 0; top: 0; right: 0;
+    -webkit-overflow-scrolling: touch;
+    min-height:100%;
+    position: fixed;
+    display: none;
+    z-index: 999;
+    overflow: {
+      y: auto;
+      x: hidden;
+    }
+    width:100%;
+  }
+  
+  .top_menu {
+    height: 40px;
+    position: relative;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .top_menu li {
+    /* width: 210px; */
+    /* height: 55px; */
+    margin-bottom: 10px;
+  }
+  
+  .top_menu li:nth-child(1) {
+    align-self: flex-start;
+    justify-content: center;
+    padding: 22px 10px 10px;
+  }
+  
+  /* .top_menu li:nth-child(2) {
+    margin-top: 5px;
+  } */
+  
+  .top_menu li a {
+    /* color: #A4A4A4; */
+    font-size: 3.1333rem;
+  }
+  
+  .top_menu li a:hover {
+    color: #434343;
+  }

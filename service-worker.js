@@ -29,7 +29,6 @@ const FILES_TO_CACHE = [
   '/img/envelope.svg',
   '/img/github-alt.svg',
   '/img/instagram.svg',
-  '/img/octoface.svg',
   '/img/octofaceright.svg',
   '/img/rss.svg',
   '/img/search.svg',
