@@ -1,78 +1,46 @@
+
+$active: #A4A4A4;
+$active--svg: #F1F1F1;
+$demon: #080808;
+
 footer {
-    margin-top: 9.375%;
-  }
-  .chevrones {
-    display: none;
-    padding: 0 3.75%;
-    overflow: hidden;
-    height: 28px;
-    cursor: default;
-  }
-  
-  .chevrones li a {
-    text-decoration: none;
-    font-family: 'roboto_light', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1rem;
-  }
-  /* будет удалено */
-  .chevrones li a {
-    fill: #434343;
-  }
-  
-  .chevrones li a:hover {
-    fill: #101010;
-  }
-  
-  .chevrones li a svg {
-    fill: #101010;
-  }
-  
-  .chevrones li a svg:hover {
-    fill: #434343;
-  }
-  
-  .chevrones li a span {
-    display: inline-block;
-    margin: 0 5px;
-  }
-  
-  footer nav {
+  margin-top: 9.375%;
+  nav {
     font-size: 0;
   }
-  
-  .bottomnav {
-    padding: 1.25% 11.875% 1.875%;
-    overflow: hidden;
-    height: 25px;
-    cursor: default;
+}
+
+.bottomnav {
+  padding: 1.25% 11.875% 1.875%;
+  overflow: hidden;
+  cursor: default;
+  height: 25px;
+
+  li a svg {
+    fill: $active;
+
+    &:hover {
+      fill: $active--svg;
+    }
   }
-  
-  .bottomnav li a svg {
-    fill: #A4A4A4;
+}
+
+.bottom_menu {
+  overflow: hidden;
+  cursor: default;
+  color: $active;
+  display: none;
+  height: 20px;
+
+  li a {
+    color: $active;
+
+    &:hover {
+      color: $active;
+    }
   }
-  
-  .bottomnav li a svg:hover {
-    fill: #F1F1F1;
-  }
-  
-  .bottom_menu {
-    color: #A4A4A4;
-    overflow: hidden;
-    height: 20px;
-    cursor: default;
-    display: none;
-  }
-  
-  .bottom_menu li a {
-    color: #A4A4A4;
-  }
-  
-  .bottom_menu li a:hover {
-    color: #F1F1F1;
-  }
-  
-  .blacky {
-    background-color: #080808;
-  }
+}
+
+.blacky {
+  background-color: $demon;
+}
