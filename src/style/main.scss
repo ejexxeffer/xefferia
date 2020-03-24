@@ -972,14 +972,16 @@ input:-webkit-autofill {
       &:nth-child(1) {
         display: none;
       }
+    }
+  }
 
-      &:nth-child(1) {
-        visibility: hidden;
-      }
-      
-      &:nth-last-child(1) {
-        visibility: hidden;
-      }
+  .topnav li {
+    &:nth-child(1) {
+      visibility: hidden;
+    }
+    
+    &:nth-last-child(1) {
+      visibility: hidden;
     }
   }
 

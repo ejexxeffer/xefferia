@@ -1,6 +1,6 @@
 const gulp = require ('gulp');
 const sass = require ('gulp-sass');
-const uglify = require ('gulp-uglify');
+const terser = require ('gulp-terser');
 const prefixer = require ('gulp-autoprefixer');
 const clean_css = require ('gulp-clean-css');
 const connect = require ('gulp-connect-php');
@@ -24,7 +24,10 @@ const path = {
       style: 'src/style/**/*.scss',
       fonts: 'src/fonts/**/*.*'
   },
-  clean: './build'
+  clean: {
+    build: 'build',
+    deploy: 'src'
+  }
 };
 
 const configSync = {
@@ -45,36 +48,26 @@ const configPhp = {
   open: false
 }
 
-gulp.task ('watch', function(done) {
-  gulp.watch('src/scss/**/*.css').on('change', () => {
-    gulp.series('styles',reload());
-    // reload();
-    done();
-  });
-  gulp.watch('*.html').on('change', () => {
-    reload();
-    done();
-  });
-  gulp.watch('src/js/**/*.js').on('change', () => {
-    gulp.series('js',reload());
-    // reload();
-    done();
-  });
-  gulp.watch('*.php').on('change', ()=> {
-    reload();
-    done();
-  });
-});
+function watch() {
+  gulp.watch('src/style/**/*.scss',gulp.parallel(styles))
+    .on('change', () => {return reload()});
+  gulp.watch('*.html')
+    .on('change', () => {return reload()});
+  gulp.watch('src/js/**/*.js',gulp.series(js))
+    .on('change', () => {return reload()});
+  gulp.watch('*.php')
+    .on('change', () => {return reload()});
+}
 
-gulp.task ('js', () => {
+function js() {
   return gulp.src(path.src.js)
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.js));
-});
+}
 
-gulp.task ('styles', () => {
+function styles() {
   return gulp.src(path.src.style)
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -82,14 +75,14 @@ gulp.task ('styles', () => {
     .pipe(clean_css())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css));
-});
+}
 
 gulp.task('cleanBuild', () => {
-  return del('build');
+  return del(path.clean.build);
 });
 
-gulp.task('cleanSrc', () => {
-  return del('src');
+gulp.task('cleanDeploy', () => {
+  return del(path.clean.deploy);
 });
 
 gulp.task('serve', (done) => {
@@ -109,15 +102,12 @@ gulp.task('php', (done) => {
   done();
 });
 
-gulp.task('buildDev', (done) => {
-  gulp.series('cleanBuild', 'styles', 'js');
-  done();
-});
+gulp.task('build', gulp.series('cleanBuild', styles, js));
 
 gulp.task('deploy', (done) => {
-  gulp.series('cleanBuild', 'styles', 'js', 'cleanSrc');
+  gulp.series('cleanBuild', styles, js, 'cleanDeploy');
   done();
 });
 
 
-gulp.task('default', gulp.series('cleanBuild',gulp.parallel(['sync','watch'])));
+gulp.task('default', gulp.series('cleanBuild', 'build', gulp.parallel('sync', watch)));
