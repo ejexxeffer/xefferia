@@ -104,10 +104,7 @@ gulp.task('php', (done) => {
 
 gulp.task('build', gulp.series('cleanBuild', styles, js));
 
-gulp.task('deploy', (done) => {
-  gulp.series('cleanBuild', styles, js, 'cleanDeploy');
-  done();
-});
+gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'cleanDeploy'));
 
 
 gulp.task('default', gulp.series('cleanBuild', 'build', gulp.parallel('sync', watch)));
