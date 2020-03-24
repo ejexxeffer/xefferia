@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const version = '1';
 
@@ -34,8 +34,8 @@ const FILES_TO_CACHE = [
   '/img/search.svg',
   '/img/three-bars.svg',
   '/img/twitter.svg',
-  '/css/fonts.css',
-  '/css/main.css',
+  '/build/main.css',
+  '/build/js.css',
   '/fonts/oranienbaum-regular-webfont.woff',
   '/fonts/roboto-italic-webfont.woff2',
   '/fonts/roboto-italic-webfont.woff',

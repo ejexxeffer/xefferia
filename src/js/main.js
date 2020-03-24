@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
