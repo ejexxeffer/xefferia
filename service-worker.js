@@ -27,7 +27,6 @@ const FILES_TO_CACHE = [
   '/img/wtf.jpg',
   '/img/chevron-down.svg',
   '/img/envelope.svg',
-  '/img/github-alt.svg',
   '/img/instagram.svg',
   '/img/octofaceright.svg',
   '/img/rss.svg',
@@ -35,7 +34,7 @@ const FILES_TO_CACHE = [
   '/img/three-bars.svg',
   '/img/twitter.svg',
   '/build/main.css',
-  '/build/js.css',
+  '/build/main.js',
   '/fonts/oranienbaum-regular-webfont.woff',
   '/fonts/roboto-italic-webfont.woff2',
   '/fonts/roboto-italic-webfont.woff',
@@ -52,7 +51,7 @@ const FILES_TO_CACHE = [
   '/fonts/roboto-thinitalic-webfont.woff2',
   '/fonts/roboto-thinitalic-webfont.woff',
   '/fonts/robotomono-regular-webfont.woff2',
-  '/fonts/robotomono-regular-webfont.woff',
+  '/fonts/robotomono-regular-webfont.woff'
 ];
 
 self.addEventListener('install', (event) => {
@@ -70,7 +69,9 @@ self.addEventListener('fetch', (event) => {
 
 function precache() {
   return caches.open(CACHE).then((cache) => {
-    return cache.addAll(FILES_TO_CACHE);
+    return cache.addAll(FILES_TO_CACHE)
+    .then(() => console.log('Assets added to cache'))
+     .catch(err => console.log('Error while fetching assets', err));
   });
 }
 
