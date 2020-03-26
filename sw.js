@@ -77,8 +77,8 @@ function precache() {
 
 function fromCache(request) {
   return caches.open(CACHE).then((cache) => {
-    return cache.match(request).then((matching) => {
-      return matching || Promise.reject('no-match');
+    return cache.match(request).then((response) => {
+      return response || Promise.reject('no-match');
     });
   });
 }
