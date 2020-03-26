@@ -4,12 +4,10 @@ EVOLUTIONING BLOG.
 
 <p align="center">
   <a href="https://xeffeia.com">
-    <img height="257" width="257" src="https://drive.google.com/file/d/1xwW2aVq7T-vcoxEliGcGLAbx3qZCqJ7-/view?usp=sharing">
+    <img height="256" width="256" src="https://github.com/ejexxeffer/xefferia/raw/master/android-chrome-256x256.png">
   </a>
   <p align="center">The streaming build system</p>
 </p>
-
-[![NPM version][npm-image]][npm-url]
 
 ## Getting Started
 
