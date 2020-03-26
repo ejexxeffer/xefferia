@@ -1,12 +1,10 @@
-# xefferia
-Hello, this is Ejex, i am try to make
-EVOLUTIONING BLOG.
-
 <p align="center">
+  <p>Hello, this is Ejex, i am try to make
+blog named by</p>
+  <h1>Xefferia</h1>
   <a href="https://xeffeia.com">
     <img height="256" width="256" src="https://github.com/ejexxeffer/xefferia/raw/master/android-chrome-256x256.png">
   </a>
-  <p align="center">The streaming build system</p>
 </p>
 
 ## Getting Started
