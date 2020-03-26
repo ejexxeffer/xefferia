@@ -1,0 +1,166 @@
+$header: #ffffff;
+
+.body_404 {
+    background: url("../img/320dp.svg") no-repeat;
+    background-position-y:10px;
+    background-size: 100%;
+  }
+  
+  .main_404 {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header_404 h1 {
+    font-size: 3.0667rem;
+    margin: 28.125% auto 0;
+    color: $header;
+    cursor: default;
+    width: 76px;
+    padding: 0;
+  }
+  
+  .info_404 p {
+    font-family: 'oranienbaum', serif;
+    margin: 155px auto 0;
+    font-size: 3.3333rem;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.8;
+    cursor: default;
+    width: 170px;
+    padding: 0;
+  }
+  
+  .info_404 p a {
+    cursor: pointer;
+  }
+
+  @media all and (min-width: 570px) and (orientation: portrait),all and (min-width: 570px) and (orientation: landscape) {
+    .body_404 {
+      background: url("../img/570dp.svg") no-repeat;
+      background-position-y: 5px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1 {
+      margin: 57px auto 0;
+      font-size: 3rem;
+      width: 76px;
+    }
+    
+    .info_404 p {
+      margin: 35px auto 0;
+      font-size: 2.3rem;
+      line-height: 0.8;
+      width: 129px;
+    }
+  }
+  
+  @media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
+    .body_404 {
+      background: url("../img/770dp.svg") no-repeat;
+      background-position-y: 11px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1 {
+      margin: 110px auto 0;
+      font-size: 6rem;
+      width: 190px;
+    }
+    
+    .info_404 p {
+      margin: 226px auto 0;
+      font-size: 5.7rem;
+      line-height: 0.8;
+      width: 345px;
+    }
+  }
+  
+  @media all and (min-width: 1024px) and (orientation: portrait),all and (min-width: 1024px) and (orientation: landscape) {
+    .body_404 {
+      background: url("../img/1024dp.svg") no-repeat;
+      background-position-y: 10px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1{
+      margin: 111px auto 0;
+      font-size: 6rem;
+      width: 190px;
+    }
+    
+    .info_404 p {
+      margin: 103px auto 0;
+      line-height: 0.8;
+      font-size: 5rem;
+      width: 428px;
+    }
+  }
+  
+  @media all and (min-width: 1440px) and (orientation: portrait),all and (min-width: 1440px) and (orientation: landscape) {  
+    .body_404 {
+      background: url("../img/1920dp.svg") no-repeat;
+      background-position-y: 13px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1 {
+      margin: 151px auto 0;
+      font-size: 6.1905rem;
+      width: 205px;
+    }
+    
+    .info_404 p {
+      margin: 168px auto 0;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      width: 360px;
+    }
+  }
+  
+  
+  @media all and (min-width: 1920px) and (orientation: portrait),all and (min-width: 1920px) and (orientation: landscape) {  
+    .body_404 {
+      background: url("../img/1920dp.svg") no-repeat;
+      background-position-y: 13px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1{
+      margin: 206px auto 0;
+      font-size: 5.9091rem;
+      width: 205px;
+    }
+    
+    .info_404 p {
+      margin: 140px auto 0;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      width: 360px;
+    }
+  }
+  
+  @media all and (min-width: 2048px) and (orientation: portrait),all and (min-width: 2048px) and (orientation: landscape) {  
+    .body_404 {
+      background: url("../img/2048dp.svg") no-repeat;
+      background-position-y: 13px;
+      background-size: 100%;
+    }
+    
+    .header_404 h1 {
+      margin: 206px auto 0;
+      font-size: 5.9091rem;
+      width: 205px;
+    }
+    
+    .info_404 p {
+      margin: 140px auto 0;
+      font-size: 5.5rem;
+      line-height: 0.8;
+      width: 360px;
+    }
+  }
+  
