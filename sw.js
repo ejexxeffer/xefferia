@@ -61,8 +61,8 @@ const FILES_TO_CACHE = [
 ];
 
 self.addEventListener('install', (event) => {
-  console.log('The service worker is being installed.');
-
+  console.log('The NEW service worker is being installed.');
+  
   event.waitUntil(precache());
   console.log('Precache is done')
 });
@@ -90,16 +90,11 @@ self.addEventListener('fetch', function(event) {
                   return response;   // return the fetched data
                 })
             })
-            .catch(function(err) {       // fallback mechanism
-              return caches.open(CACHE_ERRORS)
-                .then(function(cache) {
-                  cache.put(event.request.url, err);
-                  return err;
-                });
-            });
+            .catch(err => console.log('Error while fetching assets', err));
         }
       })
   );
+  event.waitUntil(update(event.request));
 });
 
 function precache() {
@@ -110,18 +105,23 @@ function precache() {
   });
 }
 
-function fromCache(request) {
-  return caches.open(CACHE).then((cache) => {
-    return cache.match(request).then((response) => {
-      return response || Promise.reject('no-match');
-    });
-  });
-}
+
+
+// function fromCache(request) {
+//   return caches.open(CACHE).then((cache) => {
+//     return cache.match(request).then((response) => {
+//       return response || Promise.reject('no-match');
+//     });
+//   });
+// }
 
 function update(request) {
   return caches.open(CACHE).then((cache) => {
     return fetch(request).then((response) => {
+      console.log('Update is done.');
       return cache.put(request, response);
-    });
-  });
+    })
+    .catch(err => console.log('Error while put response in cache', err));
+  })
+  .catch(err => console.log('Error while caching', err));
 }
