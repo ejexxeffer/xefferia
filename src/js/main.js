@@ -15,12 +15,10 @@ let filtered = [];
 document.addEventListener('DOMContentLoaded', loadValid);
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js', {scope: '/'})
       .then((reg) => {
         console.log('Service worker registered.', reg);
       });
-  });
 }
 
 function loadValid() {
