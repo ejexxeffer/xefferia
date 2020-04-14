@@ -75,17 +75,17 @@ self.addEventListener('install', (event) => {
 // });
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then((response) => {
         if (response) {
           return response;     // if valid response is found in cache return it
         } else {
           return fetch(event.request)     //fetch from internet
-            .then(function(response) {
+            .then((response) => {
               return caches.open(CACHE)
-                .then(function(cache) {
+                .then((cache) => {
                   cache.put(event.request.url, response.clone());    //save the response for future
                   return response;   // return the fetched data
                 })
