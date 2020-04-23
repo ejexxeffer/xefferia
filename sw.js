@@ -1,6 +1,7 @@
 'use strict';
 
-const version = '' + Math.random().toString(36).substr(2, 9);
+// const version = '' + Math.random().toString(36).substr(2, 9);
+const version = '1';
 
 const CACHE = `offline-cache-${version}`;
 

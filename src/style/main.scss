@@ -726,6 +726,7 @@ input:-webkit-autofill {
   .top_menu {
     margin: 10px auto 0;
     flex-direction: row;
+    display: flex;
     width: 550px;
     height: 28px;
 
@@ -746,6 +747,7 @@ input:-webkit-autofill {
   .topnav li {
     &:nth-child(1) {
       visibility: hidden;
+      float: none;
     }
     
     &:nth-last-child(1) {
