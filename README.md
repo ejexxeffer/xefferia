@@ -30,7 +30,7 @@ $ npm install
 # Run the app
 $ gulp
 ```
-Note: If you're on `Windows` try [git bash for windows](https://git-scm.com/downloads)with git for install.
+Note: If you're on `Windows` try [git bash for windows](https://git-scm.com/downloads) with git for install.
 
 ## Credits
 
