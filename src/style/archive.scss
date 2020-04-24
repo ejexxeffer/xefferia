@@ -142,6 +142,17 @@ input[type="search"] {
   }
 }
 
+@media all and (min-width: 320px) and (orientation: portrait), all and (min-width: 320px) and (orientation: landscape) {
+  .archive_grid {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  margin: 15px auto 0;
+  column-gap: 20px;
+  max-width: 400px;
+  column-count: 2;
+  }
+}
+
 @media all and (min-width: 570px) and (orientation: portrait),all and (min-width: 570px) and (orientation: landscape) {
   .search_input {
     border-radius: 6px;
