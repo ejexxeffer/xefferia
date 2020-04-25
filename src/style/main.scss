@@ -8,6 +8,8 @@
 @import './404.scss';
 
 $absoluteblack: #000000;
+$greyquotes: #E6E6E6;
+// $highlight: #C9C9C9;
 $searchinput: #838383;
 $active: #A4A4A4;
 $demon: #080808;
@@ -61,6 +63,10 @@ $code: #FAF3E1;
 
 .display_block {
   display: block !important;
+}
+
+.highlight {
+  // background-color: $highlight;
 }
 
 a img {
@@ -120,7 +126,7 @@ pre {
 }
 
 .inputcode {
-  background: $code;
+  background: $greyquotes;
 }
 
 main {
