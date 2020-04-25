@@ -1,2 +1,2 @@
-version: 1.0
-first impressions
+version: 1.1
+new version
