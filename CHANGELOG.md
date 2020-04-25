@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Search for archive
 - Contacts page
-- All css now building
+- All css now building from scss
 - Gulp minification
 - mail.php for server
 - CHANGELOG.md
