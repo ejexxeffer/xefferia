@@ -1,94 +1,110 @@
-var gulp = require ('gulp');
-//const browserSync = require('browser-sync').create();
-//var reload = browserSync.reload;
-var browserSync = require('browser-sync');
+const gulp = require ('gulp');
+const sass = require ('gulp-sass');
+const terser = require ('gulp-terser');
+const prefixer = require ('gulp-autoprefixer');
+const clean_css = require ('gulp-clean-css');
+const connect = require ('gulp-connect-php');
+const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync');
 const reload = browserSync.reload;
+const del = require ('del');
+sass.compiler = require('node-sass');
 
-var config = {
-	server: {
-		baseDir: './',
-		index: 'index.html'
-	},
-	port: 3000,
-	notify: false
+const path = {
+  build: {
+      js: 'build/',
+      css: 'build/',
+  },
+  src: {
+      js: 'src/js/main.js',
+      style: 'src/style/main.scss',
+  },
+  watch: {
+      js: 'src/js/**/*.js',
+      style: 'src/style/**/*.scss',
+      fonts: 'src/fonts/**/*.*'
+  },
+  clean: {
+    build: 'build',
+    deploy: 'src'
+  }
 };
 
-/*
- *Old tasks
- */
-// gulp.task (watch, ['serve'], function(){
-// 	gulp.watch('css/**/*.css', browserSync.reload);
-// 	gulp.watch('*.html', browserSync.reload);
-// 	gulp.watch('js/**/*.js', browserSync.reload);
-// });
+const configSync = {
+  server: {
+    baseDir: './',
+    index: 'index.html'
+  },
+  port: 3000,
+  // open: "local",
+  notify: false
+};
 
-gulp.task ('watch', function(done) {
-		gulp.watch('css/**/*.css').on('change', () => {
-			browserSync.reload();
-			done();
-		});
-		gulp.watch('*.html').on('change', () => {
-			browserSync.reload();
-			done();
-		});
-		gulp.watch('js/**/*.js').on('change', () => {
-			browserSync.reload();
-			done();
-		});
-	});
+const configPhp = {
+  base: './',
+  keepalive: true,
+  hostname: 'localhost',
+  port: 8080,
+  open: false
+}
 
-// gulp.task('serve', function() {
-// 	browserSync.init({
-// 		server: {
-// 			baseDir: './',
-// 			index: "index.html"
-// 		},
-// 	});
-// 	// browserSync.watch("*.html").on("change", reload);
-// });
+function watch() {
+  gulp.watch('src/style/**/*.scss',gulp.parallel(styles))
+    .on('change', () => {return reload()});
+  gulp.watch('*.html')
+    .on('change', () => {return reload()});
+  gulp.watch('src/js/**/*.js',gulp.series(js))
+    .on('change', () => {return reload()});
+  gulp.watch('*.php')
+    .on('change', () => {return reload()});
+}
 
-// function browserSync(done) {
-// 	browsersync.init({
-// 	  server: {
-// 		baseDir: "./"
-// 	  },
-// 	  port: 3000,
-// 	  notify: false 
-// 	});
-// 	done();
-//   }
+function js() {
+  return gulp.src(path.src.js)
+    .pipe(sourcemaps.init())
+    .pipe(terser())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.build.js));
+}
 
-// gulp.task('serve', function(done) {
+function styles() {
+  return gulp.src(path.src.style)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(prefixer())
+    .pipe(clean_css())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.build.css));
+}
 
-//     browserSync.init({
-//         server: {
-// 			baseDir: "./"
-// 		},
-// 		port: 3000,
-// 		notify: false
-//     }); 
-
-//     done();
-// });
-
-gulp.task('serve', function(done){
-	browserSync(config);
-	done();
+gulp.task('cleanBuild', () => {
+  return del(path.clean.build);
 });
 
-  
-/*
- *Old tasks
- */  
-// gulp.task('assets', function() {
-// 	return gulp.src('app/assets/**', {since: gulp.lastRun('assets')})
-// 		.pipe(newer('public'))
-// 		.pipe(gulp.dest('public'));
-// });
+gulp.task('cleanDeploy', () => {
+  return del(path.clean.deploy);
+});
 
-// gulp.task('default', function() {
-// 	gulp.start('watch');
-// });
+gulp.task('serve', (done) => {
+  connect.server(configPhp, ()=> {
+    browserSync({proxy: '127.0.0.1:8080', notify: false});
+  });
+  done();
+});
 
-// const defaultTasks = gulp.parallel(serve, watch);
-gulp.task('default', gulp.parallel('serve','watch'));
+gulp.task('sync', (done) => {
+  browserSync.init(configSync);
+  done();
+});
+
+gulp.task('php', (done) => {
+  connect.server(configPhp);
+  done();
+});
+
+gulp.task('build', gulp.series('cleanBuild', styles, js));
+
+gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'cleanDeploy'));
+
+
+gulp.task('default', gulp.series('cleanBuild', 'build', gulp.parallel('sync', watch)));
