@@ -11,11 +11,7 @@
 
 ## Getting Started
 
-<<<<<<< HEAD
-v1.0.1 Flexbox and archive.
-=======
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
->>>>>>> release-1.1
 
 ### How to use
 
@@ -31,13 +27,6 @@ $ cd xefferia
 # Install dependencies
 $ npm install
 
-<<<<<<< HEAD
-Alternative v1.0 Make blog with php SQL database.
-
-Alternative v1.1 Change SQL to MongoDB.
-
-Alternative v2.0 PHP FRAMEWORK.
-=======
 # Run the app
 $ gulp
 ```
@@ -46,7 +35,6 @@ Note: If you're on `Windows` try [git bash for windows](https://git-scm.com/down
 ## Credits
 
 This software uses the following open source packages:
->>>>>>> release-1.1
 
 - [Node.js](https://nodejs.org/)
 - [SCSS](https://github.com/sass/sass)
