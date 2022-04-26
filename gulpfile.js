@@ -1,9 +1,10 @@
 const gulp = require ('gulp');
-const sass = require ('gulp-sass');
+// const sass = require ('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const terser = require ('gulp-terser');
 const prefixer = require ('gulp-autoprefixer');
 const clean_css = require ('gulp-clean-css');
-const connect = require ('gulp-connect-php');
+// const connect = require ('gulp-connect-php');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
@@ -97,10 +98,10 @@ gulp.task('sync', (done) => {
   done();
 });
 
-gulp.task('php', (done) => {
-  connect.server(configPhp);
-  done();
-});
+// gulp.task('php', (done) => {
+//   connect.server(configPhp);
+//   done();
+// });
 
 gulp.task('build', gulp.series('cleanBuild', styles, js));
 
