@@ -2,12 +2,13 @@
 
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
+let jsform = document.getElementById('js_form');
 let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
 let searсhForm = document.getElementById('search_form');
-let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html'];
+let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html','posts/jstest.html'];
 let searchTerm = '';
 let cards = [];
 let filtered = [];
@@ -79,6 +80,19 @@ function loadValid() {
       buildArchive(cards);
     });
   };
+  if (jsform !== null) {
+    let jsvalue = jsform.querySelector('#js_value');
+    let jsinput = '';
+    jsform.addEventListener('submit', jsFormPrevent);
+    jsvalue.addEventListener('input', event => {
+      jsinput = event.target.value;
+      closestNum(jsinput);
+    });
+  }
+}
+
+function jsFormPrevent (event) {
+  event.preventDefault();
 }
 
 function isValid(param) {
@@ -209,4 +223,9 @@ function submitFormHandlerArchive(event) {
     searchTerm = '';
     buildArchive(cards);
   }
+}
+
+function closestNum(value) {
+  let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
+  return console.log(arr, value);
 }
