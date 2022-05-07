@@ -81,12 +81,22 @@ function loadValid() {
     });
   };
   if (jsform !== null) {
+    let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
+    let jstext = document.querySelector('#js_text_result');
     let jsvalue = jsform.querySelector('#js_value');
     let jsinput = '';
+    let result = 0;
     jsform.addEventListener('submit', jsFormPrevent);
     jsvalue.addEventListener('input', event => {
       jsinput = event.target.value;
-      closestNum(jsinput);
+      // closestNum(jsinput);
+      jstext.innerHTML = '';
+      result = closestNum(arr, jsinput);
+      if((result !== null) && (result !== undefined)){
+        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + result);
+      } else {
+        jstext.insertAdjacentText("beforeend", 'Вы ввели пустую строку');
+      }
     });
   }
 }
@@ -225,7 +235,39 @@ function submitFormHandlerArchive(event) {
   }
 }
 
-function closestNum(value) {
-  let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
-  return console.log(arr, value);
+function closestNum(array, value) {
+  let intermediate = 0;
+  let rightArr = array.length - 1;
+  let leftArr = 0;
+  // let arr2 = [];
+  // let i = 0;
+  let middle = Math.trunc((rightArr - leftArr)/2);
+  if (rightArr === 0) return array[0];
+  if ((value === '') || (value === null) || (value === undefined) || isNaN(value)){
+    intermediate = null;
+    return intermediate;
+  }
+  while(intermediate === 0) {
+    if ((+array[middle] === +value)) {
+      intermediate = +array[middle];
+      // arr2[i] = array[middle];
+      break;
+    } 
+    if (leftArr === rightArr)  {
+      intermediate = array[leftArr];
+      // arr2[i] = array[leftArr];
+      break;
+    }
+    if ((+array[middle] > +value)) {
+      rightArr = middle-1;
+      // arr2[i] = array[middle];
+    } else if (+array[middle] < +value) {
+      leftArr = middle+1;
+      // arr2[i] = array[middle];
+    }
+    middle = Math.trunc(leftArr + (rightArr - leftArr)/2);
+    // i++;
+  }
+  // return console.log(arr2, intermediate);
+  return intermediate;
 }
