@@ -89,8 +89,8 @@ function loadValid() {
     jsform.addEventListener('submit', jsFormPrevent);
     jsvalue.addEventListener('input', event => {
       jsinput = event.target.value;
-      // closestNum(jsinput);
       jstext.innerHTML = '';
+      //add binary search result to js_text_result after the form
       result = closestNum(arr, jsinput);
       if((result !== null) && (result !== undefined)){
         jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + result);
@@ -239,8 +239,6 @@ function closestNum(array, value) {
   let intermediate = 0;
   let rightArr = array.length - 1;
   let leftArr = 0;
-  // let arr2 = [];
-  // let i = 0;
   let middle = Math.trunc((rightArr - leftArr)/2);
   if (rightArr === 0) return array[0];
   if ((value === '') || (value === null) || (value === undefined) || isNaN(value)){
@@ -250,24 +248,19 @@ function closestNum(array, value) {
   while(intermediate === 0) {
     if ((+array[middle] === +value)) {
       intermediate = +array[middle];
-      // arr2[i] = array[middle];
       break;
     } 
     if (leftArr === rightArr)  {
       intermediate = array[leftArr];
-      // arr2[i] = array[leftArr];
       break;
     }
+    //check left and right border
     if ((+array[middle] > +value)) {
       rightArr = middle-1;
-      // arr2[i] = array[middle];
     } else if (+array[middle] < +value) {
       leftArr = middle+1;
-      // arr2[i] = array[middle];
     }
     middle = Math.trunc(leftArr + (rightArr - leftArr)/2);
-    // i++;
   }
-  // return console.log(arr2, intermediate);
   return intermediate;
 }
