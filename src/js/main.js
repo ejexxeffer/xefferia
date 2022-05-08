@@ -85,17 +85,16 @@ function loadValid() {
     let jstext = document.querySelector('#js_text_result');
     let jsvalue = jsform.querySelector('#js_value');
     let jsinput = '';
-    let result = 0;
     jsform.addEventListener('submit', jsFormPrevent);
     jsvalue.addEventListener('input', event => {
       jsinput = event.target.value;
       jstext.innerHTML = '';
+      let reg_test = /^-?\d*\.{0,1}\d+$/;
       //add binary search result to js_text_result after the form
-      result = closestNum(arr, jsinput);
-      if((result !== null) && (result !== undefined)){
-        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + result);
+      if (reg_test.test(jsinput) && (+jsinput !== null) && (+jsinput !== undefined)) {
+        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + closestNum(arr, Math.round(+jsinput)));
       } else {
-        jstext.insertAdjacentText("beforeend", 'Вы ввели пустую строку');
+        jstext.insertAdjacentText("beforeend", 'Вы ввели не число или пустую строку');
       }
     });
   }
@@ -241,10 +240,6 @@ function closestNum(array, value) {
   let leftArr = 0;
   let middle = Math.trunc((rightArr - leftArr)/2);
   if (rightArr === 0) return array[0];
-  if ((value === '') || (value === null) || (value === undefined) || isNaN(value)){
-    intermediate = null;
-    return intermediate;
-  }
   while(intermediate === 0) {
     if ((+array[middle] === +value)) {
       intermediate = +array[middle];
