@@ -81,18 +81,19 @@ function loadValid() {
     });
   };
   if (jsform !== null) {
-    let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
     let jstext = document.querySelector('#js_text_result');
     let jsvalue = jsform.querySelector('#js_value');
+    let jsbutton = jsform.querySelector('#js_text_button');
     let jsinput = '';
-    jsform.addEventListener('submit', jsFormPrevent);
+    jsform.addEventListener('submit', FormPrevent);
+    jsbutton.addEventListener('click', jsArrRandomize)
     jsvalue.addEventListener('input', event => {
       jsinput = event.target.value;
       jstext.innerHTML = '';
       let reg_test = /^-?\d*\.{0,1}\d+$/;
       //add binary search result to js_text_result after the form
       if (reg_test.test(jsinput) && (+jsinput !== null) && (+jsinput !== undefined)) {
-        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + closestNum(arr, Math.round(+jsinput)));
+        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + closestNum(Math.round(+jsinput)));
       } else {
         jstext.insertAdjacentText("beforeend", 'Вы ввели не число или пустую строку');
       }
@@ -100,7 +101,7 @@ function loadValid() {
   }
 }
 
-function jsFormPrevent (event) {
+function FormPrevent (event) {
   event.preventDefault();
 }
 
@@ -234,28 +235,45 @@ function submitFormHandlerArchive(event) {
   }
 }
 
-function closestNum(array, value) {
+function closestNum(value) {
+  let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
+  let rightArr = arr.length - 1;
   let intermediate = 0;
-  let rightArr = array.length - 1;
   let leftArr = 0;
   let middle = Math.trunc((rightArr - leftArr)/2);
-  if (rightArr === 0) return array[0];
+  if (rightArr === 0) return arr[0];
   while(intermediate === 0) {
-    if ((+array[middle] === +value)) {
-      intermediate = +array[middle];
+    if ((+arr[middle] === +value)) {
+      intermediate = +arr[middle];
       break;
     } 
     if (leftArr === rightArr)  {
-      intermediate = array[leftArr];
+      intermediate = arr[leftArr];
       break;
     }
     //check left and right border
-    if ((+array[middle] > +value)) {
+    if ((+arr[middle] > +value)) {
       rightArr = middle-1;
-    } else if (+array[middle] < +value) {
+    } else if (+arr[middle] < +value) {
       leftArr = middle+1;
     }
     middle = Math.trunc(leftArr + (rightArr - leftArr)/2);
   }
   return intermediate;
+}
+
+function jsArrRandomize() {
+  let arr = [];
+  let jsinput = document.querySelector('#js_value');
+  let jstextresult = document.querySelector('#js_text_result');
+  let jstextarr = document.querySelector('#js_text_arr');
+  jstextresult.innerHTML = '';
+  jstextarr.innerHTML = '';
+  jsinput.value = '';
+  for (let i = 0; i < Math.floor(Math.random()*30); i++) {
+    arr[i] = Math.trunc(Math.random()*Math.random()*150);
+  }
+  arr.sort((a,b) => a - b);
+
+  jstextarr.innerHTML = arr.join(' ');
 }
