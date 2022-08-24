@@ -8,14 +8,27 @@
 @import './404.scss';
 @import './jstest.scss';
 
+//light theme colors
 $absoluteblack: #000000;
 $greyquotes: #E6E6E6;
 // $highlight: #C9C9C9;
-$searchinput: #838383;
 $active: #A4A4A4;
+$searchinput: #838383;
+$menu: #434343;
 $demon: #080808;
 $body: #101010;
-$menu: #434343;
+$code: #FAF3E1;
+
+//dark theme colors
+$dark_background: #131313;
+$dark_demon: #F7F7F7;
+$dark_body: #EFEFEF;
+// $highlight: #C9C9C9;
+$dark_menu: #BCBCBC;
+$dark_searchinput: #7C7C7C;
+$dark_active: #5B5B5B;
+$dark_inputbackground:#3b3b3b;
+$dark_greyquotes: #262626;
 $code: #FAF3E1;
 
 
@@ -128,6 +141,13 @@ pre {
 
 .inputcode {
   background: $greyquotes;
+  background: $greyquotes;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_greyquotes;
+  }
+  @media (prefers-color-scheme: light) {
+    background: $greyquotes;
+  }
 }
 
 main {
@@ -138,6 +158,12 @@ main {
 
 .greyquotes {
   background: $greyquotes;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_greyquotes;
+  }
+  @media (prefers-color-scheme: light) {
+    background: $greyquotes;
+  }
 
   blockquote {
     quotes: "\201e" "\201c";
@@ -181,6 +207,14 @@ body {
   display: flex;
   color: $body;
   margin: 0;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_background;
+    color: $dark_body
+  }
+  @media (prefers-color-scheme: light) {
+    background: white;
+    color: $body;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -317,6 +351,20 @@ a {
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
   }
+  @media (prefers-color-scheme: dark) {
+    color: $dark_menu;
+    &:hover,
+    a:focus {
+      color: $dark_body;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    color: $menu;
+    &:hover,
+    a:focus {
+      color: $body
+    }
+  }
 }
 
 .main_header {
@@ -337,11 +385,22 @@ a {
   }
   
   a {
-    color: #101010;
-  }
-  
-  a:hover {
-    color: $menu;
+    color: $body;
+    a:hover {
+      color: $menu;
+    }
+    @media (prefers-color-scheme: dark) {
+      color: $dark_body;
+      a:hover {
+        color:$dark_menu
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      color: $body;
+      a:hover {
+        color:$menu
+      }
+    }
   }
   
   time {
@@ -399,16 +458,34 @@ a {
     height: 32px;
     width: 100%;
 
+
     &:focus {
       border: 2px solid $menu;
     }
-
+    
     &:invalid:not(:placeholder-shown) {
       box-shadow: 0 0 5px #ff5151;
     }
     
     &:valid:not(:placeholder-shown) {
       box-shadow: 0 0 5px #55ff5d;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark_searchinput;
+      background-color: $dark_inputbackground;
+      color: $dark_body;
+      &:focus {
+        border: 2px solid $dark_menu;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      border: 1px solid grey;
+      background-color: white;
+      color: $body;
+      &:focus {
+        border: 2px solid $menu;
+      }
     }
   }
 
@@ -436,6 +513,22 @@ a {
 
     &:focus {
       border: 2px solid $menu;
+    }
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark_searchinput;
+      background-color: $dark_inputbackground;
+      color: $dark_body;
+      &:focus {
+        border: 2px solid $dark_menu;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      border: 1px solid grey;
+      background-color: white;
+      color: $body;
+      &:focus {
+        border: 2px solid $menu;
+      }
     }
   }
 
@@ -465,6 +558,34 @@ a {
 
       &:not(:not(:disabled)):hover {
         color: $greyquotes;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark_demon;
+      color: $dark_greyquotes;
+      &:hover {
+        background-color: $dark_active;
+        color: $demon;
+      }
+      &:disabled {
+        background-color: $dark_active;
+        &:not(:not(:disabled)):hover {
+          color: $dark_greyquotes
+        }
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      background-color: $demon;
+      color: $greyquotes;
+      &:hover {
+        background-color: $active;
+        color: white;
+      }
+      &:disabled {
+        background-color: $active;
+        &:not(:not(:disabled)):hover {
+          color: $greyquotes
+        }
       }
     }
   }
@@ -733,22 +854,37 @@ input:-webkit-autofill {
       a {
         font-size: 1.0667rem;
         color: $active;
+        @media (prefers-color-scheme: dark) {
+          color: $dark_active;
+          &:hover {
+            color: $dark_menu;
+          }
+        }
+        @media (prefers-color-scheme: light) {
+          color: $active;
+        &:hover {
+          color: $menu;
+          }
+        }
       }
 
       &:nth-child(1) {
         display: none;
-      }
+        }
     }
   }
 
-  .topnav li {
-    &:nth-child(1) {
-      visibility: hidden;
-      float: none;
-    }
-    
-    &:nth-last-child(1) {
-      visibility: hidden;
+  .topnav {
+    height: 48px;
+    li {
+      &:nth-child(1) {
+        visibility: hidden;
+        float: none;
+      }
+      
+      &:nth-last-child(1) {
+        visibility: hidden;
+      }
     }
   }
 
@@ -849,6 +985,12 @@ input:-webkit-autofill {
   footer {
     margin-top: 35px;
     background: $demon;
+    @media (prefers-color-scheme: dark) {
+      background: white;
+    }
+    @media (prefers-color-scheme: light) {
+      background: $demon;
+    }
   }
 
   .bottomnav {
@@ -972,6 +1114,9 @@ input:-webkit-autofill {
 
   header {  
     padding:1.7362% 1.818181818% 0 1.818181818%;
+  }
+  .topnav {
+    height: 52px;
   }
 
   .top_menu {
