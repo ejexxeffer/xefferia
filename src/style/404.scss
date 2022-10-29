@@ -1,14 +1,55 @@
 $header: #ffffff;
+$active: #A4A4A4;
+$menu: #434343;
+$dark_menu: #BCBCBC;
 
 .body_404 {
-    background: url("../img/320dp.svg") no-repeat;
-    background-position-y:10px;
-    background-size: 100%;
+    // background: url("../img/strange.svg") no-repeat;
+    // background-position-y:10px;
+    // background-size: 100%;
   }
-  
+  .test {
+    height: 100px;
+  }
   .main_404 {
+    // display: grid;
+    // grid-template: "container" 1fr;
+    // place-items: center;
+    // place-content: center;
+    overflow: hidden;
     padding: 0;
     margin: 0;
+    // svg {
+    //   position: absolute;
+    // }
+    article {
+      display: grid;
+      grid-template: "container" 1fr;
+      place-items: center;
+      place-content: center;
+      overflow: hidden;
+      // min-height: fill-available;
+      // min-height: -webkit-fill-available;
+      svg {
+        place-self: start center;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      .info_404 {
+        place-self: end center;
+      }
+    }
+  }
+
+  .main_404 article > * {
+    grid-area: container;
+  }
+
+
+
+  .body_404 {
+    // overflow: visible;
+    // box-shadow : 0px -0px 10000px transparent /*trick for chrome*/
   }
   
   .header_404 h1 {
@@ -19,10 +60,15 @@ $header: #ffffff;
     width: 76px;
     padding: 0;
   }
+
+  .info_404 {
+    // margin-top: -35%;
+  }
   
   .info_404 p {
     font-family: 'oranienbaum', serif;
-    margin: 155px auto 0;
+    // margin: 155px auto 0;
+    margin: 0 auto 0;
     font-size: 3.3333rem;
     text-align: center;
     font-style: normal;
@@ -31,18 +77,34 @@ $header: #ffffff;
     cursor: default;
     width: 170px;
     padding: 0;
+    padding-bottom: 30px;
   }
   
-  .info_404 p a {
+  .info_404 p {
+    a {
+      color: $active;
+      @media (prefers-color-scheme: dark) {
+      color: $menu;
+      &:hover {
+        color: $active
+      }
+    }
+      @media (prefers-color-scheme: light) {
+      color: $active;
+      a:hover {
+        color:$menu
+      }
+    }
     cursor: pointer;
+    }
   }
 
   @media all and (min-width: 570px) and (orientation: portrait),all and (min-width: 570px) and (orientation: landscape) {
-    .body_404 {
-      background: url("../img/570dp.svg") no-repeat;
-      background-position-y: 5px;
-      background-size: 100%;
-    }
+    // .body_404 {
+    //   background: url("../img/570dp.svg") no-repeat;
+    //   background-position-y: 5px;
+    //   background-size: 100%;
+    // }
     
     .header_404 h1 {
       margin: 57px auto 0;
@@ -51,19 +113,19 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 35px auto 0;
-      font-size: 2.3rem;
+      // margin: 35px auto 0;
+      font-size: 4rem;
       line-height: 0.8;
-      width: 129px;
+      width: 280px;
     }
   }
   
   @media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
-    .body_404 {
-      background: url("../img/770dp.svg") no-repeat;
-      background-position-y: 11px;
-      background-size: 100%;
-    }
+    // .body_404 {
+    //   background: url("../img/770dp.svg") no-repeat;
+    //   background-position-y: 11px;
+    //   background-size: 100%;
+    // }
     
     .header_404 h1 {
       margin: 110px auto 0;
@@ -72,19 +134,19 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 226px auto 0;
-      font-size: 5.7rem;
+      // margin: 226px auto 0;
+      font-size: 4rem;
       line-height: 0.8;
       width: 345px;
     }
   }
   
   @media all and (min-width: 1024px) and (orientation: portrait),all and (min-width: 1024px) and (orientation: landscape) {
-    .body_404 {
-      background: url("../img/1024dp.svg") no-repeat;
-      background-position-y: 10px;
-      background-size: 100%;
-    }
+    // .body_404 {
+    //   background: url("../img/1024dp.svg") no-repeat;
+    //   background-position-y: 10px;
+    //   background-size: 100%;
+    // }
     
     .header_404 h1{
       margin: 111px auto 0;
@@ -93,7 +155,7 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 103px auto 0;
+      // margin: 103px auto 0;
       line-height: 0.8;
       font-size: 5rem;
       width: 428px;
@@ -101,10 +163,14 @@ $header: #ffffff;
   }
   
   @media all and (min-width: 1440px) and (orientation: portrait),all and (min-width: 1440px) and (orientation: landscape) {  
-    .body_404 {
-      background: url("../img/1920dp.svg") no-repeat;
-      background-position-y: 13px;
-      background-size: 100%;
+    // .body_404 {
+    //   background: url("../img/1920dp.svg") no-repeat;
+    //   background-position-y: 13px;
+    //   background-size: 100%;
+    // }
+
+    .info_404 {
+      // margin-top: -400px;
     }
     
     .header_404 h1 {
@@ -114,20 +180,20 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 168px auto 0;
+      // margin: 168px auto 0;
       font-size: 5.5rem;
       line-height: 0.8;
-      width: 360px;
+      width: 500px;
     }
   }
   
   
   @media all and (min-width: 1920px) and (orientation: portrait),all and (min-width: 1920px) and (orientation: landscape) {  
-    .body_404 {
-      background: url("../img/1920dp.svg") no-repeat;
-      background-position-y: 13px;
-      background-size: 100%;
-    }
+    // .body_404 {
+    //   background: url("../img/1920dp.svg") no-repeat;
+    //   background-position-y: 13px;
+    //   background-size: 100%;
+    // }
     
     .header_404 h1{
       margin: 206px auto 0;
@@ -136,19 +202,19 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 140px auto 0;
+      // margin: 140px auto 0;
       font-size: 5.5rem;
       line-height: 0.8;
-      width: 360px;
+      width: 530px;
     }
   }
   
   @media all and (min-width: 2048px) and (orientation: portrait),all and (min-width: 2048px) and (orientation: landscape) {  
-    .body_404 {
-      background: url("../img/2048dp.svg") no-repeat;
-      background-position-y: 13px;
-      background-size: 100%;
-    }
+    // .body_404 {
+    //   background: url("../img/2048dp.svg") no-repeat;
+    //   background-position-y: 13px;
+    //   background-size: 100%;
+    // }
     
     .header_404 h1 {
       margin: 206px auto 0;
@@ -157,10 +223,10 @@ $header: #ffffff;
     }
     
     .info_404 p {
-      margin: 140px auto 0;
+      // margin: 140px auto 0;
       font-size: 5.5rem;
       line-height: 0.8;
-      width: 360px;
+      width: 530px;
     }
   }
   

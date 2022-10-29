@@ -92,10 +92,10 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
 
   workbox.precacheAndRoute([{
     "url": "404.html",
-    "revision": "7871f2c87c143510459e9c76374a3ecd"
+    "revision": "2a18e7801b5a099b89f3184da9092277"
   }, {
     "url": "about.html",
-    "revision": "d18699f8c0138b4898ebf470c12b82ff"
+    "revision": "49b087ecc5c1463d6b80727915d6cfa3"
   }, {
     "url": "android-chrome-192x192.png",
     "revision": "5d62c70e364674f37ae7f37537f19a66"
@@ -137,16 +137,16 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "cd4aa14abb7bd764cbf36b8f7c827f99"
   }, {
     "url": "archive.html",
-    "revision": "325e6c59c78059f20b0f11e6232a1d73"
+    "revision": "ec2a0934acc1e9ab8379811673d7f507"
   }, {
     "url": "build/main.css",
-    "revision": "11b7b2681e466e47f6a9678eb2662624"
+    "revision": "2474c9dd42e0cdce4a0c5fdddaa6395b"
   }, {
     "url": "build/main.js",
-    "revision": "ca875b7769f3e750cf5af4ec99bbb7b1"
+    "revision": "36f5ce5fce82e99624cdf2ceeb0313a4"
   }, {
     "url": "contacts.html",
-    "revision": "8d5962f1fc803843791261e40bfa33a5"
+    "revision": "32541bc0acb2d0ea9dba3a5fd3a5c1b8"
   }, {
     "url": "favicon-16x16.png",
     "revision": "a0e55e403a8401ce96aaef46edab27c5"
@@ -277,6 +277,9 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "url": "img/search.svg",
     "revision": "36809be2a9ffd36c6af8ec97c4625a3a"
   }, {
+    "url": "img/strange.svg",
+    "revision": "5b47d7fffdae269a63f1e1f95c589fd6"
+  }, {
     "url": "img/three-bars.svg",
     "revision": "291b63a3f2b98cee03a2fca2c020638a"
   }, {
@@ -305,13 +308,13 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "487f62ed883b53be2f0d7bb1f4f5a24b"
   }, {
     "url": "posts/20_04_2019.html",
-    "revision": "e9b5170ce523e2a9c0a7469fc3cf1a4a"
+    "revision": "a476c5c6263a8e727716a60c34abed63"
   }, {
     "url": "posts/29_08_2019.html",
-    "revision": "fbc9576343e2a1e8718641d8b25371cc"
+    "revision": "bb8c1007080fd44014407f50478f7d0b"
   }, {
     "url": "posts/binaryfind.html",
-    "revision": "6039fd58f8ae52f439a595d92c3c78cc"
+    "revision": "110ccbf178dd2830641dbc81965d60c0"
   }, {
     "url": "prod.config.js",
     "revision": "184bc93b0cb665e7959089b692aa211f"
@@ -320,7 +323,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "b8ca9f73e7d80deb31a9857fdaf02e56"
+    "revision": "91ac79eef00ba090da22a1a9500341ea"
   }, {
     "url": "webpack.config.js",
     "revision": "bb3d30f53555f30986fd2c32f287da4d"
