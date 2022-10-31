@@ -3,6 +3,7 @@
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
 let jsform = document.getElementById('js_form');
+let rollable = document.getElementById('rollable');
 let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
@@ -24,11 +25,11 @@ if ('serviceWorker' in navigator)  {
       });
 }
 
-
+// checking avalible parameters of the page
 function loadValid() {
   threeBars.addEventListener('click',toggle);
   threeBars_close.addEventListener('click',toggle);
-
+  //FORM FROM CONTACTS
   if (form !== null) {
     let nameInpt = form.querySelector('#name');
     let emailInpt = form.querySelector('#email');
@@ -54,7 +55,7 @@ function loadValid() {
   
     form.addEventListener('submit', submitFormHandler);
   };
-
+  //SEARCH FORM FROM ARCHIVE
   if (searchForm !== null) {
     let searchInpt = searchForm.querySelector('#search');
     let submitSearchBtn = searchForm.querySelector('#submit_search');
@@ -80,6 +81,7 @@ function loadValid() {
       buildArchive(cards);
     });
   };
+  //BINARY FIND FORM
   if (jsform !== null) {
     let jstext = document.querySelector('#js_text_result');
     let jsvalue = jsform.querySelector('#js_value');
@@ -98,6 +100,10 @@ function loadValid() {
         jstext.insertAdjacentText("beforeend", 'Вы ввели не число или пустую строку');
       }
     });
+  }
+  //CHECK ABOUT ROLLABLE CONTENT
+  if (rollable !== null) {
+    ContentRoll();
   }
 }
 
@@ -280,6 +286,24 @@ function jsArrRandomize() {
   arr.sort((a,b) => a - b);
 
   jstextarr.innerHTML = arr.join(' ');
+}
+
+function ContentRoll() {
+  let headers = document.getElementsByTagName('h2');
+  for (let i = 0; i < headers.length; i++) {
+    headers[i].addEventListener('click', Roll);
+    headers[i].style.cursor = 'pointer';
+  }
+}
+
+function Roll(event) {
+  console.log(event);
+  let elem = event.target.nextElementSibling;
+  while (!!elem) {
+    if (elem.matches(event.target.localName)) break;
+    elem.classList.toggle('hidden');
+    elem = elem.nextElementSibling;
+  }
 }
 
 //fix for viewport on mobile devices
