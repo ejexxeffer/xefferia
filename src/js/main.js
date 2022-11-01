@@ -293,17 +293,27 @@ function ContentRoll() {
   for (let i = 0; i < headers.length; i++) {
     headers[i].addEventListener('click', Roll);
     headers[i].style.cursor = 'pointer';
+    headers[i].click();
   }
 }
 
 function Roll(event) {
   console.log(event);
+  if (event.target.nextElementSibling.id === 'insert') {
+    event.target.nextElementSibling.remove();
+  } else {
+    event.target.insertAdjacentHTML('beforeend', rollPlainHTML(event.target.nextElementSibling.innerText.split('\n',1)[0]))
+  }
   let elem = event.target.nextElementSibling;
   while (!!elem) {
     if (elem.matches(event.target.localName)) break;
     elem.classList.toggle('hidden');
     elem = elem.nextElementSibling;
   }
+}
+
+function rollPlainHTML(string) {
+  return `<p id="insert">${string}...</p>`;
 }
 
 //fix for viewport on mobile devices

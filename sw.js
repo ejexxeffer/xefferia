@@ -143,7 +143,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "2474c9dd42e0cdce4a0c5fdddaa6395b"
   }, {
     "url": "build/main.js",
-    "revision": "74d6575e48d64c8289ba5e307ff03cd8"
+    "revision": "2eab7ca1360786ad2402bfcbd2f5fbd8"
   }, {
     "url": "contacts.html",
     "revision": "32541bc0acb2d0ea9dba3a5fd3a5c1b8"
@@ -290,7 +290,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "7164bdc80bdc5d2ca39ebed3997f63dd"
+    "revision": "8f82a043722bf2457bfb702bb67cf044"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -323,7 +323,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "c180bf3e47fbfef3fc6801fb8df5c1a4"
+    "revision": "d83cf2346d61f7f1d4994b90a92fc2e7"
   }, {
     "url": "webpack.config.js",
     "revision": "bb3d30f53555f30986fd2c32f287da4d"
