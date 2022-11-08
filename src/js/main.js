@@ -288,32 +288,52 @@ function jsArrRandomize() {
   jstextarr.innerHTML = arr.join(' ');
 }
 
+//old handler
+// function ContentRoll() {
+//   let headers = document.getElementsByTagName('h2');
+//   for (let i = 0; i < headers.length; i++) {
+//     headers[i].addEventListener('click', Roll);
+//     headers[i].style.cursor = 'pointer';
+//     headers[i].click();
+//   }
+// }
+
+//new handler with delegation
 function ContentRoll() {
   let headers = document.getElementsByTagName('h2');
+  rollable.addEventListener('click', RollCheck);
   for (let i = 0; i < headers.length; i++) {
-    headers[i].addEventListener('click', Roll);
     headers[i].style.cursor = 'pointer';
     headers[i].click();
   }
 }
 
-function Roll(event) {
+function RollCheck(event) {
   console.log(event);
-  if (event.target.nextElementSibling.id === 'insert') {
-    event.target.nextElementSibling.remove();
-  } else {
-    event.target.insertAdjacentHTML('beforeend', rollPlainHTML(event.target.nextElementSibling.innerText.split('\n',1)[0]))
-  }
-  let elem = event.target.nextElementSibling;
+  if (event.target.localName == 'h2') Roll(event.target);
+  if (event.target.id == 'insert') Roll(event.target.previousElementSibling);
+  if (event.target.parentElement.id == 'insert') Roll(event.target.parentElement.previousElementSibling);
+}
+
+function Roll(target) {
+  let elem = target.nextElementSibling;
   while (!!elem) {
-    if (elem.matches(event.target.localName)) break;
+    if (elem.matches(target.localName)) break;
     elem.classList.toggle('hidden');
     elem = elem.nextElementSibling;
   }
+  if (target.nextElementSibling.id === 'insert') {
+    target.nextElementSibling.remove();
+    console.log('Next sibling is: ' + target.nextElementSibling.classList)
+  } else {
+    target.insertAdjacentHTML('afterend', rollPlainHTML(target.nextElementSibling.innerText.split('\n',1)[0]))
+  }
 }
 
+
+
 function rollPlainHTML(string) {
-  return `<p id="insert">${string}...</p>`;
+  return `<p style='color: #A4A4A4; cursor: pointer;'id="insert">${string}...<span style='color: black;'>читать далее</span>...</p>`;
 }
 
 //fix for viewport on mobile devices

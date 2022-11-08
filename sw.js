@@ -143,7 +143,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "2474c9dd42e0cdce4a0c5fdddaa6395b"
   }, {
     "url": "build/main.js",
-    "revision": "2eab7ca1360786ad2402bfcbd2f5fbd8"
+    "revision": "be4d2d0d59b128517130715e9c9d0693"
   }, {
     "url": "contacts.html",
     "revision": "32541bc0acb2d0ea9dba3a5fd3a5c1b8"
@@ -323,7 +323,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "d83cf2346d61f7f1d4994b90a92fc2e7"
+    "revision": "d67fac6a26626bcf884e6f8e897f8e4c"
   }, {
     "url": "webpack.config.js",
     "revision": "bb3d30f53555f30986fd2c32f287da4d"
