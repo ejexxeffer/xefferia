@@ -3,6 +3,7 @@
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
 let jsform = document.getElementById('js_form');
+let rollable = document.getElementById('rollable');
 let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
@@ -24,11 +25,11 @@ if ('serviceWorker' in navigator)  {
       });
 }
 
-
+// checking avalible parameters of the page
 function loadValid() {
   threeBars.addEventListener('click',toggle);
   threeBars_close.addEventListener('click',toggle);
-
+  //FORM FROM CONTACTS
   if (form !== null) {
     let nameInpt = form.querySelector('#name');
     let emailInpt = form.querySelector('#email');
@@ -54,7 +55,7 @@ function loadValid() {
   
     form.addEventListener('submit', submitFormHandler);
   };
-
+  //SEARCH FORM FROM ARCHIVE
   if (searchForm !== null) {
     let searchInpt = searchForm.querySelector('#search');
     let submitSearchBtn = searchForm.querySelector('#submit_search');
@@ -80,6 +81,7 @@ function loadValid() {
       buildArchive(cards);
     });
   };
+  //BINARY FIND FORM
   if (jsform !== null) {
     let jstext = document.querySelector('#js_text_result');
     let jsvalue = jsform.querySelector('#js_value');
@@ -98,6 +100,10 @@ function loadValid() {
         jstext.insertAdjacentText("beforeend", 'Вы ввели не число или пустую строку');
       }
     });
+  }
+  //CHECK ABOUT ROLLABLE CONTENT
+  if (rollable !== null) {
+    ContentRoll();
   }
 }
 
@@ -280,6 +286,54 @@ function jsArrRandomize() {
   arr.sort((a,b) => a - b);
 
   jstextarr.innerHTML = arr.join(' ');
+}
+
+//old handler
+// function ContentRoll() {
+//   let headers = document.getElementsByTagName('h2');
+//   for (let i = 0; i < headers.length; i++) {
+//     headers[i].addEventListener('click', Roll);
+//     headers[i].style.cursor = 'pointer';
+//     headers[i].click();
+//   }
+// }
+
+//new handler with delegation
+function ContentRoll() {
+  let headers = document.getElementsByTagName('h2');
+  rollable.addEventListener('click', RollCheck);
+  for (let i = 0; i < headers.length; i++) {
+    headers[i].style.cursor = 'pointer';
+    headers[i].click();
+  }
+}
+
+function RollCheck(event) {
+  console.log(event);
+  if (event.target.localName == 'h2') Roll(event.target);
+  if (event.target.id == 'insert') Roll(event.target.previousElementSibling);
+  if (event.target.parentElement.id == 'insert') Roll(event.target.parentElement.previousElementSibling);
+}
+
+function Roll(target) {
+  let elem = target.nextElementSibling;
+  while (!!elem) {
+    if (elem.matches(target.localName)) break;
+    elem.classList.toggle('hidden');
+    elem = elem.nextElementSibling;
+  }
+  if (target.nextElementSibling.id === 'insert') {
+    target.nextElementSibling.remove();
+    console.log('Next sibling is: ' + target.nextElementSibling.classList)
+  } else {
+    target.insertAdjacentHTML('afterend', rollPlainHTML(target.nextElementSibling.innerText.split('\n',1)[0]))
+  }
+}
+
+
+
+function rollPlainHTML(string) {
+  return `<p style='color: #A4A4A4; cursor: pointer;'id="insert">${string}...<span style='color: black;'>читать далее</span>...</p>`;
 }
 
 //fix for viewport on mobile devices
