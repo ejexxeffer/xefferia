@@ -143,7 +143,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "2474c9dd42e0cdce4a0c5fdddaa6395b"
   }, {
     "url": "build/main.js",
-    "revision": "be4d2d0d59b128517130715e9c9d0693"
+    "revision": "9c1b4599062cdd7b30a567b10418e9db"
   }, {
     "url": "contacts.html",
     "revision": "32541bc0acb2d0ea9dba3a5fd3a5c1b8"
@@ -256,6 +256,9 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "url": "img/close.svg",
     "revision": "612304f43b0efb86a5557662bd59f0e2"
   }, {
+    "url": "img/ejex0002.svg",
+    "revision": "bcabb38a056a383482f636536fcc05f9"
+  }, {
     "url": "img/ejexlogo.svg",
     "revision": "c4f9b3ac7113852201490a84576490e3"
   }, {
@@ -270,6 +273,12 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
   }, {
     "url": "img/octofaceright.svg",
     "revision": "360e67d42df3ba3bbee9084c9542f63b"
+  }, {
+    "url": "img/one.svg",
+    "revision": "baa9f08afba2c36503d238b60b77cd3e"
+  }, {
+    "url": "img/optimised_ejex_animated.svg",
+    "revision": "5ee1763b0f2d71520276708f8f26f907"
   }, {
     "url": "img/rss.svg",
     "revision": "360e8f39e143129b45cee676f82d1b89"
@@ -286,11 +295,14 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "url": "img/twitter.svg",
     "revision": "93b56711da03bd30debd6be33d771546"
   }, {
+    "url": "img/two.svg",
+    "revision": "d8da25be62a57e4b63b37e003ad64700"
+  }, {
     "url": "img/wtf.jpg",
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "8f82a043722bf2457bfb702bb67cf044"
+    "revision": "6dd5d5b0f413dad1852550dc6695e230"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -311,7 +323,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "a476c5c6263a8e727716a60c34abed63"
   }, {
     "url": "posts/29_08_2019.html",
-    "revision": "bb8c1007080fd44014407f50478f7d0b"
+    "revision": "f1266e085ba022a5d0c4cfe55e4c078d"
   }, {
     "url": "posts/binaryfind.html",
     "revision": "110ccbf178dd2830641dbc81965d60c0"
@@ -323,7 +335,7 @@ define(['./workbox-daeee7c1'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "d67fac6a26626bcf884e6f8e897f8e4c"
+    "revision": "136b139652d88302da7b134bd29beaab"
   }, {
     "url": "webpack.config.js",
     "revision": "bb3d30f53555f30986fd2c32f287da4d"
