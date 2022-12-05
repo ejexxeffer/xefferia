@@ -19,7 +19,9 @@ const path = {
   },
   src: {
       js: 'src/js/main.js',
-      style: 'src/style/main.scss',
+      main: 'src/style/main.scss',
+      light: 'src/style/light.scss',
+      dark: 'src/style/dark.scss',
   },
   watch: {
       js: 'src/js/**/*.js',
@@ -71,17 +73,19 @@ function js() {
     .pipe(sourcemaps.init())
     .pipe(terser())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.build.js));
+    .pipe(gulp.dest(path.build.js))
+    .pipe(browserSync.stream());
 }
 
 function styles() {
-  return gulp.src(path.src.style)
+  return gulp.src([path.src.main, path.src.dark, path.src.light])
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(prefixer())
     .pipe(clean_css())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.build.css));
+    .pipe(gulp.dest(path.build.css))
+    .pipe(browserSync.stream());
 }
 
 gulp.task('cleanBuild', () => {

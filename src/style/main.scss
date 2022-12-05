@@ -139,8 +139,8 @@ pre {
   }
 }
 
+//theme
 .inputcode {
-  background: $greyquotes;
   background: $greyquotes;
   @media (prefers-color-scheme: dark) {
     background: $dark_greyquotes;
@@ -156,6 +156,7 @@ main {
   flex:1;
 }
 
+//theme
 .greyquotes {
   background: $greyquotes;
   @media (prefers-color-scheme: dark) {
@@ -190,6 +191,7 @@ cite::before {
   content: "— ";
 }
 
+//theme
 body {
   font-family: 'roboto_regular', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -209,7 +211,7 @@ body {
   margin: 0;
   @media (prefers-color-scheme: dark) {
     background: $dark_background;
-    color: $dark_body
+    color: $dark_body;
   }
   @media (prefers-color-scheme: light) {
     background: white;
@@ -326,6 +328,7 @@ li {
   }
 }
 
+//theme
 a {
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
   -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -374,6 +377,7 @@ a {
   max-width: 390px;
 }
 
+//theme
 .archlabel {
   margin: 3.333333333% auto 0;
   text-align: right;
@@ -444,7 +448,8 @@ a {
     margin-bottom: 5px;
     display: block;
   }
-  
+
+//theme
   input {
     font-family: 'roboto_regular', sans-serif;
     border: 1px solid grey;
@@ -489,6 +494,7 @@ a {
     }
   }
 
+//theme
   textarea {
     font-family: 'roboto_regular', sans-serif;
     border: 1px solid grey;
@@ -532,6 +538,7 @@ a {
     }
   }
 
+//theme
   button {
     font-family: 'roboto_medium', sans-serif;
     display: inline-block;
@@ -840,6 +847,7 @@ input:-webkit-autofill {
     width: auto;
   }
 
+//theme
   .top_menu {
     margin: 10px auto 0;
     flex-direction: row;
@@ -982,6 +990,7 @@ input:-webkit-autofill {
     }
   }
 
+//theme
   footer {
     margin-top: 35px;
     background: $demon;
