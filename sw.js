@@ -134,13 +134,22 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "63b53ea871f1b46f0d1ca650006292e3"
   }, {
     "url": "build/main.css",
-    "revision": "0765ab8872debf262c77f5009b7afe41"
+    "revision": "19fed372e424ffef81c44f4ddeb6bceb"
   }, {
     "url": "build/main.js",
     "revision": "bb84b5ef8ad632d868c20d45fa127109"
   }, {
     "url": "contacts.html",
     "revision": "532db4e94236f9cc67c8923df494b99e"
+  }, {
+    "url": "dist/main.js",
+    "revision": "dcd13363f7fc0686e6f55db3159c3bd3"
+  }, {
+    "url": "dist/sw.js",
+    "revision": "8ba343a7cab3de3b338904bc02eec8d7"
+  }, {
+    "url": "dist/workbox-8b6cdeda.js",
+    "revision": "f816987d575dabde3f6e63c4413d955b"
   }, {
     "url": "favicon-16x16.png",
     "revision": "a0e55e403a8401ce96aaef46edab27c5"
@@ -335,7 +344,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "136b139652d88302da7b134bd29beaab"
   }, {
     "url": "webpack.config.js",
-    "revision": "bb3d30f53555f30986fd2c32f287da4d"
+    "revision": "b457516e99721dfd77f1a0712201b1e9"
   }], {});
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/index.html")));
   workbox.registerRoute("/api/*", new workbox.CacheFirst({

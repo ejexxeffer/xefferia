@@ -137,6 +137,11 @@ pre {
     color: #B6D3FF;
     content: "C#";
   }
+
+  &[rel="SVG"]::before {
+    color: #31ad48;
+    content: "SVG";
+  }
 }
 
 //theme
