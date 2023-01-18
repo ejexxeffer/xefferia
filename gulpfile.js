@@ -132,9 +132,9 @@ gulp.task('bundle-sw', async (done) => {
     navigationPreload: true,
     runtimeCaching: [{
       // Match any same-origin request that contains 'api'.
-      urlPattern: '/api/*',
+      urlPattern: '/*',
       // Apply a StaleWhileRevalidate strategy.
-      handler: 'CacheFirst',
+      handler: 'StaleWhileRevalidate',
       options: {
         // Use a custom cache name for this route.
         cacheName: 'my-api-cache',

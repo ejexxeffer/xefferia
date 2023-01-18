@@ -155,12 +155,6 @@ pre {
   }
 }
 
-main {
-  padding: 0 3.125%;
-  min-height: 100%;
-  flex:1;
-}
-
 //theme
 .greyquotes {
   background: $greyquotes;
@@ -175,52 +169,6 @@ main {
     quotes: "\201e" "\201c";
     padding: 5px 5%;
     margin: 2px 0;
-  }
-}
-
-
-
-q {
-  quotes: "\201e" "\201c";
-
-  &::before {
-    content: "— "open-quote;
-  }
-  
-  &::after {
-    content: close-quote;
-  }
-}
-
-cite::before {
-  content: "— ";
-}
-
-//theme
-body {
-  font-family: 'roboto_regular', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  flex-direction: column;
-  background-size: cover;
-  background: white;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  min-height: 100vh;
-  display: flex;
-  color: $body;
-  margin: 0;
-  @media (prefers-color-scheme: dark) {
-    background: $dark_background;
-    color: $dark_body;
-  }
-  @media (prefers-color-scheme: light) {
-    background: white;
-    color: $body;
   }
 }
 
@@ -317,6 +265,64 @@ li {
   }
 }
 
+
+q {
+  quotes: "\201e" "\201c";
+
+  &::before {
+    content: "— "open-quote;
+  }
+  
+  &::after {
+    content: close-quote;
+  }
+}
+
+cite::before {
+  content: "— ";
+}
+
+main {
+  padding: 0 3.125%;
+  min-height: 100%;
+  flex:1;
+  li {
+    font: {
+      family: 'roboto_regular', sans-serif;
+      size: 1rem;
+      style: normal;
+      weight: 400;
+    }
+  }
+}
+
+//theme
+body {
+  font-family: 'roboto_regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  flex-direction: column;
+  background-size: cover;
+  background: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  color: $body;
+  margin: 0;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_background;
+    color: $dark_body;
+  }
+  @media (prefers-color-scheme: light) {
+    background: white;
+    color: $body;
+  }
+}
 .archlabel {
   font: {
     family: 'roboto_light', sans-serif;

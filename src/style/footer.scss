@@ -4,6 +4,23 @@ $active--svg: #F1F1F1;
 $demon: #080808;
 
 footer {
+  ul {
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    clear: both;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+    clear: both;
+  }
   margin-top: 9.375%;
   nav {
     font-size: 0;

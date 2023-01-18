@@ -3,28 +3,45 @@ $menu: #434343;
 $dark_body: #EFEFEF;
 
 
-ul {
-  justify-content: space-between;
-  text-decoration: none;
-  display: flex;
-  clear: both;
-  padding: 0;
-  margin: 0;
-}
+// ul {
+//   justify-content: space-between;
+//   text-decoration: none;
+//   display: flex;
+//   clear: both;
+//   padding: 0;
+//   margin: 0;
+// }
 
-li {
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  list-style: none;
-  display: flex;
-  clear: both;
-}
+// li {
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   list-style: none;
+//   display: flex;
+//   clear: both;
+// }
 
 //theme
 header {  
   padding:3.125% 3.125%  0 3.125%;
 
+  ul {
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    clear: both;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+    clear: both;
+  }
   nav:nth-last-child(1) {
     background-color: rgba(255, 255, 255, 0.95);
     @media(prefers-color-scheme: dark) {

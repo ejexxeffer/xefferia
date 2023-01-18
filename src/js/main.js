@@ -8,22 +8,24 @@ let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
-let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html','posts/binaryfind.html'];
+let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html','posts/29_02_2020.html','posts/binaryfind.html'];
 let searchTerm = '';
 let cards = [];
 let filtered = [];
 
 document.addEventListener('DOMContentLoaded', loadValid);
 
-if ('serviceWorker' in navigator)  {
-    navigator.serviceWorker.register('../sw.js')
-      .then((reg) => {
-        console.log('Service worker registration succeeded.', reg);
-      })
-      .catch((error) => {
-        console.log('Registration failed with ' + error);
-      });
-}
+// if ('serviceWorker' in navigator)  {
+//     window.addEventListener('load', function() {
+//       navigator.serviceWorker.register('../sw.js')
+//       .then((reg) => {
+//         console.log('Service worker registration succeeded.', reg);
+//       })
+//       .catch((error) => {
+//         console.log('Registration failed with ' + error);
+//       });
+//     });
+// }
 
 // checking avalible parameters of the page
 function loadValid() {

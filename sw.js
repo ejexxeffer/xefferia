@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-071448a4'], (function (workbox) { 'use strict';
+define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
 
   workbox.enable();
   self.skipWaiting();
@@ -137,19 +137,10 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "19fed372e424ffef81c44f4ddeb6bceb"
   }, {
     "url": "build/main.js",
-    "revision": "bb84b5ef8ad632d868c20d45fa127109"
+    "revision": "89aec464c2700fa359d5a03bd533b6a1"
   }, {
     "url": "contacts.html",
     "revision": "532db4e94236f9cc67c8923df494b99e"
-  }, {
-    "url": "dist/main.js",
-    "revision": "dcd13363f7fc0686e6f55db3159c3bd3"
-  }, {
-    "url": "dist/sw.js",
-    "revision": "8ba343a7cab3de3b338904bc02eec8d7"
-  }, {
-    "url": "dist/workbox-8b6cdeda.js",
-    "revision": "f816987d575dabde3f6e63c4413d955b"
   }, {
     "url": "favicon-16x16.png",
     "revision": "a0e55e403a8401ce96aaef46edab27c5"
@@ -215,7 +206,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "d68a1771adc4ac273fbf1fd9e7e28858"
   }, {
     "url": "gulpfile.js",
-    "revision": "a10c7339b7338353bf36903a2bf3fe50"
+    "revision": "302dc43ed9b3c4f2a66316dd51b6757a"
   }, {
     "url": "img/1024dp.svg",
     "revision": "df58dc214dd5bc87b5fcddb6468518e4"
@@ -308,7 +299,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "8f82a043722bf2457bfb702bb67cf044"
+    "revision": "f012edd8309b2a85af1a1dc29d42cfce"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -326,13 +317,16 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "c9aeb80d14265e311f581325b87fb5b8"
   }, {
     "url": "posts/20_04_2019.html",
-    "revision": "6d213c812066a5203ed062fa23ec9db6"
+    "revision": "ede9f7cb0fee2d4c883bf9febc0e1381"
+  }, {
+    "url": "posts/29_02_2020.html",
+    "revision": "c042c41c971b0ce95cc6e2e7210b63fe"
   }, {
     "url": "posts/29_08_2019.html",
-    "revision": "55883b431817be1c56c6df6269d554a4"
+    "revision": "4931f04c2be916c82c9110fee7cb8345"
   }, {
     "url": "posts/binaryfind.html",
-    "revision": "e3b65388b6ba6a6ab33891e17805263d"
+    "revision": "662e5e0b6434fac08360537b95f87daf"
   }, {
     "url": "prod.config.js",
     "revision": "184bc93b0cb665e7959089b692aa211f"
@@ -341,13 +335,13 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "136b139652d88302da7b134bd29beaab"
+    "revision": "b6c82d8a25aa199511d0ff1157938c9e"
   }, {
     "url": "webpack.config.js",
-    "revision": "b457516e99721dfd77f1a0712201b1e9"
+    "revision": "24ed65a9b98c762ee9d3ab99f9d2a955"
   }], {});
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/index.html")));
-  workbox.registerRoute("/api/*", new workbox.CacheFirst({
+  workbox.registerRoute("/*", new workbox.StaleWhileRevalidate({
     "cacheName": "my-api-cache",
     "fetchOptions": {
       "mode": "no-cors"
