@@ -134,7 +134,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "63b53ea871f1b46f0d1ca650006292e3"
   }, {
     "url": "build/main.css",
-    "revision": "19fed372e424ffef81c44f4ddeb6bceb"
+    "revision": "cb3eed98e5ad001a10e562baf6b583bd"
   }, {
     "url": "build/main.js",
     "revision": "89aec464c2700fa359d5a03bd533b6a1"
@@ -206,7 +206,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "d68a1771adc4ac273fbf1fd9e7e28858"
   }, {
     "url": "gulpfile.js",
-    "revision": "302dc43ed9b3c4f2a66316dd51b6757a"
+    "revision": "cc7ff9f509309ef0fd6c49730a7153fb"
   }, {
     "url": "img/1024dp.svg",
     "revision": "df58dc214dd5bc87b5fcddb6468518e4"
@@ -299,7 +299,13 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "f012edd8309b2a85af1a1dc29d42cfce"
+    "revision": "86425685ed35e02c0749306437cf2bab"
+  }, {
+    "url": "main_index1.html",
+    "revision": "d1f22b8abbc2af6996f0f6ff6cabdb54"
+  }, {
+    "url": "main_index2.html",
+    "revision": "d1f22b8abbc2af6996f0f6ff6cabdb54"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -311,16 +317,19 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "8c4a6aa498dcaa6ded46026ebbce7bb4"
   }, {
     "url": "package-lock.json",
-    "revision": "97b45e5e48edeb813288c17f3289002b"
+    "revision": "be20f6ea0a6abdbdd3aba17112a4789b"
   }, {
     "url": "package.json",
-    "revision": "c9aeb80d14265e311f581325b87fb5b8"
+    "revision": "95e54c3d1961ea0c34f39c1d2fcfae5a"
   }, {
     "url": "posts/20_04_2019.html",
     "revision": "ede9f7cb0fee2d4c883bf9febc0e1381"
   }, {
+    "url": "posts/202020.html",
+    "revision": "d08a0c5e726e4a4c4276ba6f87d3b64a"
+  }, {
     "url": "posts/29_02_2020.html",
-    "revision": "c042c41c971b0ce95cc6e2e7210b63fe"
+    "revision": "ac6a699df4703bc88dba5e1a56a8822b"
   }, {
     "url": "posts/29_08_2019.html",
     "revision": "4931f04c2be916c82c9110fee7cb8345"
