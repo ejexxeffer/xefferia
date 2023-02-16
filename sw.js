@@ -83,7 +83,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "9711b77bdc8c020c8ce6cfb61030540c"
   }, {
     "url": "about.html",
-    "revision": "69713d102cfba3614b9334445af5732c"
+    "revision": "398f8647a36f1028872d39044963775c"
   }, {
     "url": "android-chrome-192x192.png",
     "revision": "5d62c70e364674f37ae7f37537f19a66"
@@ -125,7 +125,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "cd4aa14abb7bd764cbf36b8f7c827f99"
   }, {
     "url": "archive.html",
-    "revision": "f37bfc15b6174cd1b294d4ac1873c061"
+    "revision": "f3fbc32f502361befa1fe1c49db26568"
   }, {
     "url": "build/dark.css",
     "revision": "f9973f3c2f3741e484053ce9fd3accee"
@@ -134,13 +134,13 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "63b53ea871f1b46f0d1ca650006292e3"
   }, {
     "url": "build/main.css",
-    "revision": "cb3eed98e5ad001a10e562baf6b583bd"
+    "revision": "9ecd8484124d34ad41468b852cf2f29e"
   }, {
     "url": "build/main.js",
     "revision": "89aec464c2700fa359d5a03bd533b6a1"
   }, {
     "url": "contacts.html",
-    "revision": "532db4e94236f9cc67c8923df494b99e"
+    "revision": "191c886846227dc5189c2dd57d442fa0"
   }, {
     "url": "favicon-16x16.png",
     "revision": "a0e55e403a8401ce96aaef46edab27c5"
@@ -295,17 +295,41 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "url": "img/two.svg",
     "revision": "2a2730020aafd38ef56d6fee3237760d"
   }, {
+    "url": "img/whereis1.svg",
+    "revision": "f6ce4b81f7a4db776d7939daff2497cc"
+  }, {
+    "url": "img/whereis10.png",
+    "revision": "1af2e3c54a7a35a7ae2c9836b7253478"
+  }, {
+    "url": "img/whereis11.png",
+    "revision": "f5b101a5046cf3beba4e3c2a1688332b"
+  }, {
+    "url": "img/whereis2.svg",
+    "revision": "acdd33066c05ef4c4ce524cfec871ef9"
+  }, {
+    "url": "img/whereis3.png",
+    "revision": "01249efbbb7bd1607622ad6357d6a62d"
+  }, {
+    "url": "img/whereis5.png",
+    "revision": "22606742b37cfbdad0c9fa7e38638d2c"
+  }, {
+    "url": "img/whereis6.png",
+    "revision": "37de8d8589b8bd6a07aa1cf11f0e5057"
+  }, {
+    "url": "img/whereis7.svg",
+    "revision": "c02706a14f925e46f5e0d400374311b1"
+  }, {
+    "url": "img/whereis8.png",
+    "revision": "55d53e8a3e6624dfe5d2a445c11ac1c8"
+  }, {
+    "url": "img/whereis9.png",
+    "revision": "ad4bda5adf4a88666cccfa4cad20cac3"
+  }, {
     "url": "img/wtf.jpg",
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "86425685ed35e02c0749306437cf2bab"
-  }, {
-    "url": "main_index1.html",
-    "revision": "d1f22b8abbc2af6996f0f6ff6cabdb54"
-  }, {
-    "url": "main_index2.html",
-    "revision": "d1f22b8abbc2af6996f0f6ff6cabdb54"
+    "revision": "8feae8bd1280f7948b935eaabc9b5cba"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -323,19 +347,16 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "95e54c3d1961ea0c34f39c1d2fcfae5a"
   }, {
     "url": "posts/20_04_2019.html",
-    "revision": "ede9f7cb0fee2d4c883bf9febc0e1381"
-  }, {
-    "url": "posts/202020.html",
-    "revision": "d08a0c5e726e4a4c4276ba6f87d3b64a"
+    "revision": "eedc4682c3560cdb9fd01e1dfa91c350"
   }, {
     "url": "posts/29_02_2020.html",
-    "revision": "ac6a699df4703bc88dba5e1a56a8822b"
+    "revision": "171149ba7d02c1a3a66bdafb2f3d0e42"
   }, {
     "url": "posts/29_08_2019.html",
-    "revision": "4931f04c2be916c82c9110fee7cb8345"
+    "revision": "8da3e3accd75bb4085c549ebe9e79d91"
   }, {
     "url": "posts/binaryfind.html",
-    "revision": "662e5e0b6434fac08360537b95f87daf"
+    "revision": "8b37b545698d406b37aa63ee9c080ccc"
   }, {
     "url": "prod.config.js",
     "revision": "184bc93b0cb665e7959089b692aa211f"
