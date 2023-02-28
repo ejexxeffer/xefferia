@@ -280,6 +280,12 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "url": "img/rss.svg",
     "revision": "360e8f39e143129b45cee676f82d1b89"
   }, {
+    "url": "img/Screenshot from 2022-12-26 04-00-30.png",
+    "revision": "5036472203c5c29826a23e746ae34c7f"
+  }, {
+    "url": "img/Screenshot from 2022-12-26 04-00-41.png",
+    "revision": "2231169a212c129b3e80c291e41f463e"
+  }, {
     "url": "img/search.svg",
     "revision": "36809be2a9ffd36c6af8ec97c4625a3a"
   }, {
@@ -296,7 +302,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "2a2730020aafd38ef56d6fee3237760d"
   }, {
     "url": "img/whereis1.svg",
-    "revision": "f6ce4b81f7a4db776d7939daff2497cc"
+    "revision": "54f6cf444afba5de53d7d956c0b5567f"
   }, {
     "url": "img/whereis10.png",
     "revision": "1af2e3c54a7a35a7ae2c9836b7253478"
@@ -309,6 +315,12 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
   }, {
     "url": "img/whereis3.png",
     "revision": "01249efbbb7bd1607622ad6357d6a62d"
+  }, {
+    "url": "img/whereis4_1.svg",
+    "revision": "61f4be471c0bdf0c43ac112af20749e7"
+  }, {
+    "url": "img/whereis4_2.svg",
+    "revision": "bc097ffbed5e01af710230db07b1845d"
   }, {
     "url": "img/whereis5.png",
     "revision": "22606742b37cfbdad0c9fa7e38638d2c"
@@ -329,7 +341,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "8feae8bd1280f7948b935eaabc9b5cba"
+    "revision": "efd6963048eb478985715c36dc9fce66"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
