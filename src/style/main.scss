@@ -659,8 +659,14 @@ input:-webkit-autofill {
 
 .images_center {
   margin: 10px auto;
+  text-align: center;
   display: block;
   height: auto;
+
+  p {
+    font-size: 0.8667rem;;
+    color: $searchinput;
+  }
 }
 
 .images_center img {

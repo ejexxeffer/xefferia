@@ -317,10 +317,10 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "01249efbbb7bd1607622ad6357d6a62d"
   }, {
     "url": "img/whereis4_1.svg",
-    "revision": "61f4be471c0bdf0c43ac112af20749e7"
+    "revision": "9bb3b3777c54a505e91486c7eaa3b9dd"
   }, {
     "url": "img/whereis4_2.svg",
-    "revision": "bc097ffbed5e01af710230db07b1845d"
+    "revision": "b4ac6ce2bea85e82f95bc5cd47dfab1d"
   }, {
     "url": "img/whereis5.png",
     "revision": "22606742b37cfbdad0c9fa7e38638d2c"
@@ -341,7 +341,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "efd6963048eb478985715c36dc9fce66"
+    "revision": "285bb1fea2c2376158ef1739dce2ab23"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
