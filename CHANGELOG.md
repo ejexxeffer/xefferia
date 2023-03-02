@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2020-03-28
+### Added
+- SVG SMIL animations
+- Rollable Content Feature
+- Dark theme
+- Pug templates
+- Workbox
+- New 404 page
+- Webpack configuration but it's not work now
+### Changed
+- Ejex logo to animated
+- Gulp tasks for pug and Workbox-build
+### Removed
+- Old 404 page
+
 ## [1.1.0] - 2020-03-28
 ### Added
 - Search for archive
@@ -17,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - README.md
 - Src directory
 - Gulpfile rewrited architecture and add new functions with building and preprocessing
-- packaje.json added all needed package for deploy
+- package.json added all needed package for deploy
 ### Removed
 - Old imgs
 - Old icons
