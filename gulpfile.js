@@ -135,7 +135,7 @@ gulp.task('sync', (done) => {
 
 gulp.task('bundle-sw', async (done) => {
   await workbox_build.generateSW({
-    mode: 'development',
+    mode: 'production',
     globDirectory: './',
     sourcemap: true,
     swDest: './sw.js',
