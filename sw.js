@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-071448a4'], (function (workbox) { 'use strict';
+define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
 
   workbox.enable();
   self.skipWaiting();
@@ -83,7 +83,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "9711b77bdc8c020c8ce6cfb61030540c"
   }, {
     "url": "about.html",
-    "revision": "69713d102cfba3614b9334445af5732c"
+    "revision": "398f8647a36f1028872d39044963775c"
   }, {
     "url": "android-chrome-192x192.png",
     "revision": "5d62c70e364674f37ae7f37537f19a66"
@@ -125,7 +125,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "cd4aa14abb7bd764cbf36b8f7c827f99"
   }, {
     "url": "archive.html",
-    "revision": "f37bfc15b6174cd1b294d4ac1873c061"
+    "revision": "f3fbc32f502361befa1fe1c49db26568"
   }, {
     "url": "build/dark.css",
     "revision": "f9973f3c2f3741e484053ce9fd3accee"
@@ -134,22 +134,13 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "63b53ea871f1b46f0d1ca650006292e3"
   }, {
     "url": "build/main.css",
-    "revision": "19fed372e424ffef81c44f4ddeb6bceb"
+    "revision": "120da036ddd6d1b30793f103b6b3b019"
   }, {
     "url": "build/main.js",
-    "revision": "bb84b5ef8ad632d868c20d45fa127109"
+    "revision": "6910ddbdc752248d66def5635fd63309"
   }, {
     "url": "contacts.html",
-    "revision": "532db4e94236f9cc67c8923df494b99e"
-  }, {
-    "url": "dist/main.js",
-    "revision": "dcd13363f7fc0686e6f55db3159c3bd3"
-  }, {
-    "url": "dist/sw.js",
-    "revision": "8ba343a7cab3de3b338904bc02eec8d7"
-  }, {
-    "url": "dist/workbox-8b6cdeda.js",
-    "revision": "f816987d575dabde3f6e63c4413d955b"
+    "revision": "191c886846227dc5189c2dd57d442fa0"
   }, {
     "url": "favicon-16x16.png",
     "revision": "a0e55e403a8401ce96aaef46edab27c5"
@@ -215,7 +206,7 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "d68a1771adc4ac273fbf1fd9e7e28858"
   }, {
     "url": "gulpfile.js",
-    "revision": "a10c7339b7338353bf36903a2bf3fe50"
+    "revision": "51ea6bc7581d8403fba442f67092d5fd"
   }, {
     "url": "img/1024dp.svg",
     "revision": "df58dc214dd5bc87b5fcddb6468518e4"
@@ -289,6 +280,12 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "url": "img/rss.svg",
     "revision": "360e8f39e143129b45cee676f82d1b89"
   }, {
+    "url": "img/Screenshot from 2022-12-26 04-00-30.png",
+    "revision": "b1efeb91cd30fc83ddbe85f4c4e78607"
+  }, {
+    "url": "img/Screenshot from 2022-12-26 04-00-41.png",
+    "revision": "5916b35f625461337950b09180ee1ebb"
+  }, {
     "url": "img/search.svg",
     "revision": "36809be2a9ffd36c6af8ec97c4625a3a"
   }, {
@@ -298,17 +295,59 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "url": "img/three-bars.svg",
     "revision": "291b63a3f2b98cee03a2fca2c020638a"
   }, {
+    "url": "img/top_padding_bug_svg.png",
+    "revision": "f77be817e84ca9484d62f1208c0d9a2a"
+  }, {
+    "url": "img/top_padding_svg_fix.png",
+    "revision": "3f487dddf94b48dc9a6901c427234225"
+  }, {
     "url": "img/twitter.svg",
     "revision": "93b56711da03bd30debd6be33d771546"
   }, {
     "url": "img/two.svg",
     "revision": "2a2730020aafd38ef56d6fee3237760d"
   }, {
+    "url": "img/whereis1.svg",
+    "revision": "54f6cf444afba5de53d7d956c0b5567f"
+  }, {
+    "url": "img/whereis10.png",
+    "revision": "1af2e3c54a7a35a7ae2c9836b7253478"
+  }, {
+    "url": "img/whereis11.png",
+    "revision": "f5b101a5046cf3beba4e3c2a1688332b"
+  }, {
+    "url": "img/whereis2.svg",
+    "revision": "acdd33066c05ef4c4ce524cfec871ef9"
+  }, {
+    "url": "img/whereis3.png",
+    "revision": "01249efbbb7bd1607622ad6357d6a62d"
+  }, {
+    "url": "img/whereis4_1.svg",
+    "revision": "9bb3b3777c54a505e91486c7eaa3b9dd"
+  }, {
+    "url": "img/whereis4_2.svg",
+    "revision": "b4ac6ce2bea85e82f95bc5cd47dfab1d"
+  }, {
+    "url": "img/whereis5.png",
+    "revision": "22606742b37cfbdad0c9fa7e38638d2c"
+  }, {
+    "url": "img/whereis6.png",
+    "revision": "37de8d8589b8bd6a07aa1cf11f0e5057"
+  }, {
+    "url": "img/whereis7.svg",
+    "revision": "c02706a14f925e46f5e0d400374311b1"
+  }, {
+    "url": "img/whereis8.png",
+    "revision": "55d53e8a3e6624dfe5d2a445c11ac1c8"
+  }, {
+    "url": "img/whereis9.png",
+    "revision": "ad4bda5adf4a88666cccfa4cad20cac3"
+  }, {
     "url": "img/wtf.jpg",
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "8f82a043722bf2457bfb702bb67cf044"
+    "revision": "8bf9699dd6de46ca23e38c636e94668e"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -320,19 +359,22 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "8c4a6aa498dcaa6ded46026ebbce7bb4"
   }, {
     "url": "package-lock.json",
-    "revision": "97b45e5e48edeb813288c17f3289002b"
+    "revision": "be20f6ea0a6abdbdd3aba17112a4789b"
   }, {
     "url": "package.json",
-    "revision": "c9aeb80d14265e311f581325b87fb5b8"
+    "revision": "95e54c3d1961ea0c34f39c1d2fcfae5a"
   }, {
     "url": "posts/20_04_2019.html",
-    "revision": "6d213c812066a5203ed062fa23ec9db6"
+    "revision": "eedc4682c3560cdb9fd01e1dfa91c350"
+  }, {
+    "url": "posts/29_02_2020.html",
+    "revision": "171149ba7d02c1a3a66bdafb2f3d0e42"
   }, {
     "url": "posts/29_08_2019.html",
-    "revision": "55883b431817be1c56c6df6269d554a4"
+    "revision": "8da3e3accd75bb4085c549ebe9e79d91"
   }, {
     "url": "posts/binaryfind.html",
-    "revision": "e3b65388b6ba6a6ab33891e17805263d"
+    "revision": "8b37b545698d406b37aa63ee9c080ccc"
   }, {
     "url": "prod.config.js",
     "revision": "184bc93b0cb665e7959089b692aa211f"
@@ -341,13 +383,13 @@ define(['./workbox-071448a4'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "136b139652d88302da7b134bd29beaab"
+    "revision": "3931b4df2f6901cfa29613742ad7f0fc"
   }, {
     "url": "webpack.config.js",
-    "revision": "b457516e99721dfd77f1a0712201b1e9"
+    "revision": "24ed65a9b98c762ee9d3ab99f9d2a955"
   }], {});
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/index.html")));
-  workbox.registerRoute("/api/*", new workbox.CacheFirst({
+  workbox.registerRoute("/*", new workbox.StaleWhileRevalidate({
     "cacheName": "my-api-cache",
     "fetchOptions": {
       "mode": "no-cors"

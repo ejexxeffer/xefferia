@@ -9,6 +9,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const del = require ('del');
+const gulp_pug = require ('gulp-pug');
+const plumbeer = require ('gulp-plumber');
 sass.compiler = require('node-sass');
 const workbox_build = require('workbox-build')
 
@@ -60,13 +62,30 @@ const configPhp = {
 function watch() {
   gulp.watch('src/style/**/*.scss',gulp.parallel(styles))
     .on('change', () => {return reload()});
-  gulp.watch('*.html')
+  gulp.watch('src/pug/**/*.pug', gulp.parallel('pug'))
     .on('change', () => {return reload()});
   gulp.watch('src/js/**/*.js',gulp.series(js))
     .on('change', () => {return reload()});
   gulp.watch('*.php')
     .on('change', () => {return reload()});
 }
+
+function pugMainBuild() {
+  return gulp.src('src/pug/*.pug')
+  .pipe(gulp_pug({pretty: true}))
+  .pipe(plumbeer())
+  .pipe(gulp.dest('./'))
+  .pipe(browserSync.stream());
+}
+
+function pugPostsBuild() {
+  return gulp.src('src/pug/post/*.pug')
+  .pipe(gulp_pug({pretty: true}))
+  .pipe(plumbeer())
+  .pipe(gulp.dest('./posts'))
+  .pipe(browserSync.stream());
+}
+
 
 function js() {
   return gulp.src(path.src.js)
@@ -87,6 +106,8 @@ function styles() {
     .pipe(gulp.dest(path.build.css))
     .pipe(browserSync.stream());
 }
+
+gulp.task('pug', gulp.parallel(pugMainBuild,pugPostsBuild));
 
 gulp.task('cleanBuild', () => {
   return del(path.clean.build);
@@ -114,7 +135,7 @@ gulp.task('sync', (done) => {
 
 gulp.task('bundle-sw', async (done) => {
   await workbox_build.generateSW({
-    mode: 'development',
+    mode: 'production',
     globDirectory: './',
     sourcemap: true,
     swDest: './sw.js',
@@ -132,9 +153,9 @@ gulp.task('bundle-sw', async (done) => {
     navigationPreload: true,
     runtimeCaching: [{
       // Match any same-origin request that contains 'api'.
-      urlPattern: '/api/*',
+      urlPattern: '/*',
       // Apply a StaleWhileRevalidate strategy.
-      handler: 'CacheFirst',
+      handler: 'StaleWhileRevalidate',
       options: {
         // Use a custom cache name for this route.
         cacheName: 'my-api-cache',
@@ -191,9 +212,9 @@ gulp.task('bundle-sw', async (done) => {
 //   done();
 // });
 
-gulp.task('build', gulp.series('cleanBuild', styles, js));
+gulp.task('build', gulp.series('cleanBuild', styles, js, 'bundle-sw','pug'));
 
-gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'cleanDeploy'));
+gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'bundle-sw','pug', 'cleanDeploy'));
 
 
 gulp.task('default', gulp.series('cleanBuild', 'build', 'bundle-sw', gulp.parallel('sync', watch)));
