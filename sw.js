@@ -134,10 +134,10 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "63b53ea871f1b46f0d1ca650006292e3"
   }, {
     "url": "build/main.css",
-    "revision": "9ecd8484124d34ad41468b852cf2f29e"
+    "revision": "120da036ddd6d1b30793f103b6b3b019"
   }, {
     "url": "build/main.js",
-    "revision": "89aec464c2700fa359d5a03bd533b6a1"
+    "revision": "6910ddbdc752248d66def5635fd63309"
   }, {
     "url": "contacts.html",
     "revision": "191c886846227dc5189c2dd57d442fa0"
@@ -206,7 +206,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "d68a1771adc4ac273fbf1fd9e7e28858"
   }, {
     "url": "gulpfile.js",
-    "revision": "cc7ff9f509309ef0fd6c49730a7153fb"
+    "revision": "51ea6bc7581d8403fba442f67092d5fd"
   }, {
     "url": "img/1024dp.svg",
     "revision": "df58dc214dd5bc87b5fcddb6468518e4"
@@ -281,10 +281,10 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "360e8f39e143129b45cee676f82d1b89"
   }, {
     "url": "img/Screenshot from 2022-12-26 04-00-30.png",
-    "revision": "5036472203c5c29826a23e746ae34c7f"
+    "revision": "b1efeb91cd30fc83ddbe85f4c4e78607"
   }, {
     "url": "img/Screenshot from 2022-12-26 04-00-41.png",
-    "revision": "2231169a212c129b3e80c291e41f463e"
+    "revision": "5916b35f625461337950b09180ee1ebb"
   }, {
     "url": "img/search.svg",
     "revision": "36809be2a9ffd36c6af8ec97c4625a3a"
@@ -294,6 +294,12 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
   }, {
     "url": "img/three-bars.svg",
     "revision": "291b63a3f2b98cee03a2fca2c020638a"
+  }, {
+    "url": "img/top_padding_bug_svg.png",
+    "revision": "f77be817e84ca9484d62f1208c0d9a2a"
+  }, {
+    "url": "img/top_padding_svg_fix.png",
+    "revision": "3f487dddf94b48dc9a6901c427234225"
   }, {
     "url": "img/twitter.svg",
     "revision": "93b56711da03bd30debd6be33d771546"
@@ -341,7 +347,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "e13bcf1427b2a0297f03ef84ae3160a9"
   }, {
     "url": "index.html",
-    "revision": "285bb1fea2c2376158ef1739dce2ab23"
+    "revision": "8bf9699dd6de46ca23e38c636e94668e"
   }, {
     "url": "manifest.json",
     "revision": "e70a45140dfb973afd1861eae900742b"
@@ -377,7 +383,7 @@ define(['./workbox-7aa339e7'], (function (workbox) { 'use strict';
     "revision": "358b87ce969b6916891cb53ce97e6994"
   }, {
     "url": "src/js/main.js",
-    "revision": "b6c82d8a25aa199511d0ff1157938c9e"
+    "revision": "3931b4df2f6901cfa29613742ad7f0fc"
   }, {
     "url": "webpack.config.js",
     "revision": "24ed65a9b98c762ee9d3ab99f9d2a955"

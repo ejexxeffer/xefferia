@@ -212,9 +212,9 @@ gulp.task('bundle-sw', async (done) => {
 //   done();
 // });
 
-gulp.task('build', gulp.series('cleanBuild', styles, js, 'pug'));
+gulp.task('build', gulp.series('cleanBuild', styles, js, 'bundle-sw','pug'));
 
-gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'pug', 'cleanDeploy'));
+gulp.task('deploy', gulp.series('cleanBuild', styles, js, 'bundle-sw','pug', 'cleanDeploy'));
 
 
 gulp.task('default', gulp.series('cleanBuild', 'build', 'bundle-sw', gulp.parallel('sync', watch)));

@@ -15,17 +15,17 @@ let filtered = [];
 
 document.addEventListener('DOMContentLoaded', loadValid);
 
-// if ('serviceWorker' in navigator)  {
-//     window.addEventListener('load', function() {
-//       navigator.serviceWorker.register('../sw.js')
-//       .then((reg) => {
-//         console.log('Service worker registration succeeded.', reg);
-//       })
-//       .catch((error) => {
-//         console.log('Registration failed with ' + error);
-//       });
-//     });
-// }
+if ('serviceWorker' in navigator)  {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('../sw.js')
+      .then((reg) => {
+        console.log('Service worker registration succeeded.', reg);
+      })
+      .catch((error) => {
+        console.log('Registration failed with ' + error);
+      });
+    });
+}
 
 // checking avalible parameters of the page
 function loadValid() {
