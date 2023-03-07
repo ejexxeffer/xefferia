@@ -1,0 +1,161 @@
+//light theme colors
+$absoluteblack: #000000;
+$greyquotes: #E6E6E6;
+// $highlight: #C9C9C9;
+$active: #A4A4A4;
+$searchinput: #838383;
+$menu: #434343;
+$demon: #080808;
+$body: #101010;
+$code: #FAF3E1;
+$active--svg: #F1F1F1;
+
+header {
+  nav:nth-last-child(1) {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+body {
+  background: white;
+  color: $body;
+}
+
+a {
+  color: $menu;
+  &:hover,
+  a:focus {
+    color: $body
+  }
+}
+
+.logo a{
+  svg path {
+    fill: #080808
+  }
+  &:hover svg path{
+    fill: $menu;
+  }
+}
+
+.topnav {
+  li svg path {
+    fill: #080808
+  }
+  & li:nth-child(odd) {
+    svg path{
+      fill: #1B1F23;
+    }
+  }
+}
+
+.top_menu {
+  li {
+    &:nth-child(1) {
+      svg path{
+        fill: #1B1F23;
+      }
+    }
+  }
+}
+
+.inputcode {
+  background: $greyquotes;
+}
+
+.greyquotes {
+  background: $greyquotes;
+}
+
+.archlabel {
+  a {
+    color: $body;
+    a:hover {
+      color: $menu;
+    }
+  }
+}
+
+.contacts_form {
+  input {
+    border: 1px solid grey;
+    background-color: white;
+    color: $body;
+    &:focus {
+      border: 2px solid $menu;
+    }
+  }
+  
+  textarea {
+    border: 1px solid grey;
+    background-color: white;
+    color: $body;
+    &:focus {
+      border: 2px solid $menu;
+    }
+  }
+
+  button {
+    background-color: $demon;
+    color: $greyquotes;
+    &:hover {
+      background-color: $active;
+      color: white;
+    }
+    &:disabled {
+      background-color: $active;
+      &:not(:not(:disabled)):hover {
+        color: $greyquotes
+      }
+    }
+  }
+}
+
+.bottomnav {
+  li a svg {
+    &:hover {
+      fill: $active--svg;
+    }
+  }
+}
+
+.blacky {
+  background-color: $demon;
+}
+
+.search_input {
+  border: 1px solid black;
+  background-color: white;
+  color: $body;
+  &:focus {
+    border: 2px solid $searchinput;
+  }
+}
+
+.search_button {
+  background-color: white;
+  color: $body;
+  &:hover {
+    background-color: $active;
+    color: black;
+  }
+
+  &:hover .search_icon path {
+    fill: white;
+  }
+}
+
+@media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
+  .top_menu {
+    li {
+      color: $active;
+        &:hover {
+      color: $menu;
+      }
+    }
+  }
+
+  footer {
+    background: $demon;
+  }
+}

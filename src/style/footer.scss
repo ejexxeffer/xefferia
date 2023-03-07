@@ -4,12 +4,30 @@ $active--svg: #F1F1F1;
 $demon: #080808;
 
 footer {
+  ul {
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    clear: both;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+    clear: both;
+  }
   margin-top: 9.375%;
   nav {
     font-size: 0;
   }
 }
 
+//theme
 .bottomnav {
   padding: 1.25% 11.875% 1.875%;
   overflow: hidden;
@@ -21,6 +39,16 @@ footer {
 
     &:hover {
       fill: $active--svg;
+    }
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        fill: #0E0E0E; 
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      &:hover {
+        fill: $active--svg;
+      }
     }
   }
 }
@@ -41,6 +69,13 @@ footer {
   }
 }
 
+//theme
 .blacky {
   background-color: $demon;
+  @media (prefers-color-scheme: dark) {
+    background-color: white;
+  }
+  @media (prefers-color-scheme: light) {
+    background-color: $demon;
+  }
 }

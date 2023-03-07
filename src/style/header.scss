@@ -1,30 +1,55 @@
 
 $menu: #434343;
+$dark_body: #EFEFEF;
 
 
-ul {
-  justify-content: space-between;
-  text-decoration: none;
-  display: flex;
-  clear: both;
-  padding: 0;
-  margin: 0;
-}
+// ul {
+//   justify-content: space-between;
+//   text-decoration: none;
+//   display: flex;
+//   clear: both;
+//   padding: 0;
+//   margin: 0;
+// }
 
-li {
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  list-style: none;
-  display: flex;
-  clear: both;
-}
+// li {
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   list-style: none;
+//   display: flex;
+//   clear: both;
+// }
 
+//theme
 header {  
   padding:3.125% 3.125%  0 3.125%;
 
+  ul {
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    clear: both;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    display: flex;
+    clear: both;
+  }
   nav:nth-last-child(1) {
     background-color: rgba(255, 255, 255, 0.95);
+    @media(prefers-color-scheme: dark) {
+      background-color: rgba( 7, 7, 7, 0.95);
+    }
+    @media(prefers-color-scheme: light) {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
     bottom: 0; left: 0; top: 0; right: 0;
     -webkit-overflow-scrolling: touch;
     min-height:100%;
@@ -39,16 +64,69 @@ header {
   }
 }
 
-.logo:hover path{
-  fill: $menu;
+//theme
+.logo a{
+  width: 100%;
+  height: 100%;
+  font-size: 0px;
+  text-decoration: none;
+  svg path {
+    fill: #080808
+  }
+  :hover svg path{
+    fill: $menu;
+  }
+  @media(prefers-color-scheme: dark) {
+    svg path{
+      fill:#dadada;
+    }
+    &:hover svg path{
+      fill:$dark_body;
+    }
+  }
+  @media(prefers-color-scheme: light) {
+    svg path {
+      fill: #080808
+    }
+    &:hover svg path{
+      fill: $menu;
+    }
+  }
 }
 
+//theme
 .topnav {
   overflow: hidden;
   height: 40px;
   cursor: default;
+  @media(prefers-color-scheme: dark) {
+    li svg path{
+      fill:#dadada;
+    }
+  }
+  @media(prefers-color-scheme: light) {
+    li svg path {
+      fill: #080808
+    }
+  }
+  & li:nth-child(odd) {
+    @media(prefers-color-scheme: dark) {
+      svg path{
+        fill:#dadada;
+      }
+      svg path:hover {
+        fill: #f4f4f4;
+      }
+    }
+    @media(prefers-color-scheme: light) {
+      svg path{
+        fill: #1B1F23;
+      }
+    }
+  }
 }
 
+//theme
 .top_menu {
   flex-direction: column;
   align-items: center;
@@ -61,10 +139,20 @@ header {
     margin-bottom: 10px;
 
     &:nth-child(1) {
-      padding: 22px 10px 10px;
+      padding: 5.2% 3.2% 2%;
       float: left;
       justify-content: center;
       align-self: flex-start;
+      @media(prefers-color-scheme: dark) {
+        svg path{
+          fill:#dadada;
+        }
+      }
+      @media(prefers-color-scheme: light) {
+        svg path{
+          fill: #1B1F23;
+        }
+      }
     }
     
      a {

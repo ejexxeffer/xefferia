@@ -1,0 +1,20 @@
+extends includes/layout.pug
+
+
+block content
+  .main_header
+    h1 BINARYFIND
+  .archlabel
+    a(href='#')
+      p algorithms
+    time 00/00/0000
+  .headerquote
+    blockquote(cite="https://www.habr.ru") What a code.
+    cite Скудный филоффф
+  .main_text
+    .js_text
+      p(id="js_text_arr") 1 2 3 4 5 6 7 8 9 10
+      form(action="" class="js_text--form" id="js_form")
+        input(type="text" name="value" id="js_value" placeholder="Введите число")
+        button(id="js_text_button") Пересобрать массив
+      p(id="js_text_result")

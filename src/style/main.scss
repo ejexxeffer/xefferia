@@ -6,15 +6,29 @@
 @import './footer.scss';
 @import './archive.scss';
 @import './404.scss';
+@import './jstest.scss';
 
+//light theme colors
 $absoluteblack: #000000;
 $greyquotes: #E6E6E6;
 // $highlight: #C9C9C9;
-$searchinput: #838383;
 $active: #A4A4A4;
+$searchinput: #838383;
+$menu: #434343;
 $demon: #080808;
 $body: #101010;
-$menu: #434343;
+$code: #FAF3E1;
+
+//dark theme colors
+$dark_background: #131313;
+$dark_demon: #F7F7F7;
+$dark_body: #EFEFEF;
+// $highlight: #C9C9C9;
+$dark_menu: #BCBCBC;
+$dark_searchinput: #7C7C7C;
+$dark_active: #5B5B5B;
+$dark_inputbackground:#3b3b3b;
+$dark_greyquotes: #262626;
 $code: #FAF3E1;
 
 
@@ -123,63 +137,39 @@ pre {
     color: #B6D3FF;
     content: "C#";
   }
+
+  &[rel="SVG"]::before {
+    color: #31ad48;
+    content: "SVG";
+  }
 }
 
+//theme
 .inputcode {
   background: $greyquotes;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_greyquotes;
+  }
+  @media (prefers-color-scheme: light) {
+    background: $greyquotes;
+  }
 }
 
-main {
-  padding: 0 3.125%;
-  min-height: 100%;
-  flex:1;
-}
-
+//theme
 .greyquotes {
   background: $greyquotes;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_greyquotes;
+  }
+  @media (prefers-color-scheme: light) {
+    background: $greyquotes;
+  }
 
   blockquote {
     quotes: "\201e" "\201c";
     padding: 5px 5%;
     margin: 2px 0;
   }
-}
-
-
-
-q {
-  quotes: "\201e" "\201c";
-
-  &::before {
-    content: "— "open-quote;
-  }
-  
-  &::after {
-    content: close-quote;
-  }
-}
-
-cite::before {
-  content: "— ";
-}
-
-body {
-  font-family: 'roboto_regular', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  flex-direction: column;
-  background-size: cover;
-  background: white;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  min-height: 100vh;
-  display: flex;
-  color: $body;
-  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -275,6 +265,64 @@ li {
   }
 }
 
+
+q {
+  quotes: "\201e" "\201c";
+
+  &::before {
+    content: "— "open-quote;
+  }
+  
+  &::after {
+    content: close-quote;
+  }
+}
+
+cite::before {
+  content: "— ";
+}
+
+main {
+  padding: 0 3.125%;
+  min-height: 100%;
+  flex:1;
+  li {
+    font: {
+      family: 'roboto_regular', sans-serif;
+      size: 1rem;
+      style: normal;
+      weight: 400;
+    }
+  }
+}
+
+//theme
+body {
+  font-family: 'roboto_regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  flex-direction: column;
+  background-size: cover;
+  background: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  color: $body;
+  margin: 0;
+  @media (prefers-color-scheme: dark) {
+    background: $dark_background;
+    color: $dark_body;
+  }
+  @media (prefers-color-scheme: light) {
+    background: white;
+    color: $body;
+  }
+}
 .archlabel {
   font: {
     family: 'roboto_light', sans-serif;
@@ -291,6 +339,7 @@ li {
   }
 }
 
+//theme
 a {
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
   -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -316,6 +365,20 @@ a {
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
   }
+  @media (prefers-color-scheme: dark) {
+    color: $dark_menu;
+    &:hover,
+    a:focus {
+      color: $dark_body;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    color: $menu;
+    &:hover,
+    a:focus {
+      color: $body
+    }
+  }
 }
 
 .main_header {
@@ -325,6 +388,7 @@ a {
   max-width: 390px;
 }
 
+//theme
 .archlabel {
   margin: 3.333333333% auto 0;
   text-align: right;
@@ -336,11 +400,22 @@ a {
   }
   
   a {
-    color: #101010;
-  }
-  
-  a:hover {
-    color: $menu;
+    color: $body;
+    a:hover {
+      color: $menu;
+    }
+    @media (prefers-color-scheme: dark) {
+      color: $dark_body;
+      a:hover {
+        color:$dark_menu
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      color: $body;
+      a:hover {
+        color:$menu
+      }
+    }
   }
   
   time {
@@ -384,7 +459,8 @@ a {
     margin-bottom: 5px;
     display: block;
   }
-  
+
+//theme
   input {
     font-family: 'roboto_regular', sans-serif;
     border: 1px solid grey;
@@ -398,10 +474,11 @@ a {
     height: 32px;
     width: 100%;
 
+
     &:focus {
       border: 2px solid $menu;
     }
-
+    
     &:invalid:not(:placeholder-shown) {
       box-shadow: 0 0 5px #ff5151;
     }
@@ -409,8 +486,26 @@ a {
     &:valid:not(:placeholder-shown) {
       box-shadow: 0 0 5px #55ff5d;
     }
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark_searchinput;
+      background-color: $dark_inputbackground;
+      color: $dark_body;
+      &:focus {
+        border: 2px solid $dark_menu;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      border: 1px solid grey;
+      background-color: white;
+      color: $body;
+      &:focus {
+        border: 2px solid $menu;
+      }
+    }
   }
 
+//theme
   textarea {
     font-family: 'roboto_regular', sans-serif;
     border: 1px solid grey;
@@ -436,8 +531,25 @@ a {
     &:focus {
       border: 2px solid $menu;
     }
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark_searchinput;
+      background-color: $dark_inputbackground;
+      color: $dark_body;
+      &:focus {
+        border: 2px solid $dark_menu;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      border: 1px solid grey;
+      background-color: white;
+      color: $body;
+      &:focus {
+        border: 2px solid $menu;
+      }
+    }
   }
 
+//theme
   button {
     font-family: 'roboto_medium', sans-serif;
     display: inline-block;
@@ -464,6 +576,34 @@ a {
 
       &:not(:not(:disabled)):hover {
         color: $greyquotes;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark_demon;
+      color: $dark_greyquotes;
+      &:hover {
+        background-color: $dark_active;
+        color: $demon;
+      }
+      &:disabled {
+        background-color: $dark_active;
+        &:not(:not(:disabled)):hover {
+          color: $dark_greyquotes
+        }
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      background-color: $demon;
+      color: $greyquotes;
+      &:hover {
+        background-color: $active;
+        color: white;
+      }
+      &:disabled {
+        background-color: $active;
+        &:not(:not(:disabled)):hover {
+          color: $greyquotes
+        }
       }
     }
   }
@@ -519,8 +659,14 @@ input:-webkit-autofill {
 
 .images_center {
   margin: 10px auto;
+  text-align: center;
   display: block;
   height: auto;
+
+  p {
+    font-size: 0.8667rem;;
+    color: $searchinput;
+  }
 }
 
 .images_center img {
@@ -718,6 +864,7 @@ input:-webkit-autofill {
     width: auto;
   }
 
+//theme
   .top_menu {
     margin: 10px auto 0;
     flex-direction: row;
@@ -732,22 +879,37 @@ input:-webkit-autofill {
       a {
         font-size: 1.0667rem;
         color: $active;
+        @media (prefers-color-scheme: dark) {
+          color: $dark_active;
+          &:hover {
+            color: $dark_menu;
+          }
+        }
+        @media (prefers-color-scheme: light) {
+          color: $active;
+        &:hover {
+          color: $menu;
+          }
+        }
       }
 
       &:nth-child(1) {
         display: none;
-      }
+        }
     }
   }
 
-  .topnav li {
-    &:nth-child(1) {
-      visibility: hidden;
-      float: none;
-    }
-    
-    &:nth-last-child(1) {
-      visibility: hidden;
+  .topnav {
+    height: 48px;
+    li {
+      &:nth-child(1) {
+        visibility: hidden;
+        float: none;
+      }
+      
+      &:nth-last-child(1) {
+        visibility: hidden;
+      }
     }
   }
 
@@ -845,9 +1007,16 @@ input:-webkit-autofill {
     }
   }
 
+//theme
   footer {
     margin-top: 35px;
     background: $demon;
+    @media (prefers-color-scheme: dark) {
+      background: white;
+    }
+    @media (prefers-color-scheme: light) {
+      background: $demon;
+    }
   }
 
   .bottomnav {
@@ -971,6 +1140,9 @@ input:-webkit-autofill {
 
   header {  
     padding:1.7362% 1.818181818% 0 1.818181818%;
+  }
+  .topnav {
+    height: 52px;
   }
 
   .top_menu {

@@ -1,0 +1,164 @@
+$greyquotes: #E6E6E6;
+$dark_demon: #F7F7F7;
+$dark_menu: #BCBCBC;
+$active: #A4A4A4;
+$dark_searchinput: #7C7C7C;
+$menu: #434343;
+$dark_active: #5B5B5B;
+$dark_inputbackground:#3b3b3b;
+$dark_greyquotes: #262626;
+$demon: #080808;
+
+
+
+.js_text {
+  padding: 0 15px;
+}
+
+.js_text--form {
+  text-align: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+
+  input {
+    font-family: 'roboto_regular', sans-serif;
+    border: 1px solid grey;
+    vertical-align: middle;
+    box-sizing: border-box;
+    outline-style: none;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    padding-left: 5px;
+    font-size: 1rem;
+    height: 32px;
+    width: 100%;
+
+    &:focus {
+      border: 2px solid $menu;
+    }
+    
+    
+    &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    -moz-apearance:none;
+    appearance: none;
+    }
+    
+    &::-ms-clear {
+      display: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $dark_searchinput;
+      background-color: $dark_inputbackground;
+      color: $dark_body;
+      &:focus {
+        border: 2px solid $dark_menu;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      border: 1px solid grey;
+      background-color: white;
+      color: $body;
+      &:focus {
+        border: 2px solid $menu;
+      }
+    }
+  }
+
+  button {
+    font-family: 'roboto_medium', sans-serif;
+    appearance: none;
+    display: inline-block;
+    align-self: center;
+    vertical-align: middle;
+    outline-style: none;
+    color: $greyquotes;
+    background-color: $demon;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    border-left: none;
+    cursor: pointer;
+    border: none;
+    height: 42px;
+    width: 100px;
+
+    &:active {
+      outline: none !important;
+      box-shadow: none !important;
+      outline: 0;
+      background-color:none ;
+    }
+    
+    &:hover {
+      background-color: $menu;
+      color: white;
+    }
+    
+    // &:disabled {
+    //   background-color: $active;
+
+    //   &:not(:not(:disabled)):hover {
+    //     color: $greyquotes;
+    //   }
+    // }
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark_demon;
+      color: $dark_greyquotes;
+      &:hover {
+        background-color: $dark_active;
+        color: $dark_demon;
+      }
+      // &:disabled {
+      //   background-color: $dark_active;
+      //   &:not(:not(:disabled)):hover {
+      //     color: $dark_greyquotes
+      //   }
+      // }
+    }
+    @media (prefers-color-scheme: light) {
+      background-color: $demon;
+      color: $greyquotes;
+      &:hover {
+        background-color: $active;
+        color: white;
+      }
+      &:disabled {
+        background-color: $active;
+        &:not(:not(:disabled)):hover {
+          color: $greyquotes
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 570px) and (orientation: portrait),all and (min-width: 570px) and (orientation: landscape) {
+  .js_text {
+    margin: 0 auto;
+    max-width: 420px;
+  }
+}
+
+
+@media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
+  .js_text--form {
+    margin-top: 20px;
+    input {
+      font-size: 0.8rem;
+    }
+  }
+}
+  
+@media all and (min-width: 1440px) and (orientation: portrait),all and (min-width: 1440px) and (orientation: landscape) {
+  .js_text--form {
+  }
+}
+
+@media all and (min-width: 1920px) and (orientation: portrait),all and (min-width: 1920px) and (orientation: landscape) {
+  .js_text--form {
+    margin-top: 30px;
+  }
+}

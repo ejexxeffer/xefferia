@@ -2,32 +2,36 @@
 
 let form = document.getElementById('form');
 let searchForm = document.getElementById('search_form');
+let jsform = document.getElementById('js_form');
+let rollable = document.getElementById('rollable');
 let mobileMenu = document.getElementById('listmenu');
 let threeBars = document.getElementById('threebars');
 let threeBars_close = document.getElementById('threebars_close');
 let archiveGrid = document.getElementById('archive');
-let searсhForm = document.getElementById('search_form');
-let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html'];
+let urls = ['index.html','posts/29_08_2019.html','posts/20_04_2019.html','posts/29_02_2020.html','posts/binaryfind.html'];
 let searchTerm = '';
 let cards = [];
 let filtered = [];
 
 document.addEventListener('DOMContentLoaded', loadValid);
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js', {scope: '/'})
+if ('serviceWorker' in navigator)  {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('../sw.js')
       .then((reg) => {
         console.log('Service worker registration succeeded.', reg);
       })
       .catch((error) => {
         console.log('Registration failed with ' + error);
       });
+    });
 }
 
+// checking avalible parameters of the page
 function loadValid() {
   threeBars.addEventListener('click',toggle);
   threeBars_close.addEventListener('click',toggle);
-
+  //FORM FROM CONTACTS
   if (form !== null) {
     let nameInpt = form.querySelector('#name');
     let emailInpt = form.querySelector('#email');
@@ -53,10 +57,10 @@ function loadValid() {
   
     form.addEventListener('submit', submitFormHandler);
   };
-
-  if (searсhForm !== null) {
+  //SEARCH FORM FROM ARCHIVE
+  if (searchForm !== null) {
     let searchInpt = searchForm.querySelector('#search');
-    let submitSearchBtn = searсhForm.querySelector('#submit_search');
+    let submitSearchBtn = searchForm.querySelector('#submit_search');
     let i = 0;
   
     searchInpt.addEventListener('input', ()=>{
@@ -79,6 +83,34 @@ function loadValid() {
       buildArchive(cards);
     });
   };
+  //BINARY FIND FORM
+  if (jsform !== null) {
+    let jstext = document.querySelector('#js_text_result');
+    let jsvalue = jsform.querySelector('#js_value');
+    let jsbutton = jsform.querySelector('#js_text_button');
+    let jsinput = '';
+    jsform.addEventListener('submit', FormPrevent);
+    jsbutton.addEventListener('click', jsArrRandomize)
+    jsvalue.addEventListener('input', event => {
+      jsinput = event.target.value;
+      jstext.innerHTML = '';
+      let reg_test = /^-?\d*\.{0,1}\d+$/;
+      //add binary search result to js_text_result after the form
+      if (reg_test.test(jsinput) && (+jsinput !== null) && (+jsinput !== undefined)) {
+        jstext.insertAdjacentText("beforeend", 'Ближайшее число равно:  ' + closestNum(Math.round(+jsinput)));
+      } else {
+        jstext.insertAdjacentText("beforeend", 'Вы ввели не число или пустую строку');
+      }
+    });
+  }
+  //CHECK ABOUT ROLLABLE CONTENT
+  if (rollable !== null) {
+    ContentRoll();
+  }
+}
+
+function FormPrevent (event) {
+  event.preventDefault();
 }
 
 function isValid(param) {
@@ -90,7 +122,7 @@ function isValid(param) {
 }
 
 function toggle() {
-  if (window.matchMedia("(max-width: 700px)").matches) {
+  if (window.matchMedia("(max-width: 768px)").matches) {
     document.body.classList.toggle('overflow_hidden');
     mobileMenu.classList.toggle('display_block');
   } else {
@@ -127,29 +159,28 @@ function buildArchive(cards) {
     filtered = cards;
   }
 
-  searсhForm.querySelector('#submit_search').disabled = true;
+  searchForm.querySelector('#submit_search').disabled = true;
 
   archiveGrid.innerHTML = '';
   filtered.forEach(item => {
     archiveGrid.insertAdjacentHTML("beforeend",htmlToCard(item.href,item.headerValue,item.date,item.theme));
 
-    searсhForm.querySelector('#submit_search').disabled = false;
+    searchForm.querySelector('#submit_search').disabled = false;
   });
 }
 
 function promiseXHR(method, url, body) {
   return new Promise ((resolve, reject) => {
     let xhr = new XMLHttpRequest();
+    if (method === "" || method === null || url === "" || url === null || body === "" || body === null) {
+      reject(new Error('Request not filled'));
+    }
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        if (xhr.status == 200 && method == 'GET') {
+        if (xhr.status >= 200 && xhr.status < 300) {
           resolve(xhr.response);
-        }
-
-        if (xhr.status == 404) {
-          reject(xhr.statusText);
-        } else if (xhr.status == 500) {
-          reject(xhr.statusText);
+        } else {
+          reject(new Error(`Request failed: ${xhr.status} ${xhr.statusText}`));
         }
       }
     }
@@ -159,6 +190,11 @@ function promiseXHR(method, url, body) {
       xhr.responseType = 'json';
     } else  if (method === 'GET') {
       xhr.responseType = 'document';
+    } else {
+      xhr.responseType = ""
+    }
+    xhr.onerror = function () {
+      reject(new Error(`Request failed: ${xhr.status} ${xhr.statusText}`));
     }
     xhr.send(body);
   })
@@ -210,3 +246,111 @@ function submitFormHandlerArchive(event) {
     buildArchive(cards);
   }
 }
+
+function closestNum(value) {
+  let arr = document.querySelector('#js_text_arr').innerHTML.split(' ');
+  let rightArr = arr.length - 1;
+  let intermediate = 0;
+  let leftArr = 0;
+  let middle = Math.trunc((rightArr - leftArr)/2);
+  if (rightArr === 0) return arr[0];
+  while(intermediate === 0) {
+    if ((+arr[middle] === +value)) {
+      intermediate = +arr[middle];
+      break;
+    } 
+    if (leftArr === rightArr)  {
+      intermediate = arr[leftArr];
+      break;
+    }
+    //check left and right border
+    if ((+arr[middle] > +value)) {
+      rightArr = middle-1;
+    } else if (+arr[middle] < +value) {
+      leftArr = middle+1;
+    }
+    middle = Math.trunc(leftArr + (rightArr - leftArr)/2);
+  }
+  return intermediate;
+}
+
+function jsArrRandomize() {
+  let arr = [];
+  let jsinput = document.querySelector('#js_value');
+  let jstextresult = document.querySelector('#js_text_result');
+  let jstextarr = document.querySelector('#js_text_arr');
+  jstextresult.innerHTML = '';
+  jstextarr.innerHTML = '';
+  jsinput.value = '';
+  for (let i = 0; i < Math.floor(Math.random()*30); i++) {
+    arr[i] = Math.trunc(Math.random()*Math.random()*150);
+  }
+  arr.sort((a,b) => a - b);
+
+  jstextarr.innerHTML = arr.join(' ');
+}
+
+//old handler
+// function ContentRoll() {
+//   let headers = document.getElementsByTagName('h2');
+//   for (let i = 0; i < headers.length; i++) {
+//     headers[i].addEventListener('click', Roll);
+//     headers[i].style.cursor = 'pointer';
+//     headers[i].click();
+//   }
+// }
+
+//new handler with delegation
+function ContentRoll() {
+  let headers = document.getElementsByTagName('h2');
+  rollable.addEventListener('click', RollCheck);
+  for (let i = 0; i < headers.length; i++) {
+    headers[i].style.cursor = 'pointer';
+    headers[i].click();
+  }
+}
+
+function RollCheck(event) {
+  console.log(event);
+  if (event.target.localName == 'h2') Roll(event.target);
+  if (event.target.id == 'insert') Roll(event.target.previousElementSibling);
+  if (event.target.parentElement.id == 'insert') Roll(event.target.parentElement.previousElementSibling);
+}
+
+function Roll(target) {
+  let elem = target.nextElementSibling;
+  while (!!elem) {
+    if (elem.matches(target.localName)) break;
+    elem.classList.toggle('hidden');
+    elem = elem.nextElementSibling;
+  }
+  if (target.nextElementSibling.id === 'insert') {
+    target.nextElementSibling.remove();
+    console.log('Next sibling is: ' + target.nextElementSibling.classList)
+  } else {
+    target.insertAdjacentHTML('afterend', rollPlainHTML(target.nextElementSibling.innerText.split('\n',1)[0]))
+  }
+}
+
+
+
+function rollPlainHTML(string) {
+  return `<p style='color: #A4A4A4; cursor: pointer;'id="insert">${string}...<span style='color: black;'>читать далее</span>...</p>`;
+}
+
+//fix for viewport on mobile devices
+function calculateVh() {
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Initial calculation
+calculateVh();
+
+// Re-calculate on resize
+window.addEventListener('resize', calculateVh);
+
+// Re-calculate on device orientation change
+window.addEventListener('orientationchange', calculateVh);

@@ -1,0 +1,168 @@
+//dark theme colors
+$dark_background: #131313;
+$dark_demon: #F7F7F7;
+$dark_body: #EFEFEF;
+// $highlight: #C9C9C9;
+$dark_menu: #BCBCBC;
+$dark_searchinput: #7C7C7C;
+$dark_active: #5B5B5B;
+$dark_inputbackground:#3b3b3b;
+$dark_greyquotes: #262626;
+$code: #FAF3E1;
+$demon: #080808;
+$active: #A4A4A4;
+
+
+header {
+  nav:nth-last-child(1) {
+    background-color: rgba( 7, 7, 7, 0.95);
+  }
+}
+
+body {
+  background: $dark_background;
+  color: $dark_body;
+}
+
+a {
+  color: $dark_menu;
+  &:hover,
+  a:focus {
+    color: $dark_body;
+  }
+}
+
+.logo a{
+  svg path{
+    fill:#dadada;
+  }
+  &:hover svg path{
+    fill:$dark_body;
+  }
+}
+
+.topnav {
+  li svg path{
+    fill:#dadada;
+  }
+  & li:nth-child(odd) {
+    svg path{
+      fill:#dadada;
+    }
+    svg path:hover {
+      fill: #f4f4f4;
+    }
+  }
+}
+
+.top_menu {
+  li {
+    &:nth-child(1) {
+      svg path{
+        fill:#dadada;
+      }
+    }
+  }
+}
+
+.inputcode {
+  background: $dark_greyquotes;
+}
+
+.greyquotes {
+  background: $dark_greyquotes;
+}
+
+.archlabel {
+  a {
+    color: $dark_body;
+    a:hover {
+      color:$dark_menu
+    }
+  }
+}
+
+.contacts_form {
+  input {
+    border: 1px solid $dark_searchinput;
+    background-color: $dark_inputbackground;
+    color: $dark_body;
+    &:focus {
+      border: 2px solid $dark_menu;
+    }
+  }
+  
+  textarea {
+    border: 1px solid $dark_searchinput;
+    background-color: $dark_inputbackground;
+    color: $dark_body;
+    &:focus {
+      border: 2px solid $dark_menu;
+    }
+  }
+
+  button {
+    background-color: $dark_demon;
+    color: $dark_greyquotes;
+    &:hover {
+      background-color: $dark_active;
+      color: $demon;
+    }
+    &:disabled {
+      background-color: $dark_active;
+      &:not(:not(:disabled)):hover {
+        color: $dark_greyquotes
+      }
+    }
+  }
+}
+
+.bottomnav {
+  li a svg {
+    &:hover {
+      fill: #0E0E0E;
+    }
+  }
+}
+
+.blacky {
+  background-color: white;
+}
+
+.search_input {
+  border: 1px solid $dark_searchinput;
+  background-color: $dark_inputbackground;
+  color: white;
+  &:focus {
+    border: 2px solid #dddddd;
+  }
+}
+
+.search_button {
+  background-color: $dark_inputbackground;
+  color: white;
+  &:hover {
+    background-color: $active;
+    color: white;
+  }
+  &:hover .search_icon path {
+    fill: black;
+  }
+}
+
+@media all and (min-width: 768px) and (orientation: portrait),all and (min-width: 768px) and (orientation: landscape)  {
+  .top_menu {
+    li {
+      a {
+        color: $dark_active;
+        &:hover {
+          color: $dark_menu;
+        }
+      }
+    }
+  }
+
+  footer {
+    background: white;
+  }
+}

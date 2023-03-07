@@ -4,3 +4,5 @@
 .project
 .settings
 .vscode
+workbox-*.js
+workbox-*.js.map
