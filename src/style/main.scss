@@ -655,6 +655,22 @@ input:-webkit-autofill {
     font-style: normal;
     font-weight: 400;
   }
+
+  .continue_reading {
+    color: $absoluteblack;
+    @media (prefers-color-scheme: dark) {
+      color: $code;
+      &:hover {
+        color: white;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      color: $absoluteblack;
+    &:hover {
+      color: $dark_background;
+      }
+    }
+  }
 }
 
 .images_center {
