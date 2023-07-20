@@ -83,6 +83,24 @@ $code: #FAF3E1;
   // background-color: $highlight;
 }
 
+.accident_header{
+  margin: 0 auto 0 auto;
+  max-width: 420px;
+  p {
+    font-size: 4rem;
+    margin:0;
+    font-family: 'merriweatherblack', sans-serif;
+    font-weight: 900;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+ 
+
+.scince_resume {
+  color: $searchinput;
+}
+
 a img {
   border: none;
 }
@@ -933,6 +951,14 @@ input:-webkit-autofill {
     }
   }
 
+  .accident_header{
+    max-width: 550px;
+    margin-bottom: -100px;
+    p {
+      font-size: 5rem;
+    }
+  }
+
   .main_header {
     margin-top: 10.38961039%;
     line-height: 52pt;
@@ -1078,6 +1104,14 @@ input:-webkit-autofill {
     }
   }
 
+  .accident_header{
+    max-width: 650px;
+    margin-bottom: -140px;
+    p {
+      font-size: 5.5rem;
+    }
+  }
+
   .main_header {
     padding-left: 202px;
     margin-top: 9.766%;
@@ -1170,6 +1204,13 @@ input:-webkit-autofill {
         padding: 10px 5%;
         width: 900px;
       }
+    }
+  }
+
+  .accident_header{
+    max-width: 900px;
+    p {
+      font-size: 7rem;
     }
   }
 
@@ -1269,6 +1310,14 @@ input:-webkit-autofill {
   .inputcode pre {
     margin: 20px auto;
     width: 930px;
+  }
+
+  .accident_header{
+    max-width: 1250px;
+    margin-bottom: -200px;
+    p {
+      font-size: 8rem;
+    }
   }
 
   .main_header {
