@@ -367,7 +367,7 @@ define(["./workbox-31655add"], function (e) {
         },
         {
           url: "posts/resume.html",
-          revision: "e2cb5b015c8cac931f68319c5fc8e7fb",
+          revision: "b5119150253ff47c581cfd60a1b4ec4d",
         },
         { url: "prod.config.js", revision: "184bc93b0cb665e7959089b692aa211f" },
         {
