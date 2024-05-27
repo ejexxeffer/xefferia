@@ -3,7 +3,7 @@
   <br>
   Xefferia
   <br>
-  <a href="https://xefferia.com">
+  <a href="https://xeffeia.com">
     <img height="256" width="256" src="https://github.com/ejexxeffer/xefferia/raw/master/android-chrome-256x256.png">
   </a>
   <br>

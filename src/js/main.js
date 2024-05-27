@@ -19,7 +19,7 @@ if ('serviceWorker' in navigator)  {
     window.addEventListener('load', function() {
       navigator.serviceWorker.register('../sw.js')
       .then((reg) => {
-        //console.log('Service worker registration succeeded.', reg);
+        console.log('Service worker registration succeeded.', reg);
       })
       .catch((error) => {
         console.log('Registration failed with ' + error);
@@ -311,7 +311,7 @@ function ContentRoll() {
 }
 
 function RollCheck(event) {
-  // console.log(event);
+  console.log(event);
   if (event.target.localName == 'h2') Roll(event.target);
   if (event.target.id == 'insert') Roll(event.target.previousElementSibling);
   if (event.target.parentElement.id == 'insert') Roll(event.target.parentElement.previousElementSibling);
@@ -335,7 +335,7 @@ function Roll(target) {
 
 
 function rollPlainHTML(string) {
-  return `<p style='color: #A4A4A4; cursor: pointer;'id="insert">${string}...<span class="continue_reading">читать далее</span>...</p>`;
+  return `<p style='color: #A4A4A4; cursor: pointer;'id="insert">${string}...<span style='color: black;'>читать далее</span>...</p>`;
 }
 
 //fix for viewport on mobile devices
