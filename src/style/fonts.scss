@@ -102,3 +102,21 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'merriweather_black';
+    src: url('../fonts/merriweather-black-webfont.woff2') format('woff2'),
+         url('../fonts/merriweather-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'roboto_black';
+    src: url('../fonts/roboto-black-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+
+}

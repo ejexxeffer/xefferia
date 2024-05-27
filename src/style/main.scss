@@ -83,6 +83,25 @@ $code: #FAF3E1;
   // background-color: $highlight;
 }
 
+.accident_header{
+  margin: 0 auto 0 auto;
+  max-width: 420px;
+  p {
+    font-size: 4rem;
+    margin:0;
+    // font-family: 'merriweather_black', sans-serif;
+    font-family: 'roboto_black', sans-serif;
+    font-weight: 900;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+ 
+
+.scince_resume {
+  color: $searchinput;
+}
+
 a img {
   border: none;
 }
@@ -933,6 +952,14 @@ input:-webkit-autofill {
     }
   }
 
+  .accident_header{
+    max-width: 550px;
+    margin-bottom: -100px;
+    p {
+      font-size: 5rem;
+    }
+  }
+
   .main_header {
     margin-top: 10.38961039%;
     line-height: 52pt;
@@ -1078,6 +1105,14 @@ input:-webkit-autofill {
     }
   }
 
+  .accident_header{
+    max-width: 650px;
+    margin-bottom: -130px;
+    p {
+      font-size: 5.5rem;
+    }
+  }
+
   .main_header {
     padding-left: 202px;
     margin-top: 9.766%;
@@ -1170,6 +1205,13 @@ input:-webkit-autofill {
         padding: 10px 5%;
         width: 900px;
       }
+    }
+  }
+
+  .accident_header{
+    max-width: 900px;
+    p {
+      font-size: 7rem;
     }
   }
 
@@ -1269,6 +1311,14 @@ input:-webkit-autofill {
   .inputcode pre {
     margin: 20px auto;
     width: 930px;
+  }
+
+  .accident_header{
+    max-width: 1250px;
+    margin-bottom: -190px;
+    p {
+      font-size: 8rem;
+    }
   }
 
   .main_header {
@@ -1377,6 +1427,28 @@ input:-webkit-autofill {
     box-shadow: none !important;
   }
 
+  @page {
+    margin-top: 0;
+    margin-bottom: 0.7cm;
+  }
+
+  .accident_header{
+    max-width: 500px;
+    margin-bottom: -30px;
+    margin-top: -34px;
+    p {
+      font-size: 5rem;
+    }
+  }
+
+  header {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
   html {
     line-height: 1.4;
     font-size: 18px;
@@ -1387,20 +1459,35 @@ input:-webkit-autofill {
     line-height: 1.2;
   }
 
+  .main_header {
+    margin-right: 20px;
+  }
+
+  .headerquote {
+    margin-right: 20px;
+  }
+
   .main_text {
     line-height: 1.5;
     max-width: 900px;
 
-    h2 , h3, h4 {
-      display: inline;
+    h2 {
+      display: block;
+    }
+
+    h3, h4 {
+      display: inline-block;
       page-break-before: always;
-      line-height: 2.1;
+      line-height: 1;
       orphans: 0;
       widows: 0;
     }
     
     h5, h6 {
       line-height: 3.6;
+    }
+    div {
+      page-break-inside: avoid; 
     }
   }
 
@@ -1420,7 +1507,7 @@ input:-webkit-autofill {
   }
 
   body {
-    display: inline;
+    display: block;
   }
 
   abbr[title]:after {
@@ -1456,7 +1543,7 @@ input:-webkit-autofill {
   }
 
   p {
-    display: inline-block;
+    display: block;
     orphans: 4;
     widows: 4;
   }
