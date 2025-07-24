@@ -41,13 +41,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-# idea files
-.idea
-/build
-.idea
-.project
-.settings
-.vscode
-workbox-*.js
-workbox-*.js.map
